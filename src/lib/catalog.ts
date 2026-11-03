@@ -135,11 +135,25 @@ export function juryAssignments(juryId?: string, editionId?: string) {
   );
 }
 
+export function personalWorks(juryId: string) {
+  return database.personalWorks.find((row) => row.subjectId === juryId) ?? null;
+}
+
+export function personalWorkSummary() {
+  const ready = database.personalWorks.filter((row) => row.groups.length >= 3);
+  return {
+    jurors: database.personalWorks.length,
+    ready: ready.length,
+    insufficient: database.personalWorks.length - ready.length,
+  };
+}
+
 export function juryProfile(juryId: string) {
   return {
     facts: database.juryFacts.find((row) => row.juryId === juryId) ?? null,
     inference: database.juryInferences.find((row) => row.juryId === juryId) ?? null,
     portfolios: database.juryPortfolios.filter((row) => row.juryId === juryId),
+    personalWorks: personalWorks(juryId),
   };
 }
 
@@ -288,6 +302,7 @@ export function dashboardStats() {
     singles: library.filter((item) => item.form === "single").length,
     frames: database.photographs.filter((photo) => photo.role === "series_frame").length,
     juries: database.juries.length,
+    juriesWithStyleTags: database.juryInferences.filter((row) => row.sampleStatus === "sufficient").length,
     analysesComplete: database.singleAnalyses.filter((row) => row.analyzedAt).length,
     analysesTemplate: database.singleAnalyses.length + database.seriesAnalyses.length,
     blockedTasks: database.tasks.filter((task) => task.status === "blocked" || task.status === "failed").length,
@@ -357,16 +372,51 @@ export function qualityReport(): { ok: boolean; checks: QualityCheck[] } {
     detail: `${database.imageAssets.length} 条图片资源`,
   });
   checks.push({
-    name: "评委推断在样本不足时不填写风格",
-    ok: database.juryInferences.every(
-      (row) =>
+    name: "不足 3 组本人作品时不填写风格",
+    ok: database.juryInferences.every((row) => {
+      const groups = personalWorks(row.juryId)?.groups.length ?? 0;
+      if (groups >= 3) return true;
+      return (
         row.kind === "inference" &&
         row.sampleStatus === "insufficient" &&
+        row.sampleCount === groups &&
         row.visualStyle === null &&
         row.colorTendency === null &&
-        row.confidence === null,
-    ),
+        row.compositionTendency === null &&
+        row.narrativePreference === null &&
+        row.thematicMode === null &&
+        row.commonSubjects === null &&
+        row.confidence === null &&
+        row.styleTags.length === 0
+      );
+    }),
     detail: `${database.juryInferences.length} 份画像`,
+  });
+  checks.push({
+    name: "满 3 组才生成带证据的风格标签",
+    ok: database.juryInferences.every((row) => {
+      const groups = personalWorks(row.juryId)?.groups ?? [];
+      if (groups.length < 3) return row.styleTags.length === 0;
+      const cross = row.styleTags.filter((tag) => tag.scope === "cross_group");
+      return (
+        row.sampleStatus === "sufficient" &&
+        row.styleTags.length > 0 &&
+        row.styleTags.every(
+          (tag) =>
+            tag.evidence.length > 0 &&
+            tag.evidence.every((item) => groups.some((group) => group.id === item.groupId)) &&
+            tag.modelName === "pji-style-tags" &&
+            tag.modelVersion !== null &&
+            tag.confidence <= 0.7 &&
+            tag.sampleCount === tag.groupIds.length,
+        ) &&
+        cross.every((tag) => tag.sampleCount >= 2) &&
+        row.styleTags.filter((tag) => tag.scope === "single_group").every((tag) => tag.sampleCount === 1) &&
+        (cross.some((tag) => tag.dimension === "color") ? row.colorTendency !== null : row.colorTendency === null) &&
+        (cross.some((tag) => tag.dimension === "visual_style") ? row.visualStyle !== null : row.visualStyle === null)
+      );
+    }),
+    detail: personalWorkSummary().ready + " 位达到 3 组",
   });
   const keys = database.awardLinks.map(
     (link) => `${link.awardId}|${link.seriesId ?? link.photographId}|${[...link.photographerIds].sort().join("+")}`,

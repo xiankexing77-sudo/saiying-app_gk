@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { FactMark, InferenceMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
+import { PersonalWorksPanel } from "@/components/personal-works-panel";
 import { ProvenanceLine } from "@/components/provenance";
 import { RequestAnalysis } from "@/components/request-analysis";
 import { JuryValidation } from "@/components/validation-panel";
@@ -31,7 +32,12 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
   const inference = profile.inference;
   return (
     <PageMain>
-      <PageHeader kicker="Jury" title={jury.name} lede="左侧是可核对的公开资料，右侧是推断。样本不足时右侧保持空白。" />
+      <PageHeader
+        kicker="Jury"
+        title={jury.name}
+        lede="左侧是可核对的公开资料。本人作品按组采集；满 3 组才在右侧生成风格标签。样本不足时不写偏好。"
+      />
+      {profile.personalWorks ? <PersonalWorksPanel works={profile.personalWorks} inference={inference} /> : null}
       <div className="mt-8 grid gap-6 lg:grid-cols-2">
         <section className="rounded-2xl border border-teal-900/15 bg-white/75 p-5">
           <FactMark>可核实事实</FactMark>
@@ -61,7 +67,10 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
             <li>教育背景：{profile.facts?.education ?? "来源未给出"}</li>
             <li>公开出版物：{profile.facts?.publications.length ? profile.facts.publications.join("、") : "未采集"}</li>
             <li>采访：{profile.facts?.interviews.length ? "有" : "未采集"}</li>
-            <li>作品集：{profile.portfolios[0]?.note}</li>
+            <li>
+              本人作品：{profile.personalWorks ? `${profile.personalWorks.groups.length}/3 组` : "未采集"}。
+              {profile.portfolios[0]?.note}
+            </li>
           </ul>
           {quotes.map(({ quote, series }) => (
             <article key={series.id} className="mt-4 rounded-xl bg-stone-50 p-3">
@@ -80,11 +89,17 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
               <InferenceMark />
               <h2 className="text-2xl">研究画像</h2>
             </div>
-            <RequestAnalysis url={`/api/v1/juries/${jury.id}/analyze`} label="请求画像" />
+            <RequestAnalysis url={`/api/v1/juries/${jury.id}/analyze`} label="生成风格标签" />
           </div>
           {inference?.sampleStatus === "insufficient" ? (
-            <p className="mt-4 rounded-xl bg-amber-200/70 px-3 py-2 text-sm">样本不足。公开作品样本数 {inference.sampleCount}。</p>
-          ) : null}
+            <p className="mt-4 rounded-xl bg-amber-200/70 px-3 py-2 text-sm">
+              样本不足。本人作品样本组 {inference.sampleCount}/{inference.requiredGroupCount}。
+            </p>
+          ) : (
+            <p className="mt-4 rounded-xl bg-teal-900/10 px-3 py-2 text-sm text-teal-950">
+              已达到 {inference?.requiredGroupCount} 组。下面只保留至少两组陈述都写到的偏好；单组观察留在上方，不写入这些字段。
+            </p>
+          )}
           <p className="mt-3 text-sm leading-6">{inference?.statement}</p>
           <dl className="mt-4 grid gap-2 text-sm">
             {[
@@ -97,7 +112,9 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
             ].map(([label, value]) => (
               <div key={label} className="flex justify-between rounded-xl bg-white/70 px-3 py-2">
                 <dt>{label}</dt>
-                <dd className="text-stone-500">{value ?? "未分析"}</dd>
+                <dd className="max-w-[16rem] text-right text-stone-500">
+                  {value ?? (inference?.sampleStatus === "sufficient" ? "证据不足，不归纳" : "未分析")}
+                </dd>
               </div>
             ))}
           </dl>

@@ -29,7 +29,8 @@ function isBlockedHost(hostname: string) {
   return isIpLiteral(host);
 }
 
-export function assertSafePublicUrl(input: string) {
+/** 协议、凭据、端口和内网主机检查。调用方再套自己的域名清单。 */
+export function parsePublicHttps(input: string) {
   let url: URL;
   try {
     url = new URL(input);
@@ -45,7 +46,15 @@ export function assertSafePublicUrl(input: string) {
   if (url.port && url.port !== "443") {
     throw new Error("采集 URL 不能使用非 443 端口");
   }
-  if (isBlockedHost(url.hostname) || !COLLECTABLE_HOSTS.has(url.hostname.toLowerCase())) {
+  if (isBlockedHost(url.hostname)) {
+    throw new Error(`拒绝主机：${url.hostname}`);
+  }
+  return url;
+}
+
+export function assertSafePublicUrl(input: string) {
+  const url = parsePublicHttps(input);
+  if (!COLLECTABLE_HOSTS.has(url.hostname.toLowerCase())) {
     throw new Error(`拒绝主机：${url.hostname}`);
   }
   return url.toString();

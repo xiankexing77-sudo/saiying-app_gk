@@ -1,5 +1,5 @@
 import { collectionReport } from "../collectors/sony/adapter";
-import { qualityReport } from "../src/lib/catalog";
+import { personalWorkSummary, qualityReport } from "../src/lib/catalog";
 import { initialState, type AgentStage, type AgentState } from "./state";
 
 export const GRAPH: AgentStage[] = [
@@ -47,8 +47,8 @@ export function runStubGraph(years: number[]): { state: AgentState; nodes: NodeR
     },
     {
       stage: "jury_research",
-      status: "blocked",
-      summary: "公开作品样本不足，不生成审美偏好。",
+      status: personalWorkSummary().ready > 0 ? "passed" : "blocked",
+      summary: `${personalWorkSummary().ready} 位评委的本人作品达到 3 组，风格标签只来自这些作品的公开陈述。${personalWorkSummary().insufficient} 位样本不足，不从简介生成偏好。`,
     },
     {
       stage: "aesthetic_analysis",

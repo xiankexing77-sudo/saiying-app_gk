@@ -71,14 +71,24 @@ test("series and single analyses use different schemas and do not invent observa
   assert.equal(faithful?.photographerIds.length, 2);
 });
 
-test("judge profiles stay factual when the portfolio sample is empty", () => {
+test("judge profiles do not invent preference without three personal work groups", () => {
   for (const jury of database.juries) {
     const profile = juryProfile(jury.id);
+    const groups = profile.personalWorks?.groups.length ?? 0;
     assert.equal(profile.inference?.kind, "inference");
-    assert.equal(profile.inference?.sampleStatus, "insufficient");
-    assert.equal(profile.inference?.visualStyle, null);
-    assert.match(profile.inference?.statement ?? "", /样本不足/);
     assert.ok((getJury(jury.id)?.name ?? "").length > 0);
+    if (groups < 3) {
+      assert.equal(profile.inference?.sampleStatus, "insufficient");
+      assert.equal(profile.inference?.visualStyle, null);
+      assert.equal(profile.inference?.colorTendency, null);
+      assert.equal(profile.inference?.confidence, null);
+      assert.equal(profile.inference?.styleTags.length, 0);
+      assert.match(profile.inference?.statement ?? "", /样本不足/);
+    } else {
+      assert.equal(profile.inference?.sampleStatus, "sufficient");
+      assert.ok((profile.inference?.styleTags.length ?? 0) > 0);
+      assert.ok(profile.inference?.styleTags.every((tag) => tag.evidence.length > 0));
+    }
   }
 });
 

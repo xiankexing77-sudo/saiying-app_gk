@@ -189,12 +189,114 @@ export type JuryAssignment = {
   provenance: Provenance;
 };
 
+export type PortfolioChannel =
+  | "official_jury_page"
+  | "personal_site"
+  | "publisher"
+  | "press"
+  | "museum_gallery";
+
+export type StyleDimension = "visual_style" | "subject" | "color" | "composition" | "narrative" | "theme";
+
+export type StyleTagScope = "cross_group" | "single_group";
+
+/**
+ * 样本组：研究对象本人署名发表的一套作品。
+ * 同一套作品出现在多个页面只计 1 组。评委评论或评审的他人作品不计。
+ */
+export type PersonalWorkSource = {
+  sourceId: string;
+  url: string;
+  pageTitle: string;
+  channel: PortfolioChannel;
+  excerpt: string;
+  fetchedAt: string;
+  contentHash: null;
+  parserVersion: string;
+  extractionVersion: string;
+  collectionMode: "curated_seed";
+};
+
+export type PublishedClaim = {
+  key: string;
+  quote: string;
+  sourceUrl: string;
+};
+
+export type SampleGroup = {
+  id: string;
+  subjectId: string;
+  title: string;
+  yearLabel: string | null;
+  authorship: "own_work";
+  imageCount: number | null;
+  imageCountNote: string;
+  rightsStatus: "rights_blocked";
+  hostedBinary: false;
+  officialImageUrl: null;
+  sources: PersonalWorkSource[];
+  claims: PublishedClaim[];
+};
+
+export type RejectedWork = {
+  subjectId: string;
+  title: string | null;
+  url: string | null;
+  channel: PortfolioChannel;
+  reason: "not_own_work" | "unsafe_url" | "missing_description";
+  note: string;
+};
+
+export type PortfolioChannelRun = {
+  subjectId: string;
+  channel: PortfolioChannel;
+  url: string | null;
+  outcome: "group_recorded" | "merged_into_existing_group" | "no_personal_work" | "rejected";
+  note: string;
+};
+
+export type PersonalWorkAcquisition = {
+  subjectId: string;
+  subjectName: string;
+  requiredGroups: 3;
+  groups: SampleGroup[];
+  rejected: RejectedWork[];
+  runs: PortfolioChannelRun[];
+  network: false;
+  collectionMode: "curated_seed";
+};
+
+export type StyleTagEvidence = {
+  sourceUrl: string;
+  groupId: string;
+  groupTitle: string;
+  quote: string;
+  rationale: string;
+};
+
+export type StyleTag = {
+  id: string;
+  subjectId: string;
+  dimension: StyleDimension;
+  label: string;
+  scope: StyleTagScope;
+  statement: string;
+  confidence: number;
+  sampleCount: number;
+  groupIds: string[];
+  evidence: StyleTagEvidence[];
+  modelName: string;
+  modelVersion: string;
+};
+
 export type JuryPortfolio = {
   id: string;
   juryId: string;
   url: string | null;
   title: string | null;
   note: string;
+  channel: PortfolioChannel | null;
+  groupId: string | null;
 };
 
 export type JuryFactProfile = {
@@ -214,7 +316,9 @@ export type JuryInference = {
   modelName: string | null;
   modelVersion: string | null;
   analyzedAt: string | null;
+  requiredGroupCount: 3;
   evidence: { sourceUrl: string; rationale: string }[];
+  styleTags: StyleTag[];
   visualStyle: string | null;
   commonSubjects: string | null;
   colorTendency: string | null;
@@ -303,6 +407,7 @@ export type Database = {
   juryPortfolios: JuryPortfolio[];
   juryFacts: JuryFactProfile[];
   juryInferences: JuryInference[];
+  personalWorks: PersonalWorkAcquisition[];
   singleAnalyses: SingleImageAnalysis[];
   seriesAnalyses: SeriesAnalysis[];
   tasks: AgentTask[];
