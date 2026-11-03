@@ -151,7 +151,9 @@ CREATE TABLE jury_portfolios (
     jury_id TEXT NOT NULL REFERENCES juries(id),
     url TEXT,
     title TEXT,
-    note TEXT NOT NULL
+    note TEXT NOT NULL,
+    channel TEXT,
+    group_id TEXT
 );
 
 CREATE TABLE jury_profiles (
@@ -173,11 +175,66 @@ CREATE TABLE jury_profiles (
         sample_status <> 'insufficient'
         OR (
             visual_style IS NULL
+            AND common_subjects IS NULL
             AND color_tendency IS NULL
             AND composition_tendency IS NULL
+            AND narrative_preference IS NULL
+            AND thematic_mode IS NULL
             AND confidence IS NULL
         )
     )
+);
+
+-- 样本组是本人单独发表的一套作品。同一套作品的多个页面写在 personal_sample_sources，不另计组。
+-- 风格标签是推断。应用在样本组少于 3 时不写 style_tags，也不填写上面的偏好字段。
+
+CREATE TABLE personal_sample_groups (
+    id TEXT PRIMARY KEY,
+    jury_id TEXT NOT NULL REFERENCES juries(id),
+    title TEXT NOT NULL,
+    year_label TEXT,
+    authorship TEXT NOT NULL CHECK (authorship = 'own_work'),
+    image_count INTEGER,
+    image_count_note TEXT NOT NULL,
+    rights_status TEXT NOT NULL CHECK (rights_status = 'rights_blocked'),
+    hosted_binary BOOLEAN NOT NULL CHECK (hosted_binary = FALSE),
+    official_image_url TEXT
+);
+
+CREATE TABLE personal_sample_sources (
+    id TEXT PRIMARY KEY,
+    group_id TEXT NOT NULL REFERENCES personal_sample_groups(id) ON DELETE CASCADE,
+    source_url TEXT NOT NULL,
+    page_title TEXT NOT NULL,
+    channel TEXT NOT NULL,
+    excerpt TEXT NOT NULL,
+    fetched_at TIMESTAMPTZ NOT NULL,
+    content_hash TEXT,
+    parser_version TEXT NOT NULL,
+    extraction_version TEXT NOT NULL
+);
+
+CREATE TABLE personal_sample_claims (
+    id TEXT PRIMARY KEY,
+    group_id TEXT NOT NULL REFERENCES personal_sample_groups(id) ON DELETE CASCADE,
+    claim_key TEXT NOT NULL,
+    quote TEXT NOT NULL,
+    source_url TEXT NOT NULL
+);
+
+CREATE TABLE style_tags (
+    id TEXT PRIMARY KEY,
+    jury_id TEXT NOT NULL REFERENCES juries(id),
+    dimension TEXT NOT NULL,
+    label TEXT NOT NULL,
+    scope TEXT NOT NULL CHECK (scope IN ('cross_group', 'single_group')),
+    statement TEXT NOT NULL,
+    confidence NUMERIC NOT NULL CHECK (confidence <= 0.7),
+    sample_count INTEGER NOT NULL,
+    model_name TEXT NOT NULL,
+    model_version TEXT NOT NULL,
+    CHECK (scope <> 'cross_group' OR sample_count >= 2),
+    CHECK (scope <> 'single_group' OR sample_count = 1)
 );
 
 CREATE TABLE image_analyses (

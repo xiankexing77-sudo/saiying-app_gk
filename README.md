@@ -22,6 +22,17 @@ npm run build
 npm run export-seed
 ```
 
+本人作品样本组：一组是这位评委自己发表的一套作品。同一套作品在个人网站、出版社和展览页重复出现，只算 1 组。评委评论过的获奖作品不算。满 3 组才生成风格标签；不够就标「样本不足」，偏好字段留空。
+
+- [Bindi Vora](http://127.0.0.1:41731/juries/bindi-vora)：4 组本人作品，跨组标签带陈述原文、链接、置信度和模型版本。色彩只在单组里出现，不写进色彩偏好。
+- [Paul Ninson](http://127.0.0.1:41731/juries/paul-ninson)：2 组，页面写明样本不足，没有风格标签。
+- [Monica Allende](http://127.0.0.1:41731/juries/monica-allende)：0 组。她对 Zed Nelson 作品的评委会引语被标成「不是本人作品」。
+
+```bash
+curl -s http://127.0.0.1:41731/api/v1/juries/bindi-vora/profile
+curl -s -X POST http://127.0.0.1:41731/api/v1/juries/paul-ninson/analyze
+```
+
 `export-seed` 把内存里的种子写成 `database/seed/swpa.json`。应用运行时直接读取 `src/lib/data/seed.ts`，不需要 PostgreSQL、Redis 或模型密钥。
 
 交叉验证是本地夹具，不抓官网。打开 [2025 届](http://127.0.0.1:41731/editions/swpa-2025) 或 [2026 届](http://127.0.0.1:41731/editions/swpa-2026)，页面列出一致和冲突。2026 年 Open Creative 的摄影师拼写是冲突示例；2025 年 Wildlife & Nature 的 Zed Nelson 是多来源一致示例。完整 JSON：
@@ -51,7 +62,7 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - 来源里没有的标题、张数、教育背景、作品集链接保持空白，显示「未采集」或「来源页暂无」。不用模型补写。
 - 同一公开文本里互相冲突的姓名、国别或年龄会写成备注，不合并成一条更“干净”的事实。
 - 推断使用单独的区块和「推断」标记。单张分析与系列分析的字段不同。
-- 评委公开作品样本为 0 时，画像标记「样本不足」，风格、色彩、构图全部为空。
+- 评委本人作品不足 3 组时，画像标记「样本不足」，风格、色彩、构图全部为空。达到 3 组时，风格标签只引用这些作品页面上的陈述，不读像素，也不用职务简介。
 - SWPA 是匿名评审。公开引语如果称「评委会」，只作为引语保存，不解释成某位评委选了某件作品。
 - 跨届对照只发生在同一规范化赛制、同一组别。Open 的 Architecture 不与 Professional 的 Architecture & Design 混比。
 - 没有视觉分析结果时，报告不写题材、色彩或叙事趋势。
@@ -69,7 +80,8 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 | 获奖原图 | 不抓取、不托管、不在页面里外链显示。权限状态为 `rights_blocked` |
 | SonyAdapter、去重、域名校验 | 可运行。作品库仍读种子。另有多来源夹具和交叉验证，不发 HTTP |
 | LangGraph、Celery、Redis、PostgreSQL、pgvector | 未部署。`database/schema.sql` 是目标表结构；`agents/graph.ts` 只描述阶段 |
-| 视觉分析、评委审美画像、跨届审美趋势 | 模板。字段为空，明确标记推断 |
+| 获奖作品视觉分析、跨届审美趋势 | 模板。字段为空，明确标记推断 |
+| 评委本人作品与风格标签 | 夹具采集，不发 HTTP。满 3 组才由 `pji-style-tags` 根据作品陈述归并标签 |
 | 任务队列 | 进程内状态。创建和重试只改状态，没有 worker |
 
 ## 目录
@@ -77,6 +89,8 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - `src/app`：总览、赛事、届次、作品、系列、评委、报告、任务、上传分析、来源，以及 `/api/v1` 接口
 - `src/lib/data`：类型、来源和种子
 - `collectors/sony`：入口清单、名称规范化、去重、SonyAdapter、多来源摘录
+- `collectors/portfolio`：本人作品样本组。允许的主机、夹具、同一作品并组
+- `agents/style-tags.ts`：只读已采集的样本组，生成风格标签
 - `collectors/cross-validate.ts`：一致 / 冲突 / 单一来源。官方主入口优先，冲突原文都保留
 - `agents`：研究流程桩
 - `database/schema.sql`：目标 PostgreSQL 结构
@@ -90,4 +104,4 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - `GET /api/v1/tasks/{id}`
 - `POST /api/v1/tasks/{id}/retry`
 
-作品分析和评委画像的 POST 同样只返回模板或「样本不足」，不在请求里调用模型。
+作品分析的 POST 仍只返回模板。评委画像的 POST 用已采集的样本组重跑风格标签规则，不调用外部模型；不足 3 组时返回「样本不足」。

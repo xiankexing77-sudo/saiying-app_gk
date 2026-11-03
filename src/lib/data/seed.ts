@@ -1,4 +1,6 @@
-import { EXTRACTION_VERSION, PARSER_VERSION, provenance, sources, TRACK_MAPPING_VERSION } from "./sources";
+import { generateStyleTags } from "../../../agents/style-tags";
+import { acquirePersonalWorks, portfoliosFrom } from "../../../collectors/portfolio/collect";
+import { EXTRACTION_VERSION, PARSER_VERSION, provenance, SEED_FETCHED_AT, sources, TRACK_MAPPING_VERSION } from "./sources";
 import type {
   Award,
   AwardLink,
@@ -9,7 +11,6 @@ import type {
   Jury,
   JuryAssignment,
   JuryFactProfile,
-  JuryInference,
   NormalizedTrack,
   Photographer,
   Photograph,
@@ -270,28 +271,6 @@ const overallAwardName: Record<NormalizedTrack, string> = {
   student: "Student Photographer of the Year",
   youth: "Youth Photographer of the Year",
 };
-
-function emptyInference(juryId: string): JuryInference {
-  return {
-    juryId,
-    kind: "inference",
-    sampleStatus: "insufficient",
-    sampleCount: 0,
-    confidence: null,
-    modelName: null,
-    modelVersion: null,
-    analyzedAt: null,
-    evidence: [],
-    visualStyle: null,
-    commonSubjects: null,
-    colorTendency: null,
-    compositionTendency: null,
-    narrativePreference: null,
-    thematicMode: null,
-    statement:
-      "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。",
-  };
-}
 
 type JuryInput = {
   id: string;
@@ -713,7 +692,28 @@ export function buildDatabase(): Database {
     publications: [],
     interviews: [],
   }));
-  const juryInferences = juryInputs.map((jury) => emptyInference(jury.id));
+  const personalWorks = acquirePersonalWorks(
+    juryInputs.map((jury) => ({
+      id: jury.id,
+      name: jury.name,
+      officialProfileUrls: [
+        ...new Set(
+          jury.assignments.map((assignment) =>
+            assignment.editionYear === 2025
+              ? "https://www.worldphoto.org/sony-world-photography-awards/2025-judges"
+              : "https://www.worldphoto.org/2026-judges",
+          ),
+        ),
+      ],
+    })),
+  );
+  const juryInferences = personalWorks.map((acquisition) =>
+    generateStyleTags({
+      subjectId: acquisition.subjectId,
+      groups: acquisition.groups,
+      analyzedAt: SEED_FETCHED_AT,
+    }),
+  );
 
   const tracks: Track[] = ([2025, 2026] as const).flatMap((year) => {
     const sourceId = year === 2025 ? "src-press-uk-2025" : "src-blog-overall-2026";
@@ -817,15 +817,10 @@ export function buildDatabase(): Database {
     awardLinks,
     juries,
     juryAssignments,
-    juryPortfolios: juries.map((jury) => ({
-      id: `portfolio-${jury.id}`,
-      juryId: jury.id,
-      url: null,
-      title: null,
-      note: "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。",
-    })),
+    juryPortfolios: personalWorks.flatMap((acquisition) => portfoliosFrom(acquisition)),
     juryFacts,
     juryInferences,
+    personalWorks,
     singleAnalyses: photographs
       .filter((photo) => photo.role === "standalone")
       .map((photo) => ({
@@ -922,14 +917,14 @@ export function buildDatabase(): Database {
       {
         id: "task-jury-research",
         type: "research",
-        title: "评委公开作品研究",
-        status: "blocked",
-        stage: "样本检查",
+        title: "评委本人作品与风格标签",
+        status: "succeeded",
+        stage: "16 位已检查；达到 3 组的才生成风格标签",
         total: 16,
-        completed: 0,
+        completed: 16,
         failed: 0,
         currentItem: null,
-        errorLog: ["16 位评委的公开作品样本数为 0，画像标记为样本不足，未生成风格推断。"],
+        errorLog: [],
         startedAt: "2026-11-03T15:12:00.000Z",
         finishedAt: "2026-11-03T15:12:00.000Z",
         idempotencyKey: "research-juries-swpa",

@@ -5229,109 +5229,175 @@
   ],
   "juryPortfolios": [
     {
-      "id": "portfolio-monica-allende",
+      "id": "portfolio-monica-allende-none",
       "juryId": "monica-allende",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-yves-chatap",
+      "id": "portfolio-yves-chatap-none",
       "juryId": "yves-chatap",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-aldeide-delgado",
+      "id": "portfolio-aldeide-delgado-none",
       "juryId": "aldeide-delgado",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-vicky-ismach",
+      "id": "portfolio-vicky-ismach-none",
       "juryId": "vicky-ismach",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-manuel-sigrist",
+      "id": "portfolio-manuel-sigrist-none",
       "juryId": "manuel-sigrist",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-isabella-tam",
+      "id": "portfolio-isabella-tam-none",
       "juryId": "isabella-tam",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-claudia-grimaldi-marks",
+      "id": "portfolio-claudia-grimaldi-marks-none",
       "juryId": "claudia-grimaldi-marks",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-charlotte-jansen",
+      "id": "portfolio-charlotte-jansen-none",
       "juryId": "charlotte-jansen",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-daniel-brena",
+      "id": "portfolio-daniel-brena-none",
       "juryId": "daniel-brena",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-yumi-goto",
+      "id": "portfolio-yumi-goto-none",
       "juryId": "yumi-goto",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-zack-hatfield",
+      "id": "portfolio-zack-hatfield-none",
       "juryId": "zack-hatfield",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-paul-ninson",
+      "id": "portfolio-group-paul-ninson-village-with-no-men",
       "juryId": "paul-ninson",
-      "url": null,
-      "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+      "title": "Village with No Men",
+      "note": "本人作品样本组，2 条来源。图片权限阻塞，未保存原图。",
+      "channel": "press",
+      "groupId": "group-paul-ninson-village-with-no-men"
     },
     {
-      "id": "portfolio-bindi-vora",
+      "id": "portfolio-group-paul-ninson-feeding-ghana",
+      "juryId": "paul-ninson",
+      "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+      "title": "Feeding Ghana",
+      "note": "本人作品样本组，1 条来源。图片权限阻塞，未保存原图。",
+      "channel": "press",
+      "groupId": "group-paul-ninson-feeding-ghana"
+    },
+    {
+      "id": "portfolio-group-bindi-vora-mountain-of-salt",
       "juryId": "bindi-vora",
-      "url": null,
-      "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "url": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+      "title": "Mountain of Salt",
+      "note": "本人作品样本组，3 条来源。图片权限阻塞，未保存原图。",
+      "channel": "personal_site",
+      "groupId": "group-bindi-vora-mountain-of-salt"
     },
     {
-      "id": "portfolio-ruby-rees-sheridan",
+      "id": "portfolio-group-bindi-vora-white-in-the-sea",
+      "juryId": "bindi-vora",
+      "url": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+      "title": "white in the sea",
+      "note": "本人作品样本组，1 条来源。图片权限阻塞，未保存原图。",
+      "channel": "personal_site",
+      "groupId": "group-bindi-vora-white-in-the-sea"
+    },
+    {
+      "id": "portfolio-group-bindi-vora-come-back-even-as-a-shadow",
+      "juryId": "bindi-vora",
+      "url": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+      "title": "Come Back Even as a Shadow. Even as a Dream",
+      "note": "本人作品样本组，1 条来源。图片权限阻塞，未保存原图。",
+      "channel": "personal_site",
+      "groupId": "group-bindi-vora-come-back-even-as-a-shadow"
+    },
+    {
+      "id": "portfolio-group-bindi-vora-trying-to-touch-the-trees",
+      "juryId": "bindi-vora",
+      "url": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+      "title": "Trying to touch the trees",
+      "note": "本人作品样本组，1 条来源。图片权限阻塞，未保存原图。",
+      "channel": "personal_site",
+      "groupId": "group-bindi-vora-trying-to-touch-the-trees"
+    },
+    {
+      "id": "portfolio-ruby-rees-sheridan-none",
       "juryId": "ruby-rees-sheridan",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     },
     {
-      "id": "portfolio-tess-raimbeau",
+      "id": "portfolio-tess-raimbeau-none",
       "juryId": "tess-raimbeau",
       "url": null,
       "title": null,
-      "note": "公开作品集链接未采集。没有样本，就不能填写视觉风格推断。"
+      "note": "已知公开入口没有可计入的本人作品组。没有样本组，就不能填写视觉风格。",
+      "channel": null,
+      "groupId": null
     }
   ],
   "juryFacts": [
@@ -5451,14 +5517,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "yves-chatap",
@@ -5469,14 +5537,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "aldeide-delgado",
@@ -5487,14 +5557,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "vicky-ismach",
@@ -5505,14 +5577,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "manuel-sigrist",
@@ -5523,14 +5597,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "isabella-tam",
@@ -5541,14 +5617,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "claudia-grimaldi-marks",
@@ -5559,14 +5637,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "charlotte-jansen",
@@ -5577,14 +5657,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "daniel-brena",
@@ -5595,14 +5677,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "yumi-goto",
@@ -5613,14 +5697,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "zack-hatfield",
@@ -5631,50 +5717,491 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "paul-ninson",
       "kind": "inference",
       "sampleStatus": "insufficient",
-      "sampleCount": 0,
+      "sampleCount": 2,
       "confidence": null,
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 2/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "bindi-vora",
       "kind": "inference",
-      "sampleStatus": "insufficient",
-      "sampleCount": 0,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidence": [],
-      "visualStyle": null,
+      "sampleStatus": "sufficient",
+      "sampleCount": 4,
+      "confidence": 0.56,
+      "modelName": "pji-style-tags",
+      "modelVersion": "text-grounded-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "requiredGroupCount": 3,
+      "evidence": [
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+        },
+        {
+          "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+        },
+        {
+          "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+          "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「a constellation of collages」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+          "rationale": "《Trying to touch the trees》的公开陈述写有：「conjunctive collages」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「found images」"
+        },
+        {
+          "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「found photographs」"
+        },
+        {
+          "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「found images」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+          "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「Archival images」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+          "rationale": "《Trying to touch the trees》的公开陈述写有：「fragments of found postcards and images」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「appropriated text」"
+        },
+        {
+          "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「phrases and statements appropriated from news articles」"
+        },
+        {
+          "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+          "rationale": "《Mountain of Salt》的公开陈述写有：「appropriated text」"
+        },
+        {
+          "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+          "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「Through elements of text and collage」"
+        }
+      ],
+      "styleTags": [
+        {
+          "id": "tag-bindi-vora-collage",
+          "subjectId": "bindi-vora",
+          "dimension": "visual_style",
+          "label": "拼贴",
+          "scope": "cross_group",
+          "statement": "拼贴：3 组本人作品的公开陈述写到这一点。",
+          "confidence": 0.7,
+          "sampleCount": 3,
+          "groupIds": [
+            "group-bindi-vora-mountain-of-salt",
+            "group-bindi-vora-come-back-even-as-a-shadow",
+            "group-bindi-vora-trying-to-touch-the-trees"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "digital shape collages",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+            },
+            {
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "digital shape collages",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+            },
+            {
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "digital shape collages",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「digital shape collages」"
+            },
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+              "groupId": "group-bindi-vora-come-back-even-as-a-shadow",
+              "groupTitle": "Come Back Even as a Shadow. Even as a Dream",
+              "quote": "a constellation of collages",
+              "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「a constellation of collages」"
+            },
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "groupId": "group-bindi-vora-trying-to-touch-the-trees",
+              "groupTitle": "Trying to touch the trees",
+              "quote": "conjunctive collages",
+              "rationale": "《Trying to touch the trees》的公开陈述写有：「conjunctive collages」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-found_or_archival_image",
+          "subjectId": "bindi-vora",
+          "dimension": "visual_style",
+          "label": "现成或档案图像",
+          "scope": "cross_group",
+          "statement": "现成或档案图像：3 组本人作品的公开陈述写到这一点。",
+          "confidence": 0.7,
+          "sampleCount": 3,
+          "groupIds": [
+            "group-bindi-vora-mountain-of-salt",
+            "group-bindi-vora-come-back-even-as-a-shadow",
+            "group-bindi-vora-trying-to-touch-the-trees"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "found images",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「found images」"
+            },
+            {
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "found photographs",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「found photographs」"
+            },
+            {
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "found images",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「found images」"
+            },
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+              "groupId": "group-bindi-vora-come-back-even-as-a-shadow",
+              "groupTitle": "Come Back Even as a Shadow. Even as a Dream",
+              "quote": "Archival images",
+              "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「Archival images」"
+            },
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "groupId": "group-bindi-vora-trying-to-touch-the-trees",
+              "groupTitle": "Trying to touch the trees",
+              "quote": "fragments of found postcards and images",
+              "rationale": "《Trying to touch the trees》的公开陈述写有：「fragments of found postcards and images」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-text_with_image",
+          "subjectId": "bindi-vora",
+          "dimension": "narrative",
+          "label": "文字与图像并置",
+          "scope": "cross_group",
+          "statement": "文字与图像并置：2 组本人作品的公开陈述写到这一点。",
+          "confidence": 0.56,
+          "sampleCount": 2,
+          "groupIds": [
+            "group-bindi-vora-mountain-of-salt",
+            "group-bindi-vora-come-back-even-as-a-shadow"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "appropriated text",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「appropriated text」"
+            },
+            {
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "phrases and statements appropriated from news articles",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「phrases and statements appropriated from news articles」"
+            },
+            {
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "appropriated text",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「appropriated text」"
+            },
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+              "groupId": "group-bindi-vora-come-back-even-as-a-shadow",
+              "groupTitle": "Come Back Even as a Shadow. Even as a Dream",
+              "quote": "Through elements of text and collage",
+              "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「Through elements of text and collage」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-analogue_with_digital",
+          "subjectId": "bindi-vora",
+          "dimension": "visual_style",
+          "label": "胶片与数字介入",
+          "scope": "single_group",
+          "statement": "胶片与数字介入：只出现在《white in the sea》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-white-in-the-sea"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+              "groupId": "group-bindi-vora-white-in-the-sea",
+              "groupTitle": "white in the sea",
+              "quote": "Utilising a 35mm film camera, this series sees digital techniques woven into the analogue process",
+              "rationale": "《white in the sea》的公开陈述写有：「Utilising a 35mm film camera, this series sees digital techniques woven into the analogue process」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-sea_surface",
+          "subjectId": "bindi-vora",
+          "dimension": "subject",
+          "label": "海面",
+          "scope": "single_group",
+          "statement": "海面：只出现在《white in the sea》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-white-in-the-sea"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+              "groupId": "group-bindi-vora-white-in-the-sea",
+              "groupTitle": "white in the sea",
+              "quote": "curiosity with the surface of the sea",
+              "rationale": "《white in the sea》的公开陈述写有：「curiosity with the surface of the sea」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-nature_and_walk",
+          "subjectId": "bindi-vora",
+          "dimension": "subject",
+          "label": "行走与自然",
+          "scope": "single_group",
+          "statement": "行走与自然：只出现在《Trying to touch the trees》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-trying-to-touch-the-trees"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "groupId": "group-bindi-vora-trying-to-touch-the-trees",
+              "groupTitle": "Trying to touch the trees",
+              "quote": "connection to nature",
+              "rationale": "《Trying to touch the trees》的公开陈述写有：「connection to nature」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-natural_light",
+          "subjectId": "bindi-vora",
+          "dimension": "subject",
+          "label": "自然光",
+          "scope": "single_group",
+          "statement": "自然光：只出现在《white in the sea》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-white-in-the-sea"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+              "groupId": "group-bindi-vora-white-in-the-sea",
+              "groupTitle": "white in the sea",
+              "quote": "the water reflecting and refracting natural light",
+              "rationale": "《white in the sea》的公开陈述写有：「the water reflecting and refracting natural light」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-coloured_shapes",
+          "subjectId": "bindi-vora",
+          "dimension": "color",
+          "label": "彩色形状",
+          "scope": "single_group",
+          "statement": "彩色形状：只出现在《Trying to touch the trees》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-trying-to-touch-the-trees"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "groupId": "group-bindi-vora-trying-to-touch-the-trees",
+              "groupTitle": "Trying to touch the trees",
+              "quote": "coloured shapes",
+              "rationale": "《Trying to touch the trees》的公开陈述写有：「coloured shapes」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-colour_as_pigment",
+          "subjectId": "bindi-vora",
+          "dimension": "color",
+          "label": "色彩汇流",
+          "scope": "single_group",
+          "statement": "色彩汇流：只出现在《white in the sea》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-white-in-the-sea"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+              "groupId": "group-bindi-vora-white-in-the-sea",
+              "groupTitle": "white in the sea",
+              "quote": "As the colours coalesce and flow into one another",
+              "rationale": "《white in the sea》的公开陈述写有：「As the colours coalesce and flow into one another」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-grid",
+          "subjectId": "bindi-vora",
+          "dimension": "composition",
+          "label": "网格",
+          "scope": "single_group",
+          "statement": "网格：只出现在《Trying to touch the trees》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-trying-to-touch-the-trees"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "groupId": "group-bindi-vora-trying-to-touch-the-trees",
+              "groupTitle": "Trying to touch the trees",
+              "quote": "The grid roots conversations of difference",
+              "rationale": "《Trying to touch the trees》的公开陈述写有：「The grid roots conversations of difference」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-shape_directs_gaze",
+          "subjectId": "bindi-vora",
+          "dimension": "composition",
+          "label": "形状引导视线",
+          "scope": "single_group",
+          "statement": "形状引导视线：只出现在《Mountain of Salt》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-mountain-of-salt"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "direct your gaze across the image or to pause in certain spaces",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「direct your gaze across the image or to pause in certain spaces」"
+            },
+            {
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+              "groupId": "group-bindi-vora-mountain-of-salt",
+              "groupTitle": "Mountain of Salt",
+              "quote": "direct your gaze across the image or to pause in certain spaces",
+              "rationale": "《Mountain of Salt》的公开陈述写有：「direct your gaze across the image or to pause in certain spaces」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        },
+        {
+          "id": "tag-bindi-vora-grief_and_memory",
+          "subjectId": "bindi-vora",
+          "dimension": "theme",
+          "label": "哀恸与记忆",
+          "scope": "single_group",
+          "statement": "哀恸与记忆：只出现在《Come Back Even as a Shadow. Even as a Dream》。单组观察，不写成个人偏好。",
+          "confidence": 0.38,
+          "sampleCount": 1,
+          "groupIds": [
+            "group-bindi-vora-come-back-even-as-a-shadow"
+          ],
+          "evidence": [
+            {
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+              "groupId": "group-bindi-vora-come-back-even-as-a-shadow",
+              "groupTitle": "Come Back Even as a Shadow. Even as a Dream",
+              "quote": "articulates the visceral emotions of grief",
+              "rationale": "《Come Back Even as a Shadow. Even as a Dream》的公开陈述写有：「articulates the visceral emotions of grief」"
+            }
+          ],
+          "modelName": "pji-style-tags",
+          "modelVersion": "text-grounded-1.0.0"
+        }
+      ],
+      "visualStyle": "拼贴；现成或档案图像",
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
-      "narrativePreference": null,
+      "narrativePreference": "文字与图像并置",
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "已采集 4 组本人作品，达到 3 组。风格标签由 pji-style-tags（text-grounded-1.0.0）根据这些作品页面上的陈述归并，没有读取像素，也没有使用职务简介。同一线索至少出现在 2 组里，才写入偏好字段；只出现在 1 组的线索标为单组观察。样本数量按组计。SWPA 为匿名评审，这些标签不表示该评委选择了某件获奖作品。"
     },
     {
       "juryId": "ruby-rees-sheridan",
@@ -5685,14 +6212,16 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
     },
     {
       "juryId": "tess-raimbeau",
@@ -5703,14 +6232,760 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
+      "requiredGroupCount": 3,
       "evidence": [],
+      "styleTags": [],
       "visualStyle": null,
       "commonSubjects": null,
       "colorTendency": null,
       "compositionTendency": null,
       "narrativePreference": null,
       "thematicMode": null,
-      "statement": "样本不足。公开作品集尚未采集，不能凭职务简介臆测色彩、构图或题材偏好。SWPA 为匿名评审，本画像不推断个人投票，也不把某件获奖作品归因于某位评委的选择。"
+      "statement": "样本不足。本人作品样本组 0/3。不足 3 组时不生成风格标签，也不凭职务简介或零散作品说明臆测色彩、构图或题材偏好。SWPA 为匿名评审，不把获奖作品归因于评委个人的选择。"
+    }
+  ],
+  "personalWorks": [
+    {
+      "subjectId": "monica-allende",
+      "subjectName": "Monica Allende",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [
+        {
+          "subjectId": "monica-allende",
+          "title": "The Anthropocene Illusion",
+          "url": "https://www.sony.co.uk/presscentre/sony-world-photography-awards-overall-winners-2025-announced",
+          "channel": "press",
+          "reason": "not_own_work",
+          "note": "这是评委评论或评审语境下的他人作品，不是本人作品，不计入样本组。"
+        }
+      ],
+      "runs": [
+        {
+          "subjectId": "monica-allende",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        },
+        {
+          "subjectId": "monica-allende",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        },
+        {
+          "subjectId": "monica-allende",
+          "channel": "press",
+          "url": "https://www.sony.co.uk/presscentre/sony-world-photography-awards-overall-winners-2025-announced",
+          "outcome": "rejected",
+          "note": "《The Anthropocene Illusion》不是本人作品。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "yves-chatap",
+      "subjectName": "Yves Chatap",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "yves-chatap",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "aldeide-delgado",
+      "subjectName": "Aldeide Delgado",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "aldeide-delgado",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "vicky-ismach",
+      "subjectName": "Vicky Ismach",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "vicky-ismach",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "manuel-sigrist",
+      "subjectName": "Manuel Sigrist",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "manuel-sigrist",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "isabella-tam",
+      "subjectName": "Isabella Tam",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "isabella-tam",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "claudia-grimaldi-marks",
+      "subjectName": "Claudia Grimaldi Marks",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "claudia-grimaldi-marks",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "charlotte-jansen",
+      "subjectName": "Charlotte Jansen",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "charlotte-jansen",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/sony-world-photography-awards/2025-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "daniel-brena",
+      "subjectName": "Daniel Brena",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "daniel-brena",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "yumi-goto",
+      "subjectName": "Yumi Goto",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "yumi-goto",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "zack-hatfield",
+      "subjectName": "Zack Hatfield",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "zack-hatfield",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "paul-ninson",
+      "subjectName": "Paul Ninson",
+      "requiredGroups": 3,
+      "groups": [
+        {
+          "id": "group-paul-ninson-village-with-no-men",
+          "subjectId": "paul-ninson",
+          "title": "Village with No Men",
+          "yearLabel": "2017",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "来源没有给出可核对的张数，不估计。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-paul-ninson-village-with-no-men-press-0",
+              "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+              "pageTitle": "Projecting the hidden colors of Africa | World Photography Organisation",
+              "channel": "press",
+              "excerpt": "My favorite among the lot is “A village without men”. Well, as the name suggests, it is a village with no man living in it. These women, fleeing abuse from men and society have formed a village devoid of their abusers and enjoy their new lease of life.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            },
+            {
+              "sourceId": "src-pw-paul-ninson-village-with-no-men-press-1",
+              "url": "https://www.cnn.com/travel/gallery/paul-ninson-photography-umoja-village-kenya-spc-intl",
+              "pageTitle": "Photographer Paul Ninson explores the ‘Village with No Men’ | CNN",
+              "channel": "press",
+              "excerpt": "In 2017, Ghanaian photographer Paul Ninson visited for his photo series, \"Village with No Men.\" The women of Samburu vary in age and many are survivors of gender-based violence.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "women_only_village",
+              "quote": "it is a village with no man living in it. These women, fleeing abuse",
+              "sourceUrl": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa"
+            },
+            {
+              "key": "women_only_village",
+              "quote": "many are survivors of gender-based violence",
+              "sourceUrl": "https://www.cnn.com/travel/gallery/paul-ninson-photography-umoja-village-kenya-spc-intl"
+            }
+          ]
+        },
+        {
+          "id": "group-paul-ninson-feeding-ghana",
+          "subjectId": "paul-ninson",
+          "title": "Feeding Ghana",
+          "yearLabel": "ongoing",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "来源没有给出可核对的张数，不估计。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-paul-ninson-feeding-ghana-press-2",
+              "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+              "pageTitle": "Projecting the hidden colors of Africa | World Photography Organisation",
+              "channel": "press",
+              "excerpt": "“Feeding Ghana” is an ongoing project which seeks to bring to fore the front lines who work to feed the country and to showcase those who serve as the real backbone for our country’s economy.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "food_labor",
+              "quote": "the front lines who work to feed the country",
+              "sourceUrl": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa"
+            }
+          ]
+        }
+      ],
+      "rejected": [
+        {
+          "subjectId": "paul-ninson",
+          "title": "Where education is free - Ghana",
+          "url": "https://www.paulninson.com/where-education-is-free-ghana",
+          "channel": "personal_site",
+          "reason": "missing_description",
+          "note": "页面没有可引用的作品说明。不把标题当成风格证据，也不计为样本组。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "title": "Gallery 2",
+          "url": "https://www.paulninson.com/hene",
+          "channel": "personal_site",
+          "reason": "missing_description",
+          "note": "页面没有可引用的作品说明。不把标题当成风格证据，也不计为样本组。"
+        }
+      ],
+      "runs": [
+        {
+          "subjectId": "paul-ninson",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "personal_site",
+          "url": "https://www.paulninson.com/about-1",
+          "outcome": "no_personal_work",
+          "note": "关于页是履历。履历里提到的拍摄对象不转成样本组，也不生成风格。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "press",
+          "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "press",
+          "url": "https://www.cnn.com/travel/gallery/paul-ninson-photography-umoja-village-kenya-spc-intl",
+          "outcome": "merged_into_existing_group",
+          "note": "与《Village with No Men》是同一作品整体，不另计一组。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "press",
+          "url": "https://www.worldphoto.org/blogs/25-11-18/projecting-hidden-colors-africa",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "personal_site",
+          "url": "https://www.paulninson.com/where-education-is-free-ghana",
+          "outcome": "rejected",
+          "note": "《Where education is free - Ghana》没有作品说明，未计入。"
+        },
+        {
+          "subjectId": "paul-ninson",
+          "channel": "personal_site",
+          "url": "https://www.paulninson.com/hene",
+          "outcome": "rejected",
+          "note": "《Gallery 2》没有作品说明，未计入。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "bindi-vora",
+      "subjectName": "Bindi Vora",
+      "requiredGroups": 3,
+      "groups": [
+        {
+          "id": "group-bindi-vora-mountain-of-salt",
+          "subjectId": "bindi-vora",
+          "title": "Mountain of Salt",
+          "yearLabel": "2020-21",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "作者页写 372 件，出版社介绍写 371-strong。两处数字不一致，不合并成一个张数。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-bindi-vora-mountain-of-salt-personal_site-0",
+              "url": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+              "pageTitle": "Mountain of Salt, 2020-21",
+              "channel": "personal_site",
+              "excerpt": "Mountain of Salt (2020-21) is an expansive body of work comprised of found images, appropriated text and digital shape collages, initially conceptualised as a human response to the unfolding of covid-19. The shapes that appear in the works aren’t only there to direct your gaze across the image or to pause in certain spaces.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            },
+            {
+              "sourceId": "src-pw-bindi-vora-mountain-of-salt-publisher-1",
+              "url": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+              "pageTitle": "Bindi Vora – Mountain of Salt — Perimeter Editions",
+              "channel": "publisher",
+              "excerpt": "Comprising found photographs and digital shape collages, each married to phrases and statements appropriated from news articles, press conferences, and social media.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            },
+            {
+              "sourceId": "src-pw-bindi-vora-mountain-of-salt-museum_gallery-2",
+              "url": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+              "pageTitle": "Mountain of Salt: Bindi Vora - Imperial Health Charity",
+              "channel": "museum_gallery",
+              "excerpt": "Mountain of Salt is an expansive body of work comprised of found images, appropriated text and digital shape collages. They are not only there to direct your gaze across the image or to pause in certain spaces.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "found_or_archival_image",
+              "quote": "found images",
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/"
+            },
+            {
+              "key": "text_with_image",
+              "quote": "appropriated text",
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/"
+            },
+            {
+              "key": "collage",
+              "quote": "digital shape collages",
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/"
+            },
+            {
+              "key": "shape_directs_gaze",
+              "quote": "direct your gaze across the image or to pause in certain spaces",
+              "sourceUrl": "https://www.bindivora.co.uk/works/mountain-of-salt/"
+            },
+            {
+              "key": "found_or_archival_image",
+              "quote": "found photographs",
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt"
+            },
+            {
+              "key": "collage",
+              "quote": "digital shape collages",
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt"
+            },
+            {
+              "key": "text_with_image",
+              "quote": "phrases and statements appropriated from news articles",
+              "sourceUrl": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt"
+            },
+            {
+              "key": "found_or_archival_image",
+              "quote": "found images",
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora"
+            },
+            {
+              "key": "text_with_image",
+              "quote": "appropriated text",
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora"
+            },
+            {
+              "key": "collage",
+              "quote": "digital shape collages",
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora"
+            },
+            {
+              "key": "shape_directs_gaze",
+              "quote": "direct your gaze across the image or to pause in certain spaces",
+              "sourceUrl": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora"
+            }
+          ]
+        },
+        {
+          "id": "group-bindi-vora-white-in-the-sea",
+          "subjectId": "bindi-vora",
+          "title": "white in the sea",
+          "yearLabel": "2013-ongoing",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "作者页列出多个分卷，没有给总张数，不估计。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-bindi-vora-white-in-the-sea-personal_site-3",
+              "url": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+              "pageTitle": "white in the sea Vol I – XIV (2013-ongoing)",
+              "channel": "personal_site",
+              "excerpt": "white in the sea explores my intrigue and curiosity with the surface of the sea. Captured over the course of a single day, this study observes the water reflecting and refracting natural light. As the colours coalesce and flow into one another they become boundless, reflecting the shared nature of the sea. Utilising a 35mm film camera, this series sees digital techniques woven into the analogue process to intervene with the surface of the image.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "sea_surface",
+              "quote": "curiosity with the surface of the sea",
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/"
+            },
+            {
+              "key": "natural_light",
+              "quote": "the water reflecting and refracting natural light",
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/"
+            },
+            {
+              "key": "colour_as_pigment",
+              "quote": "As the colours coalesce and flow into one another",
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/"
+            },
+            {
+              "key": "analogue_with_digital",
+              "quote": "Utilising a 35mm film camera, this series sees digital techniques woven into the analogue process",
+              "sourceUrl": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/"
+            }
+          ]
+        },
+        {
+          "id": "group-bindi-vora-come-back-even-as-a-shadow",
+          "subjectId": "bindi-vora",
+          "title": "Come Back Even as a Shadow. Even as a Dream",
+          "yearLabel": "2018-24",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "页面写有 12 块文字面板，但没有把整件作品的张数说死，不估计。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-bindi-vora-come-back-even-as-a-shadow-personal_site-4",
+              "url": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+              "pageTitle": "Come Back Even as a Shadow. Even as a Dream (2018-24)",
+              "channel": "personal_site",
+              "excerpt": "Come Back even as a Shadow, Even as a Dream articulates the visceral emotions of grief in which the profoundly painful collides with the everyday whirring. Accompanying the text is a constellation of collages that fit together to form a map of kinds. Through elements of text and collage, the work emphasises the tensions between cultural mourning practices and the raw, tangible experiences of life, death, and grief. Archival images, India ink, gouache, palladium, Perspex and gloss Polaroid print on cut out BFK Rives paper.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "grief_and_memory",
+              "quote": "articulates the visceral emotions of grief",
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/"
+            },
+            {
+              "key": "collage",
+              "quote": "a constellation of collages",
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/"
+            },
+            {
+              "key": "text_with_image",
+              "quote": "Through elements of text and collage",
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/"
+            },
+            {
+              "key": "found_or_archival_image",
+              "quote": "Archival images",
+              "sourceUrl": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/"
+            }
+          ]
+        },
+        {
+          "id": "group-bindi-vora-trying-to-touch-the-trees",
+          "subjectId": "bindi-vora",
+          "title": "Trying to touch the trees",
+          "yearLabel": "2023",
+          "authorship": "own_work",
+          "imageCount": null,
+          "imageCountNote": "来源没有给出可核对的张数，不估计。",
+          "rightsStatus": "rights_blocked",
+          "hostedBinary": false,
+          "officialImageUrl": null,
+          "sources": [
+            {
+              "sourceId": "src-pw-bindi-vora-trying-to-touch-the-trees-personal_site-5",
+              "url": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+              "pageTitle": "Trying to touch the trees (2023)",
+              "channel": "personal_site",
+              "excerpt": "In a series of conjunctive collages made on Hampstead Heath that weave together countless walks and personal memories that embody a profound connection to nature, play and fauna. The grid roots conversations of difference as a reparative act. Sectional reproduction of Dido Elizabeth Belle’s portrait, drawing, coloured shapes, fragments of found postcards and images, on analogue photographs.",
+              "fetchedAt": "2026-11-03T15:00:00.000Z",
+              "contentHash": null,
+              "parserVersion": "pji-seed-1.0.0",
+              "extractionVersion": "personal-works-fixture-1",
+              "collectionMode": "curated_seed"
+            }
+          ],
+          "claims": [
+            {
+              "key": "collage",
+              "quote": "conjunctive collages",
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/"
+            },
+            {
+              "key": "nature_and_walk",
+              "quote": "connection to nature",
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/"
+            },
+            {
+              "key": "grid",
+              "quote": "The grid roots conversations of difference",
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/"
+            },
+            {
+              "key": "coloured_shapes",
+              "quote": "coloured shapes",
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/"
+            },
+            {
+              "key": "found_or_archival_image",
+              "quote": "fragments of found postcards and images",
+              "sourceUrl": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/"
+            }
+          ]
+        }
+      ],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "bindi-vora",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "personal_site",
+          "url": "https://www.bindivora.co.uk/works/",
+          "outcome": "no_personal_work",
+          "note": "个人网站作品索引还列出其他标题。没有摘录说明的标题不计为样本组，也不从标题推断风格。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "personal_site",
+          "url": "https://www.bindivora.co.uk/works/mountain-of-salt/",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "publisher",
+          "url": "https://perimetereditions.com/bindi-vora-%E2%80%93-mountain-of-salt",
+          "outcome": "merged_into_existing_group",
+          "note": "与《Mountain of Salt》是同一作品整体，不另计一组。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "museum_gallery",
+          "url": "https://www.imperialcharity.org.uk/arts/exhibitions/looking-back-looking-forward/mountain-of-salt-bindi-vora",
+          "outcome": "merged_into_existing_group",
+          "note": "与《Mountain of Salt》是同一作品整体，不另计一组。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "personal_site",
+          "url": "https://www.bindivora.co.uk/works/white-in-the-sea-vol-i-xiv-2013-ongoing/",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "personal_site",
+          "url": "https://www.bindivora.co.uk/works/come-back-even-as-a-shadow-even-as-a-dream-2018-24/",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        },
+        {
+          "subjectId": "bindi-vora",
+          "channel": "personal_site",
+          "url": "https://www.bindivora.co.uk/works/trying-to-touch-the-trees-2023/",
+          "outcome": "group_recorded",
+          "note": "记为 1 组本人作品。图片权限阻塞，未保存原图。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "ruby-rees-sheridan",
+      "subjectName": "Ruby Rees-Sheridan",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "ruby-rees-sheridan",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
+    },
+    {
+      "subjectId": "tess-raimbeau",
+      "subjectName": "Tess Raimbeau",
+      "requiredGroups": 3,
+      "groups": [],
+      "rejected": [],
+      "runs": [
+        {
+          "subjectId": "tess-raimbeau",
+          "channel": "official_jury_page",
+          "url": "https://www.worldphoto.org/2026-judges",
+          "outcome": "no_personal_work",
+          "note": "官方评委页记录职务和简介。页面没有给出本人作品链接，简介不转成样本组。"
+        }
+      ],
+      "network": false,
+      "collectionMode": "curated_seed"
     }
   ],
   "singleAnalyses": [
@@ -6693,16 +7968,14 @@
     {
       "id": "task-jury-research",
       "type": "research",
-      "title": "评委公开作品研究",
-      "status": "blocked",
-      "stage": "样本检查",
+      "title": "评委本人作品与风格标签",
+      "status": "succeeded",
+      "stage": "16 位已检查；达到 3 组的才生成风格标签",
       "total": 16,
-      "completed": 0,
+      "completed": 16,
       "failed": 0,
       "currentItem": null,
-      "errorLog": [
-        "16 位评委的公开作品样本数为 0，画像标记为样本不足，未生成风格推断。"
-      ],
+      "errorLog": [],
       "startedAt": "2026-11-03T15:12:00.000Z",
       "finishedAt": "2026-11-03T15:12:00.000Z",
       "idempotencyKey": "research-juries-swpa"

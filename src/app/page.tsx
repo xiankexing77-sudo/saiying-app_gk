@@ -14,7 +14,7 @@ export default function HomePage() {
       <PageHeader
         kicker="SWPA pilot"
         title="摄影赛事评委研究"
-        lede="Photo Jury Intelligence 收录 Sony World Photography Awards 2025 与 2026 的公开获奖记录和评委资料。官方事实带有来源；视觉分析和评委审美偏好是单独的推断层，当前没有执行。"
+        lede="Photo Jury Intelligence 收录 Sony World Photography Awards 2025 与 2026 的公开获奖记录和评委资料。获奖作品的视觉分析仍未执行。评委风格标签只在本人作品满 3 组后，根据作品陈述生成；样本不足时不写偏好。"
       />
       <div className="mt-6 flex flex-wrap gap-2">
         <SeedMark />
@@ -26,6 +26,7 @@ export default function HomePage() {
         <Stat label="届次" value={stats.editions} href="/competitions/swpa" />
         <Stat label="获奖记录" value={stats.works} href="/photographs" />
         <Stat label="评委" value={stats.juries} href="/juries" />
+        <Stat label="风格标签已生成" value={stats.juriesWithStyleTags} href="/juries/bindi-vora" />
         <Stat label="系列 / 单张" value={`${stats.series} / ${stats.singles}`} href="/photographs" />
         <Stat label="已完成视觉分析" value={stats.analysesComplete} href="/reports" />
         <Stat label="分析模板" value={stats.analysesTemplate} href="/analyze" />
