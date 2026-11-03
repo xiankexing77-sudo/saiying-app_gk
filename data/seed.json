@@ -1,0 +1,2691 @@
+{
+  "meta": {
+    "captured_at": "2026-11-03T00:00:00.000Z",
+    "scope": "vivo VISION+ Mobile PhotoAwards 2025 and 2026 award winners only",
+    "image_policy": "未下载、未托管获奖原图。详情只保留官网 workId 外链。",
+    "sources": [
+      "https://visionplus.vivo.com/competition.html/worksGalleries",
+      "https://visionplus.vivo.com/competition.html/photoawards",
+      "https://visionplus.vivo.com/rules",
+      "https://www.vivo.com.cn/brand/news/detail?id=1326&type=1",
+      "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+    ],
+    "notes": [
+      "作品字段来自官网获奖列表接口 /api/web/page/award/work（langCode=zh）与作品详情接口。",
+      "2025 公示评语来自官网前端 publicityDetails2025，按页面署名原样保留；未署名的不指认评委。",
+      "2026 作品集接口的评语字段为空，不补写。",
+      "黎晓亮的中文 Photo Awards 简介原文未在已抓取页面中找到，bio_official 留空。",
+      "Bertram 页上简介里「曾在多项摄影比赛中担任评委」一句未写入档案，避免做成站外履历字段。",
+      "点赞与分享来自详情接口，只作互动计数。"
+    ]
+  },
+  "contests": [
+    {
+      "id": "contest-2026",
+      "name": "vivo VISION+",
+      "brand": "vivo",
+      "edition_year": 2026,
+      "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries",
+      "status_note": "投稿截止公开信息为 2026-06-26，本届征集已结束。赛影不提供投稿。",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "contest-2025",
+      "name": "vivo VISION+",
+      "brand": "vivo",
+      "edition_year": 2025,
+      "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries",
+      "status_note": "2025 届获奖结果已公布。赛影只整理公开获奖档案，不提供投稿。",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    }
+  ],
+  "categories": [
+    {
+      "id": "cat-landscape",
+      "code": "Landscape",
+      "name_zh": "风光",
+      "name_en": "Landscape",
+      "gallery_name_zh": "风光",
+      "contest_id": null
+    },
+    {
+      "id": "cat-portrait",
+      "code": "Portrait",
+      "name_zh": "人像",
+      "name_en": "Portrait",
+      "gallery_name_zh": "人像",
+      "contest_id": null
+    },
+    {
+      "id": "cat-night",
+      "code": "Night",
+      "name_zh": "夜景",
+      "name_en": "Night",
+      "gallery_name_zh": "夜色",
+      "contest_id": null
+    },
+    {
+      "id": "cat-motion",
+      "code": "Motion",
+      "name_zh": "动态",
+      "name_en": "Motion",
+      "gallery_name_zh": "运动",
+      "contest_id": null
+    },
+    {
+      "id": "cat-tele",
+      "code": "TelephotoMacro",
+      "name_zh": "长焦与微距",
+      "name_en": "Telephoto & Macro",
+      "gallery_name_zh": "长焦与微距",
+      "contest_id": null
+    },
+    {
+      "id": "cat-series",
+      "code": "PhotoSeries",
+      "name_zh": "组图",
+      "name_en": "PhotoSeries",
+      "gallery_name_zh": "组图",
+      "contest_id": null
+    }
+  ],
+  "judges": [
+    {
+      "id": "judge-li",
+      "name": "黎晓亮",
+      "role": "摄影师、影像艺术家",
+      "bio_official": "",
+      "style_tags_inferred": [
+        "叙事人像",
+        "人物气质",
+        "戏剧光影"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": false,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "judge-xiao",
+      "name": "肖全",
+      "role": "人像摄影师",
+      "bio_official": "他被誉为“中国最好的人像摄影师”，著有摄影集《我们这一代》，2020年，他被联合国教科文组织授予国际文化促进基金会委员。他是一位以肖像记录时代的中国视觉讲述者，也是一个黄金时代的文化符号。",
+      "style_tags_inferred": [
+        "时代肖像",
+        "人物档案感组图"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": false,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "judge-gola",
+      "name": "Francesco Gola",
+      "role": "蔡司移动摄影大使",
+      "bio_official": "他专注于长曝光海景拍摄至今已经超过15年。他致力于在米兰教授摄影技术并在全球范围内定期举办研讨会。他的照片多年来发表于RCS Media, Olycom，Landscape Photography Magazine, Digital Photographer等多家专业杂志和机构。他在风光摄影方面的大师级技巧也多次发表在由尼康，NiSi等品牌伙伴组织的多个影集中。",
+      "style_tags_inferred": [
+        "长曝光风光 / 夜景",
+        "蔡司光学向"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": true,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "judge-bertram",
+      "name": "Bertram Hönlinger",
+      "role": "蔡司摄影专家",
+      "bio_official": "他既是一位摄影师，又是一位影像技术工程师。他拥有30余年影像领域工作经验，涉猎肖像、静物以及技术摄影等。他始终致力于传播摄影技术，其技术文章曾多次被发表在LENSIPRE摄影平台，曾于2017和2018年在“ZEISS ACADEMY”活动中开展摄影培训课程。",
+      "style_tags_inferred": [
+        "技术完成度与蔡司向"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": true,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "judge-yu",
+      "name": "于猛",
+      "role": "vivo 影像副总裁",
+      "bio_official": "他负责领导公司在影像领域的关键技术预研、产品认知、算法研究、系统集成开发、效果实现等；带领团队深度洞察消费者需求，推动智能手机影像功能创新，致力于为消费者提供便捷的影像工具，实现个性化的生活记录和艺术表达。",
+      "style_tags_inferred": [
+        "机型与移动影像能力",
+        "夜景/微距/动态等技术向"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": false,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "judge-webb",
+      "name": "Alex Webb",
+      "role": "世界著名色彩摄影师",
+      "bio_official": "亚历克斯·韦伯是当今最著名的街头摄影大师之一，马格南图片社成员，他以生动而复杂的彩色照片而闻名。在30年的摄影生涯中，韦伯用幽默而神秘的镜头语言捕捉世界各地的街头生活，用他特有的方式使用光、影和颜色，创造了独一无二的阴影美学和色彩美学。",
+      "style_tags_inferred": [
+        "彩色街头层次",
+        "色彩叙事"
+      ],
+      "source_url": "https://visionplus.vivo.com/competition.html/photoawards",
+      "locale_note": "须简体中文/中国区。英文 Europe 视图可能隐藏评委区块。",
+      "zeiss_path": false,
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    }
+  ],
+  "contest_judges": [
+    {
+      "contest_id": "contest-2026",
+      "judge_id": "judge-li",
+      "year": 2026,
+      "sort_order": 1
+    },
+    {
+      "contest_id": "contest-2025",
+      "judge_id": "judge-xiao",
+      "year": 2025,
+      "sort_order": 2
+    },
+    {
+      "contest_id": "contest-2026",
+      "judge_id": "judge-xiao",
+      "year": 2026,
+      "sort_order": 2
+    },
+    {
+      "contest_id": "contest-2025",
+      "judge_id": "judge-gola",
+      "year": 2025,
+      "sort_order": 3
+    },
+    {
+      "contest_id": "contest-2026",
+      "judge_id": "judge-gola",
+      "year": 2026,
+      "sort_order": 3
+    },
+    {
+      "contest_id": "contest-2025",
+      "judge_id": "judge-bertram",
+      "year": 2025,
+      "sort_order": 4
+    },
+    {
+      "contest_id": "contest-2026",
+      "judge_id": "judge-bertram",
+      "year": 2026,
+      "sort_order": 4
+    },
+    {
+      "contest_id": "contest-2025",
+      "judge_id": "judge-yu",
+      "year": 2025,
+      "sort_order": 5
+    },
+    {
+      "contest_id": "contest-2026",
+      "judge_id": "judge-yu",
+      "year": 2026,
+      "sort_order": 5
+    },
+    {
+      "contest_id": "contest-2025",
+      "judge_id": "judge-webb",
+      "year": 2025,
+      "sort_order": 6
+    }
+  ],
+  "works": [
+    {
+      "id": "ede1b66256d662838015377a0f79a333",
+      "contest_id": "contest-2026",
+      "title": "地球之巅",
+      "photographer": "CHUNLIN",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "马春林",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=ede1b66256d662838015377a0f79a333",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=ede1b66256d662838015377a0f79a333",
+      "work_id_ext": "ede1b66256d662838015377a0f79a333",
+      "description": "这是站在8800m向山下俯瞰的视角，孤独的攀登者行进在山脊，狂风导致云海翻涌，极致的美丽中蕴藏着危险。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [
+        {
+          "label": "公开报道",
+          "text": "创作者盛典报道同时称《地球之巅》为风光单元冠军。作品集获奖接口只把它列在「年度最佳作品」，没有再单列一条单元冠军，因此这里不另记「类别第一名」。",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7",
+      "contest_id": "contest-2026",
+      "title": "地底繁星",
+      "photographer": "陈斌",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7",
+      "work_id_ext": "8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7",
+      "description": "在新西兰的地底深处，有一种双翅目昆虫的幼虫，它们犹如夜空中的繁星般闪耀，浪漫而又神秘，为了记录下这个瞬间。我穿着水裤，在潮湿和昏暗的水里泡了十多个小时，庆幸的是，在如此恶劣的环境里，手机顺利完成了拍摄，而我也有幸在地心深处，邂逅一场“繁星“。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "看见",
+      "photographer": "周凯",
+      "photographer_source": "作品集账号",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X100s Pro",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8",
+      "description": "肥皂泡炸开前，如人的眼睛，又好似藏着整个银河。它正偷瞄着谁的梦，又或者，是梦自己从里头往外看。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "霜花里的笑",
+      "photographer": "魏巨龙",
+      "photographer_source": "作品集账号",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8",
+      "description": "霜花会消散，但笑容能温暖整个冬天。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63",
+      "contest_id": "contest-2026",
+      "title": "差一点",
+      "photographer": "蔡泽宏",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63",
+      "work_id_ext": "7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63",
+      "description": "戏剧性的一幕，就在夜鹭抓起鱼的那一秒，鱼突然滑了下去。那种到嘴的猎物又溜走的失落感，也许就是大自然最真实的一面。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756",
+      "contest_id": "contest-2026",
+      "title": "日常超现实：街头失序切片",
+      "photographer": "陈剑芳",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": "X100",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756",
+      "work_id_ext": "cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756",
+      "description": "这组照片是对当代城市公共空间的视觉抽样。镜头下，日常秩序被即兴的错位感打破：外卖员驶入“外星人”阴影，后视镜置换头颅的“无面者”、长出人腿的“爱心树”、肉摊旁从地面探出的牛头、垃圾桶上的琵琶仕女，以及小憩清洁工与墙上天使翅膀的静默反差，展现了虚假希望与真实无聊的对峙。从狗子被丢入河中打破平静，到干涸河床巨“鱼”阴影凝视垂钓者，生活于现实夹缝中上演着未彩排的荒诞剧。这些看似孤立的微小错位，共同构成了当代都市的真实图景，作品借此探讨个体在庞大城市机器中的生存状态与情绪张力。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "1d855962f70aad89a34f9cadb13377eb",
+      "contest_id": "contest-2026",
+      "title": "雾锁熔光",
+      "photographer": "歪杰",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "吴正杰",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=1d855962f70aad89a34f9cadb13377eb",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=1d855962f70aad89a34f9cadb13377eb",
+      "work_id_ext": "1d855962f70aad89a34f9cadb13377eb",
+      "description": "暴雨之后，菲律宾马荣火山被云雾重新包裹。\n\n我用 vivo X300 Ultra 搭配 400mm 增距镜，记录下雨后水汽掠过山巅、熔岩红光从雾中透出的瞬间。\n\n雨停了，但地火仍在燃烧。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "adaef08714608e3ce428540d24646384",
+      "contest_id": "contest-2026",
+      "title": "尾入深蓝",
+      "photographer": "广玉兰在狮泉河写书",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "梁家进",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X300 Pro",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=adaef08714608e3ce428540d24646384",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=adaef08714608e3ce428540d24646384",
+      "work_id_ext": "adaef08714608e3ce428540d24646384",
+      "description": "抹香鲸的尾鳍正朝着海面奋力摆动，镜头从下方捕捉到尾鳍舒展的全貌，无数气泡随水流翻涌，营造出强烈的动态张力。海水的蓝调被光影晕染出层次，尾鳍的轮廓在气泡中若隐若现，尽显深海巨兽下潜或上浮时的磅礴力量。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "星河入梦",
+      "photographer": "陈馨",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [
+        {
+          "name": "vivo55140761568",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X200",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8",
+      "description": "当铁花在夜幕中肆意绽放，仿佛将银河揉碎洒向人间。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "0275227a6230cd9ba0e05e940ac4fd4e",
+      "contest_id": "contest-2026",
+      "title": "罕见的精灵舞动现象",
+      "photographer": "在普陀山散步的北极熊",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "董书畅",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=0275227a6230cd9ba0e05e940ac4fd4e",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=0275227a6230cd9ba0e05e940ac4fd4e",
+      "work_id_ext": "0275227a6230cd9ba0e05e940ac4fd4e",
+      "description": "红色精灵作为一种难以捕捉的瞬态发光事件，长久以来只有相机才能记录。而在2026年5月26日的南亚精灵大爆发中，在短短一秒钟时间内，同时出现了红色精灵群体爆发事件（Dance Sprites）。这是地球大气层最震撼的景象之一。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d",
+      "contest_id": "contest-2026",
+      "title": "彝魂天影",
+      "photographer": "万贲",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "X90 Pro+",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d",
+      "work_id_ext": "992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d",
+      "description": "山乡，彝族老人身披查尔瓦立于苍穹之下，其头上的天菩萨在风中飞舞。天菩萨作为彝族男子的独特头饰，由额前留发编成小辫，再裹布帕成锥形指向天空，它源自对天的崇拜，神圣庄严，被视为神鹰眼睛和男子灵魂藏身之处，护佑着生命与灵魂。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "13a899d197e1b94168473cdec03b4a4e",
+      "contest_id": "contest-2026",
+      "title": "清凉！",
+      "photographer": "空调水",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "李睿",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "X300 Pro",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=13a899d197e1b94168473cdec03b4a4e",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=13a899d197e1b94168473cdec03b4a4e",
+      "work_id_ext": "13a899d197e1b94168473cdec03b4a4e",
+      "description": "炎炎夏日，让身体每一寸都浸泡在清凉的溪水中！",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "b236bc5f9b39fca7a46e76d074fce87e",
+      "contest_id": "contest-2026",
+      "title": "巴斯特的回响",
+      "photographer": "MISSSVEN",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "许天琪",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=b236bc5f9b39fca7a46e76d074fce87e",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=b236bc5f9b39fca7a46e76d074fce87e",
+      "work_id_ext": "b236bc5f9b39fca7a46e76d074fce87e",
+      "description": "石墙后虎斑猫探首，身后是虚化的斯芬克斯轮廓。浅景深将灵动生灵与远古巨像叠印，虽未对视，却血脉相通。这不经意的同框，唤醒了沉睡的神性，化作巴斯特跨越千年的回响",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "ea9ea874ffef130cac116bdc762b070b",
+      "contest_id": "contest-2026",
+      "title": "花隅相伴",
+      "photographer": "我是黄鱼",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "黄宇",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=ea9ea874ffef130cac116bdc762b070b",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=ea9ea874ffef130cac116bdc762b070b",
+      "work_id_ext": "ea9ea874ffef130cac116bdc762b070b",
+      "description": "在浓烈的色彩之间，一大一小静静相伴。他们是这片绚烂的布景之下，另一处温柔动人的风景。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "7d10788c9f9113adb66e2b096ca846fd",
+      "contest_id": "contest-2026",
+      "title": "灼阳忆影",
+      "photographer": "Jamir Lyndon Lumbao",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [
+        "Sunburnt Memories"
+      ],
+      "category_id": "cat-motion",
+      "phone_model": null,
+      "phone_note": "官网机型字段只有品牌「vivo」，没有具体机型。",
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=7d10788c9f9113adb66e2b096ca846fd",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=7d10788c9f9113adb66e2b096ca846fd",
+      "work_id_ext": "7d10788c9f9113adb66e2b096ca846fd",
+      "description": "午后酷热之下，大海依旧在声声召唤。一个孩童静静休憩，另一个以俏皮姿态奔赴海浪。这一瞬，定格了白日里静谧与活力交织的模样。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [
+        {
+          "label": "标题对照",
+          "text": "创作者盛典报道使用英文标题 Sunburnt Memories。作品集标题为《灼阳忆影》。",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "古祠侠影",
+      "photographer": "许浩龙",
+      "photographer_source": "作品集账号",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8",
+      "description": "晴日当空，古厝红墙作幕。富美英歌的少年们腾空而起，脸谱上的油彩在光里发亮，鼓槌与圆环划出风的轨迹。这一翻，是非遗的野性张力，是潮汕人刻在骨子里的滚烫与刚劲。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "dfc07302078d5027b2805a71f151ff55",
+      "contest_id": "contest-2026",
+      "title": "故乡的雨季",
+      "photographer": "张景翔",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [
+        {
+          "name": "vivo66531841667",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": null,
+      "phone_note": "官网机型字段只有品牌「vivo」，没有具体机型。",
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=dfc07302078d5027b2805a71f151ff55",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=dfc07302078d5027b2805a71f151ff55",
+      "work_id_ext": "dfc07302078d5027b2805a71f151ff55",
+      "description": "初夏，回了一趟河南老家。 从南方开往北方的列车上，窗外下起了连绵的雨。绿色的山，绿色的田野，模糊成一条长的河流。我像是顺流而下，穿过省界处一连串的山洞，远处的地势逐渐平缓。当辽阔的平原一直延伸消失在朦胧雨雾中，我知道，已经到河南了。 而故乡的夏天，就是从这样一场不长不短的雨季开始的。绿意像是涨起的河水，在雨后四处漫延，浸润了裸露的土地，和寂静的角落。稀疏的虫鸣开始响起，像下在后半夜的小雨，如果不仔细听，是听不到的。西瓜摊零零星星地出现在街边，凉棚下，是堆成小山一样的西瓜。风在青黄色的麦田里散落着海浪一船的游涡痕迹，弟弟说，那是外星人的基地。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "561cf9ad24d7b539a0106436c859b7f8",
+      "contest_id": "contest-2026",
+      "title": "高山之上",
+      "photographer": "户外摄影师ROCKER",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "王振",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": "X300 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=561cf9ad24d7b539a0106436c859b7f8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=561cf9ad24d7b539a0106436c859b7f8",
+      "work_id_ext": "561cf9ad24d7b539a0106436c859b7f8",
+      "description": "作为一名户外摄影师，拍摄珠穆朗玛峰几乎是每个从业者的梦想。这里不仅是世界最高海拔的山峰，也是每年数百人的攀登目标。2026 年是我的第三次珠峰攀登拍摄了，与以往扛着大型设备拍摄纪录片不同。这次我选择带上一部手机去记录攀登过程那些让我动容的瞬间，轻便的手机可以让我毫无压力的去攀登，把更多的精力放在观察中。从清晨第一缕阳光下，夏尔巴背夫为了生活扛起的百斤包裹，到季风来临吹动的五彩经幡，再到日出是珠峰巨大的山体在阳光下透射出的山影。我想用最简洁的镜头，去刻画人与山相逢的故事。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "05587b6c9797fcacbbe41ce7da487e01",
+      "contest_id": "contest-2026",
+      "title": "影像的回响",
+      "photographer": "路的另一边",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "王旭",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=05587b6c9797fcacbbe41ce7da487e01",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=05587b6c9797fcacbbe41ce7da487e01",
+      "work_id_ext": "05587b6c9797fcacbbe41ce7da487e01",
+      "description": "在平均海拔4500米的高原，卓玛一家五个孩子，四个患病。21年7月，因拍摄当地义诊，卓玛姐妹进入公众视野。同年12月，在各界帮助下完成手术——亦是我见证这场蜕变的起点。 22年12月、23年11月，卓玛哥哥和弟弟经救助完成脊柱矫正手术，终于能“挺直了腰板”长大。 24年9月，卓玛入学，三好学生的她开朗爱笑。妹妹今年秋季也将入学，未患病的姐姐也升入初中… 现在，孩子们不再自卑地长大，家长也能不在自责中陪伴。这些情感都通过影像得以记录传递。这是影像的意义，却又不止这些意义。一段影像改写人生或许是偶然，持续记录就可以让改变成为必然。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53",
+      "contest_id": "contest-2026",
+      "title": "金峰悬月",
+      "photographer": "李文尧",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53",
+      "work_id_ext": "abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53",
+      "description": "金光漫过覆雪岩壁，云雾缠绕巍峨山峰，一弯新月悬于清透青蓝天际。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "门内门外",
+      "photographer": "丁道明",
+      "photographer_source": "作品集账号",
+      "name_aliases": [],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "S60",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8",
+      "description": "一身浓艳戏妆，暂别舞台喧嚣。传统扮相与现代物件相遇，定格戏曲表演者落于凡尘的真实瞬间。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8",
+      "contest_id": "contest-2026",
+      "title": "星移神山",
+      "photographer": "孙昊",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [
+        {
+          "name": "vivo99832958528",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": null,
+      "phone_note": "官网机型字段为「无exif」。",
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8",
+      "work_id_ext": "da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8",
+      "description": "这张照片拍摄于贡嘎雪山附近垭口，以vivo X200 Pro夜景长曝光拍摄记录下贡嘎雪山的星轨。\n在远离光污染的纯净夜空下，星辰的轨迹与雪山的轮廓交相辉映，\n展现出自然的磅礴与时间的永恒，也诠释了手机摄影捕捉极致风光的无限可能。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "9ae7331f1fd31d19d2184e8721811be2",
+      "contest_id": "contest-2026",
+      "title": "动与静",
+      "photographer": "xiao管同学",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "管彦聪",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=9ae7331f1fd31d19d2184e8721811be2",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=9ae7331f1fd31d19d2184e8721811be2",
+      "work_id_ext": "9ae7331f1fd31d19d2184e8721811be2",
+      "description": "极简的横向卷帘白墙构建出干净疏离的背景。左侧少年牵拉弹力带全力奔跑，与右侧两名青年的静态画面，形成了极具张力的对比。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "d4adf505e75ddc8be9b2b4841247bccb",
+      "contest_id": "contest-2026",
+      "title": "少年的心事",
+      "photographer": "在马德里哼小调的白桦",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "李东杰",
+          "source": "创作者盛典报道署名",
+          "source_url": "https://www.163.com/dy/article/L6A7IBFS051284V8.html"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "X300 Pro",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=d4adf505e75ddc8be9b2b4841247bccb",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=d4adf505e75ddc8be9b2b4841247bccb",
+      "work_id_ext": "d4adf505e75ddc8be9b2b4841247bccb",
+      "description": "捕捉童年里最本能的向往与热闹，一静一动之间，藏着山区校园独有的蓬勃朝气。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "770247b86361a3fc98ae55adf8ed38b8",
+      "contest_id": "contest-2026",
+      "title": "棒球场",
+      "photographer": "李学骋",
+      "photographer_source": "创作者盛典报道署名",
+      "name_aliases": [
+        {
+          "name": "vivo13418192478",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": null,
+      "phone_note": "官网机型字段只有品牌「vivo」，没有具体机型。",
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=770247b86361a3fc98ae55adf8ed38b8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=770247b86361a3fc98ae55adf8ed38b8",
+      "work_id_ext": "770247b86361a3fc98ae55adf8ed38b8",
+      "description": "这张照片以俯瞰的视角呈现一片空旷的棒球场上，一个少年球员在等待同伴的击球。沙地与草地形成了简洁而强烈的色块对比。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2026,
+      "official_comments": [],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "5285a4cf0f1cfa4447051949324e6d30",
+      "contest_id": "contest-2025",
+      "title": "太空战舰",
+      "photographer": "吴正杰",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "歪杰",
+          "source": "公开报道中的网名",
+          "source_url": "https://www.vivo.com.cn/brand/news/detail?id=1326&type=1"
+        },
+        {
+          "name": "vivo21158415944",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 11,
+      "share_count": 9,
+      "detail_path": "/cn/works/detail?workId=5285a4cf0f1cfa4447051949324e6d30",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=5285a4cf0f1cfa4447051949324e6d30",
+      "work_id_ext": "5285a4cf0f1cfa4447051949324e6d30",
+      "description": "图中生物为樽海鞘（Salp），是一类透明、胶状的浮游被囊动物，广泛分布于温暖海域中层带。它们通过蠕动身体泵水推进，并以滤食微型浮游植物为生，是深海碳汇系统的重要组成。\n\n这张照片拍摄于菲律宾阿尼洛黑水潜水过程中，画面中的樽海鞘不仅清晰展现出过滤结构和肌肉环，还包裹着一只小鱼与数只橘色浮游甲壳类，呈现典型的“生态漂流站”状态。\n\n在这脆弱透明的“太空舱”里，生命交汇、依附与避难，构成中层海域独特而复杂的微观生态景观。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "我注意到画面中透明生物的结构展现得很清晰，它包裹着小鱼与船蛸幼体，形成了独特的生态瞬间。这个瞬间会让很多人对于我们生活的这个世界更加着迷。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这是一张真正非凡的照片，能立即吸引观者的目光。它将我们带入一个未知而迷人的水下世界。在深海黑色背景的衬托下，光线恰到好处，细节还原完美无瑕，让观者不禁对图像比例和拍摄技巧心生好奇。这张照片体现了摄影师的高标准。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅影像令人叹为观止，展现了手机摄影如今所能捕捉到的隐秘奇观。在黑水潜水的黑暗环境中，捕捉如此精妙复杂的拍摄对象，既是技术上的成就，也是艺术上的壮举。其构图、清晰度与光线运用，揭示出一个宛如外星世界的微观宇宙——在这里，生命汇聚于一片半透明的栖息之所。这不仅仅是一张樽海鞘的照片，更是一则关于生存、共生，以及自然脆弱之中蕴含的美的故事。摄影师以其独特视野与精准把控，将一次转瞬即逝的邂逅转化为一幕宇宙般的场景，提醒着我们：即便在水下，好奇心与科技的力量也能引领我们探索至何等深远的境地。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "我们的地球百分之七十是水，海洋的面积奇大无比。人类对月球火星的了解已经很多，但是对深海的认知却非常有限。樽海鞘这样的鱼类，我们几乎没有见过。摄影师有幸在海洋深处与神秘的樽海鞘狭路相逢。他是怎么做到的一部手机呈现出这样的奇景？深色的背景衬托出樽海鞘透明的身躯，身体内的金红色小鱼神情泰然自若，它仿佛在操控着这艘深海潜水艇，舱内还有两位幸运的乘客。作者没有给我们彰显深海壮丽的大全景，而是只用一条“鱼中鱼”就说明白了海里丰富的世界。这是以一当十，少即是多的表现手法，让人们的视线牢牢被画面所吸引。从而产生对海洋世界无边无际的想象力。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "《太空战舰》以极具冲击力的画面，完成了一次对海洋微观生态的惊艳捕捉。这幅作品的精妙之处在于三者构成的共生关系，在漆黑的海水中形成了一个微型生态系统。这种将科学现象转化为视觉故事的能力，让作品超越了单纯的生物记录，成为对海洋共生智慧的诗意诠释。​它以艺术化的方式揭示了 “不起眼的微小生物是海洋生态基石” 这一事实：樽海鞘虽看似柔弱，却在物质循环与物种存续中扮演着关键角色。当观众凝视这帧画面时，看到的不仅是深海的奇幻，更是生命与环境相互依存的宏大命题 —— 这正是自然摄影最珍贵的力量：让隐秘的美好被看见，让沉默的生命被尊重。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [
+        {
+          "label": "作者名对照",
+          "text": "获奖公示页作者名为吴正杰；公开报道称其网名为歪杰；作品集账号是一串 vivo 数字号。三处同时保留，方便对照。",
+          "source_url": "https://www.vivo.com.cn/brand/news/detail?id=1326&type=1"
+        }
+      ],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "fa1b46eb5b92ac0189a602e31144daf9",
+      "contest_id": "contest-2025",
+      "title": "金鱼长满枝头",
+      "photographer": "何明",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo34258570143",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 4,
+      "share_count": 2,
+      "detail_path": "/cn/works/detail?workId=fa1b46eb5b92ac0189a602e31144daf9",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=fa1b46eb5b92ac0189a602e31144daf9",
+      "work_id_ext": "fa1b46eb5b92ac0189a602e31144daf9",
+      "description": "在水波的褶皱里，一群金鱼如灵动的火焰在水中穿梭。树枝倒影的线条与它们交织，恍惚间难辨鱼儿究竟在水中穿梭，还是于空中畅游，那瞬间的姿态，像是挣脱了所有束缚，获得了真正的自由?",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "我喜欢金鱼与树的倒影共同营造出的超现实画面，让人感觉这些鱼仿佛正在珊瑚礁的枝丫间游动。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "照片中的倒影总能让我着迷，因为多重的图像信息会让人难以立刻辨认出单个细节。鱼儿与天空倒影之间的色彩对比，经由深色树枝勾勒出结构，被巧妙地定格下来.而这一主题的奥秘，唯有仔细端详才能揭晓。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这张照片堪称抽象艺术与视觉诗意的典范之作。它以鲜明的色彩搭配和流畅的构图，模糊了现实与幻象的界限。鲜艳的红色鱼群与它们在水中的倒影相互交织，宛如燃烧的花朵在枝头绽放，颠覆了我们对“景致”的固有认知。这不仅是对自然的记录，更是以想象力与情感对自然的诠释。摄影师引领我们走进一个悬浮的瞬间——在这里，动与静和谐共存，自然以光线、色彩与倒影为笔，描绘出动人画卷。这是一次大胆、优雅且令人难忘的视觉体验。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "这是一副不可思议的照片。远处看像是一棵大树结满了红色的果实，然而它却是水中的倒影。它是虚幻的不真实的。蓝色的天空也是如此，同样是假的。密密麻麻红色的不是果实，而是流动的金鱼。作者巧妙的运用树影天空金鱼，构成了一个魔幻世界，让人们去参去观察，去破我执。作品既有很强的视觉冲击力，又暗藏着深奥的哲理。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "这是一张非典型的风光摄影作品。相比常见的大山大河的壮美风光，这张照片关注到了水面的倒影和水中的鱼儿交织在一起的独特角度。欢悦的鱼群和斑驳的树枝构成了一组别开生面的组合，结合红与蓝的色彩碰撞，更增加了水中还是空中的奇幻色彩，进一步增加了这幅作品的想象和解读空间。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "95d49cc82e1588b5a3bc430725c24021",
+      "contest_id": "contest-2025",
+      "title": "节日夜",
+      "photographer": "陈勇",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo49296197616",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 5,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=95d49cc82e1588b5a3bc430725c24021",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=95d49cc82e1588b5a3bc430725c24021",
+      "work_id_ext": "95d49cc82e1588b5a3bc430725c24021",
+      "description": "节日夜",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这是光影与动静、温暖与寒冷、喧嚣与静谧、亲近与疏远之间的奇妙互动。摄影师将这一切完美呈现，使得这张图片成为吸引观者目光的氛围感佳作。vivo X200 Pro在这些具有挑战性的光线条件下，也充分展现出了其性能。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "夜景摄影需要耐心、精准与洞察力，而这幅影像在构图优美的画面中完美融合了这三者。摄影师巧妙地平衡了静泊小船的安宁与烟花转瞬即逝的绚烂，营造出一个悬浮于静谧与欢庆之间的瞬间。清冷的蓝色调增添了情感深度，唤起人们的怀旧之情与悄然的惊叹。用移动设备捕捉到如此鲜明的对比与清晰的画面，绝非易事。这幅影像提醒我们，即便是在黑暗中，也有无数故事在上演：有的宏大，有的私密，但都等待着被一双敏锐而娴熟的眼睛发现。这是对夜晚之美的诗意礼赞。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "这张夜色作品酷似一个童话故事。黄金分割的经典构图，营造出似古似今，既是东方又像西方，没有时间没有方位的特别疆域。烟花在海平面的尽头升起，红色的火焰明确而耀眼，像是一枚火箭升腾。画面下方的这艘船，没有乘客，又像在等待谁的到来。令人浮想联翩。这是一个美丽的夜晚。作品色彩饱和度很好，船体的细节以及水波都有完美的表现，这张图片具有很强的文学性。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "烟花其实是夜晚场景常见的创作主题，但这幅作品却通过幽暗深沉的蓝调渲染出了一种不同于常规烟花照片的独有的意境和氛围，让人一眼难忘。将前景停泊的小船纳入构图增加了画面的层次感和想象空间，仿佛在暗示两者之间可能的关联，进一步增强了画面的故事感。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "9950d6db5458eefe9c72fe6ad209372c",
+      "contest_id": "contest-2025",
+      "title": "密布其上之光",
+      "photographer": "张樱凡",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo84108568017",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-portrait",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 3,
+      "share_count": 1,
+      "detail_path": "/cn/works/detail?workId=9950d6db5458eefe9c72fe6ad209372c",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=9950d6db5458eefe9c72fe6ad209372c",
+      "work_id_ext": "9950d6db5458eefe9c72fe6ad209372c",
+      "description": "她不在水中，却像从深海里升起。光不是照亮她，而是沉积在她脸上的尘埃——一层星屑，一层低语，一层迟到的问候。你试图看清，却始终只抓住了光的边角，像隔着一整面银河，与她对峙。她的五官像是夜色雕刻的细节，被一场无声的雪缓缓覆盖。每一粒微光都像在说：“她曾出现过。”可她没有回答，她只是静静地，被光密密地缝在世界之外，像一个被封存的梦，闪烁着，不醒来。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "这位女性从黑暗中浮现的方式，以及光斑在她脸上闪烁的样子，带着一种引人入胜且略带神秘的氛围。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "一幅肖像，面部却没有清晰锐利地呈现？右眼虽被裁剪，却依然可辨。倒影与光点交叠，营造出一种超现实且耐人解读的氛围。画中人物仿佛在前景与背景间切换，而带有简化细节的颗粒质感更强化了这一感觉。这是一幅经过精心诠释的肖像，远非一张抓拍巧妙的快照所能企及。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅人像作品超越了传统肖像的界限，变得空灵而富有深沉的情感。它没有直接呈现一张面孔，却唤起了一种存在：难以捕捉、脆弱而永恒。那细腻的光影散落，带着几分宇宙般的质感，为主体笼罩上一层神秘的面纱，引人沉思而非寻求解释。这是一种视觉的低语，在清晰与朦胧之间充满了诗意的张力。摄影师捕捉的不仅是一个人，更是一种氛围、一种存在状态、一个近在咫尺却又遥不可及的梦境。这是一幅关于沉默、记忆与想象的肖像，静谧而有力量，令人深深动容。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "这的确是一副很有新意的人物肖像作品。作者大胆舍去了通常肖像摄影惯用的叙事手法来刻画人物，采用人造的光颗粒，来畅想“疑似银河落九天”的幻景。人物在“银河”背面若隐若现，凸显了东方女性的深邃与神秘。她的眼神似乎在告诉你，她有很多话想跟你说。又像在喃喃自语。左侧的蓝色前景，为这幅作品加了不少分。不得不说，作者有着很好的想象力，和主观意识。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "这是一张非常吸引人的肖像。从技术效果层面说，它作为暗调人像作品，整体影调过渡细腻，色彩沉稳大气。前景的蓝色和人像肤色的冷暖对撞，前景虚化过渡自然，以及蓝色的自左上到中间的斜线引导，自然而然将观者眼光聚焦到人脸上。这张肖像作品不同于常见的清晰的人像作品。若隐若现的面孔下透着某种说不清道不明的情绪和氛围，忧郁而神秘。眼神直接而坚定地直视读者，好像有很多故事和话隐藏在这张面孔下，让人忍不住浮想联翩，视线很难移开。好的人像作品需要有让人想象的空间，除了技术本身，更要有好的情感共鸣和情绪表达。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "3c235106dbb5131f3b41e0377189e617",
+      "contest_id": "contest-2025",
+      "title": "Dancing Silhouettes",
+      "photographer": "Pradiptamoy Paul",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [],
+      "title_aliases": [
+        "舞动的剪影"
+      ],
+      "category_id": "cat-motion",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 5,
+      "share_count": 3,
+      "detail_path": "/cn/works/detail?workId=3c235106dbb5131f3b41e0377189e617",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=3c235106dbb5131f3b41e0377189e617",
+      "work_id_ext": "3c235106dbb5131f3b41e0377189e617",
+      "description": "As I snapped this shot, I felt like I have captured a slice of pure childhood magic. The setting sun cast a warm, golden glow over the scene, silhouetting the joyful dancing figures of the children. Their playful energy was palpable, and the swirling dust added a sense of dynamic movement to the image.\n\nI was struck by the vibrant balloons, which glowed like tiny suns against the serene amber backdrop. The contrast between the warm light and the cool shadows created a sense of depth and dimensionality.\n\nFor me, this image is all about capturing the fleeting moments of childhood – the freedom, the innocence, the unbridled joy. As the sun dipped below the horizon, painting the sky in shades of gold and orange, I felt grateful to have preserved this instant of carefree laughter forever.",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "我很欣赏摄影师捕捉到了孩子们剪影的排列，以及余晖透过气球发出的光芒。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这张照片完美定格了逆光下的氛围。移动的孩子们排列得十分专业，彼此互不重叠，在低垂的太阳映照下形成了清晰的剪影。透明气球与深色剪影的相互映衬，让画面别具一番趣味。孩子们的动态与温暖的光线交织，同时为观者带来了紧张、和谐与安全之感。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这张照片歌颂了生命最本真的随性状态。夕阳的金色薄雾中，人们嬉戏的动态剪影被定格，散发着纯粹的快乐与活力。这一幕超越了地域与年龄的界限——每个人都能感受到阳光的温暖、运动的兴奋与欢笑的纯真。漂浮的气球与飞扬的尘埃强化了动感，而光影间强烈的对比则增添了情感的厚度。这不仅是一项技术成就，更永恒地提醒着我们：那些转瞬即逝、无忧无虑的瞬间中，藏着多么动人的美好。一帧画面，完美浓缩了童年的精髓。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "人类最早的运动起源于生活。当人类开始直立行走，解放出双手以后，为了捕猎躲避危险，就有了奔跑和投掷跳跃……继而有了欢乐和舞蹈。我们看到的这幅作品，是一群孩子的欢快嬉戏，它有不少运动的元素在其中。作者用太阳西下的时刻，在逆光下勾勒孩子们的剪影，映衬出生动的欢快场面。孩子们的跑位也恰到好处，姿态各异。琥珀色的金光把人物染成了一个个小金人。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "这张照片抓住了光与尘的舞动，像Mahmud Shabistari的诗：“光让尘埃现形，尘埃让光可见。”夕阳的金光里，尘土飞扬，带着生命力，孩子跳跃其间，纯真得像一首未完的诗。气球在逆光中闪着光，恰到好处的透出梦幻诗意。这瞬间，平凡却永恒，像在光与尘的交织中，童年被轻轻定格。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "6b75702708980f1759b62d82db86f5bf",
+      "contest_id": "contest-2025",
+      "title": "乡村放映员",
+      "photographer": "刘力",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo15760402695",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 1,
+      "detail_path": "/cn/works/detail?workId=6b75702708980f1759b62d82db86f5bf",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=6b75702708980f1759b62d82db86f5bf",
+      "work_id_ext": "6b75702708980f1759b62d82db86f5bf",
+      "description": "重庆綦江东溪镇的星空下，43岁的乡村电影放映员张元英正调试幕布准备在有362年历史的古建筑万天宫内放映电影，暖黄光影映照着留守老人与孩童的笑脸。他返乡创业经营民宿，却始终以公益放映为使命，三年间足迹遍布31个村居，用露天电影为寂静山村注入活力。通过喇叭巡村、微信群预告、直播推介等创新方式，他让电影成为连接乡邻情感的纽带，更借助惠民放映传递政策与知识，助力乡村振兴。\n在数字化时代，乡村电影放映员以传统露天电影为载体，既延续了几代人的集体记忆。放映员跋山涉水的坚守，不仅填补了偏远地区文化供给的空白，更以光影凝聚社区情感，为留守群体带来精神慰藉，成为新时代乡土文明赓续与创新的重要推动者。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这是一篇极为出色的纪实报道，聚焦主人公那独特而罕见的活动。如今，还能见到放映员这份工作，并且能用摄影加以记录，实在不多见。报道中的影像风格高度统一，既捕捉了主人公日常工作的细微之处，也呈现了更为宏观的全貌。由于主人公在画面中多处于背景位置，所以故事的核心是他那与众不同的工作，而非他个人。这组纪实报道内容完整，所选配图也恰到好处。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这组摄影作品满怀深情地致敬了那些在世界最偏远角落守护传统的无名英雄。摄影师以温暖、尊重的态度和富有叙事深度的手法，记录了一位乡村放映员的日常生活与默默坚守。他的工作远不止放映电影那么简单，更连接着几代人，传播着知识，凝聚着社区精神。每一张画面的构图都饱含匠心与关怀，让我们得以窥见一种充满使命感与韧性的人生。透过这组作品，我们不仅看到了银幕上的故事力量，更感受到了将人们凝聚在一起的那份意义。这是一段充满力量与诗意的视觉旅程。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "在西方摄影史上，报道摄影在20世纪中叶非常兴盛发达。其中尤金·史密斯，发表在美国《生活》杂志的一组《乡村医生》最为出名。报道摄影就是用图片讲故事。《乡村放映员》的作者，很可能知道尤金·史密斯。这组照片有很不错的起承转合关系，人物细节的刻画比较到位，放映员的工作过程交代完整，谋篇布局也游刃有余。如果再有一些看电影群众的反映镜头，则能让这组作品更上一层楼。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "这组影像以朴素的镜头语言，以生动、最接地气的方式记录了一位个体放映员的日常，却映照出一个时代变迁中乡村文化生态的缩影——光影流转间，是坚守的温度，是创新的活力，更是乡土中国生生不息的精神力量。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "b6d36d92af95dda219c5b1f4c9cb2ff7",
+      "contest_id": "contest-2025",
+      "title": "皮影戏",
+      "photographer": "蔡泽宏",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo74278927829",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=b6d36d92af95dda219c5b1f4c9cb2ff7",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=b6d36d92af95dda219c5b1f4c9cb2ff7",
+      "work_id_ext": "b6d36d92af95dda219c5b1f4c9cb2ff7",
+      "description": "枯树枝组成的写意线条下，静立着一只眼斑螳螂，它伸出前臂，探索者周围的环境，像在上演着一出独幕皮影戏。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "《皮影戏》这幅作品，呈现了一只静立于枯枝之上的螳螂，画面干净简洁，螳螂与枝条在高反差背景下如皮影般剪影呈现，如此构图深化了视觉冲击力与层次感。作品名称引导观者将螳螂的姿态与传统民间艺术“皮影戏”联系起来，不仅唤起了文化意象，也赋予画面更多叙事意味。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "538026c8f567f1bf474c3ace45f8a570",
+      "contest_id": "contest-2025",
+      "title": "织网",
+      "photographer": "晋毅",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo61723619416",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-tele",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 3,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=538026c8f567f1bf474c3ace45f8a570",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=538026c8f567f1bf474c3ace45f8a570",
+      "work_id_ext": "538026c8f567f1bf474c3ace45f8a570",
+      "description": "重庆渝北800千伏换流站，“电网人”的身影如五线谱上跳动的音符，他们正在为即将投运的特高压“疆电入渝”工程做最后的冲刺。这项承载“西电东送”国家战略的超级工程，投运后将为山城注入绿色发展的强劲动能。而重庆渝北800千伏换流站作为这条“能源高速公路”的核心枢纽，其精密运转的背后，是电力工人在云端之上的生死奔赴。电网上的身影既是大国工程的微观注脚，也是新时代劳动者的精神肖像。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "《织网》是一幅充满隐喻和张力的优秀视觉作品。 作者记录下“电网人”在重庆渝北800千伏换流站高空作业的瞬间，画面中密集交错的电线仿若一张无形的巨网，既隐喻国家电网工程的复杂与高效，也构成了一种抽象而有序的图像。而一位电力工人悬于其上，不仅像是跳动在五线谱上的音符，更是新时代劳动精神的具体化身。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "长焦与微距",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "f80fb0a704b330fe9342c71eae381045",
+      "contest_id": "contest-2025",
+      "title": "天山下的牧羊人",
+      "photographer": "余润皓",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo27478163677",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 1,
+      "detail_path": "/cn/works/detail?workId=f80fb0a704b330fe9342c71eae381045",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=f80fb0a704b330fe9342c71eae381045",
+      "work_id_ext": "f80fb0a704b330fe9342c71eae381045",
+      "description": "在天山石林的壮丽景色下，一片广阔的绿色草原上，一群羊悠闲地吃草。远处的牧马人骑着骏马，守护着这片宁静的土地。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "摄影师巧妙地将焦点对准了远处的牧羊人和羊群，充分利用了长焦镜头的优势，有效地压缩了空间感，使得画面中的各个元素层次分明，同时又和谐统一。画面中的细节得到了完美的展现，色彩还原真实自然，动态范围宽广，为观者呈现了一幅生动的自然景象。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "74d40ea20d817ee380775910a3c1c9e0",
+      "contest_id": "contest-2025",
+      "title": "大地的血肉",
+      "photographer": "贺进一",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo66228141835",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 4,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=74d40ea20d817ee380775910a3c1c9e0",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=74d40ea20d817ee380775910a3c1c9e0",
+      "work_id_ext": "74d40ea20d817ee380775910a3c1c9e0",
+      "description": "脑花岩与波浪状的纹理，这是大自然的杰作。在日出前我看到了这边大地宛若血肉般的纹理。这是万年时间精雕细琢的艺术世界。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这幅名为《大地的血肉》的作品，记录了脑花岩地貌在日出前的瞬间。波浪状的岩层宛如大地的肌理，富有生命的张力。作者借助黎明时分短暂的光影，精准捕捉到岩石表面丰富的细节与纹理，将自然雕琢千万年的痕迹清晰展现。这是一次充满敬意的视觉叙事。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "4e56ed93358b5f331e0daabc669caa25",
+      "contest_id": "contest-2025",
+      "title": "世界的北极",
+      "photographer": "夏厚龙",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo31684875502",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=4e56ed93358b5f331e0daabc669caa25",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=4e56ed93358b5f331e0daabc669caa25",
+      "work_id_ext": "4e56ed93358b5f331e0daabc669caa25",
+      "description": "北极光在人们心中是一个自由的渴望，也是一种精神寄托，所以人们奔赴北极去追逐北极光",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这幅作品通过人物的互动和极光的流动，传达了一种宁静而又充满力量的情感。画面中的两个人影在极光的映衬下显得格外温暖和亲切，他们的姿态和动作似乎在诉说着对这片神秘土地的敬畏和探索。这种情感的传递，使得这幅作品不仅仅是一张美丽的风景照，更是一幅充满故事和情感的摄影作品。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "889769c810d73b12be6001913c29de35",
+      "contest_id": "contest-2025",
+      "title": "走过冷暖",
+      "photographer": "杨军帝都",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "杨军",
+          "source": "获奖公示页作者名",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 3,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=889769c810d73b12be6001913c29de35",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=889769c810d73b12be6001913c29de35",
+      "work_id_ext": "889769c810d73b12be6001913c29de35",
+      "description": "广告招贴画的暖色和路灯照射下的冷色相呼应，冷暖色调的强烈碰撞，构建出一种奇幻又迷人的氛围，两个人物相同的动作又仿佛两个平行时空在此交汇。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这幅作品左侧广告里人物被暖色调的灯光照亮，右侧人物则处于较冷的光线中，形成了鲜明的冷暖对比，增强了画面的视觉冲击力。两位人物的行走姿态和方向，似乎在诉说着各自的故事和心情。画面中的光影变化和人物的姿态，不仅增加了画面的动态感，也使得作品充满了故事性和思考空间。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "3a60cc31f83a9c2500bdd9c62176ed73",
+      "contest_id": "contest-2025",
+      "title": "《祈祷的小女孩》",
+      "photographer": "付建国",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [],
+      "title_aliases": [
+        "期盼中的小女孩"
+      ],
+      "category_id": "cat-portrait",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 3,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=3a60cc31f83a9c2500bdd9c62176ed73",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=3a60cc31f83a9c2500bdd9c62176ed73",
+      "work_id_ext": "3a60cc31f83a9c2500bdd9c62176ed73",
+      "description": "在非洲埃塞俄比亚北部小镇阿利贝拉，有一座神奇的教堂，整座教堂由一整块巨大的石块，从内部雕刻而成，每天早上，整个小镇的人们，不管是大人小孩，都会聚集在这里祈祷，她们不仅生活极度贫困，也处在内战的阴影中，信仰，也成了她们生活最后的底线，一个小女孩跟随自己的妈妈祈祷，她的眼神里流露出对这个世界懵懵懂懂",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "摄影师巧妙地利用了自然光线，突出了小女孩面部的柔和轮廓和期盼的眼神。作品的构图简洁，小女孩被置于画面的中心，吸引了观者的全部注意力，她的眼神中透露出的渴望和对未来的憧憬，触动了观者的情感共鸣，使得作品具有了更深层次的意义和价值。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "6749e470fa3c7ac25393f7dbed143170",
+      "contest_id": "contest-2025",
+      "title": "【戴礼帽的男子】",
+      "photographer": "梁喜兵",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo49562853971",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [
+        "戴礼帽的男子"
+      ],
+      "category_id": "cat-portrait",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=6749e470fa3c7ac25393f7dbed143170",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=6749e470fa3c7ac25393f7dbed143170",
+      "work_id_ext": "6749e470fa3c7ac25393f7dbed143170",
+      "description": "一个戴礼帽的男子闪现在香格里拉的逆光街头，帽身的纹理与质感在光影交织下朦胧而神秘，帽檐微微下倾，诉说着不羁与洒脱。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这张黑白摄影作品静默，却充满张力；简洁，却层次分明。摄影师以极简的构图和精准的光影调度，营造出一种凝练而深邃的视觉诗意。画面前景，一位戴帽男子的侧影被剪影化处理，沉稳而孤立，他低垂的姿态仿佛陷入沉思，暗示着某种内省、疏离或记忆的沉潜。远处，两位迎光而行的人物被镶嵌在强烈的逆光之中，身影在地面上被拉得修长，仿佛穿越在光与影之间。这一静一动、一近一远之间的关系，不仅构建出画面的空间层次，更营造出时间的流动与心理的距离。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "人像",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "ebf87941355550a2a5ea058c9ddb7168",
+      "contest_id": "contest-2025",
+      "title": "少年强",
+      "photographer": "宇帆影迹",
+      "photographer_source": "作品集账号",
+      "name_aliases": [
+        {
+          "name": "王宇",
+          "source": "获奖公示页作者名",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": "X200 Pro",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=ebf87941355550a2a5ea058c9ddb7168",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=ebf87941355550a2a5ea058c9ddb7168",
+      "work_id_ext": "ebf87941355550a2a5ea058c9ddb7168",
+      "description": "春节期间，潮汕各地“跳火墩”活动热闹非凡。等火堆燃起火势旺盛时，大人们如猛虎般争先跃过，尽显英勇。一位少年也倍受感染，他手执鲜艳旗帜，眼神坚定，鼓起勇气加入其中。这一跃，不仅是对传统文化的传承，更是勇气与活力的绽放。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这幅作品生动地捕捉了一名少年在火焰中跳跃的瞬间，展现了非凡的勇气和活力。大光圈的使用确保了背景的虚化，使得主体更加突出，高速快门则完美地捕捉到了火焰的细节和少年的动作，传达了一种积极向上、勇往直前的精神。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "fd0839778dbe0587dbd12b09c51763b2",
+      "contest_id": "contest-2025",
+      "title": "单杠上的教学",
+      "photographer": "樊丽勇",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo92038080418",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-motion",
+      "phone_model": "X90 Pro+",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 1,
+      "detail_path": "/cn/works/detail?workId=fd0839778dbe0587dbd12b09c51763b2",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=fd0839778dbe0587dbd12b09c51763b2",
+      "work_id_ext": "fd0839778dbe0587dbd12b09c51763b2",
+      "description": "山西太原，少体校训练馆里单杠上训练的孩子们。“冠军梦”是练体操孩子的人生梦想。为实现这个远大理想，他们日复一日在汗水里操练，付出了比其他孩子更多的努力。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这幅作品通过黑白摄影的方式，进一步强调了光影的对比和人物的运动关系，突出了体操动作的力量感和美感。画面中教练及身后的三角形钢丝线稳定性，与空中学生之间的互动，不仅展示了教学的过程，也体现了师生之间的动静关系、默契和信任。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "运动",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "bb316c060be5d74274359032fbfc8a97",
+      "contest_id": "contest-2025",
+      "title": "Helicity",
+      "photographer": "Patrick Pineda",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [],
+      "title_aliases": [
+        "螺旋度"
+      ],
+      "category_id": "cat-series",
+      "phone_model": "V2454DA",
+      "phone_note": null,
+      "like_count": 3,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=bb316c060be5d74274359032fbfc8a97",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=bb316c060be5d74274359032fbfc8a97",
+      "work_id_ext": "bb316c060be5d74274359032fbfc8a97",
+      "description": "Every spring, the unique geography of the Great Plains in North America creates ideal conditions for the development of the elusive \"supercell\" thunderstorm — a rare but powerful rotating storm that can often produce violent tornadoes. Captured in the plains of Colorado, Kansas and Nebraska, USA.",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这组作品在曝光、构图和时机把握上都做得非常优秀。摄影师利用高速快门冻结了风暴的动态，同时通过低角度和广角镜头强调了龙卷风的旋转和规模，使得每一幅画面都充满了动感和戏剧性，突出了云层的纹理和光影的对比，增强了作品的视觉冲击力。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "993b94deceed19ce7a217b0152b091f8",
+      "contest_id": "contest-2025",
+      "title": "逐梦生蓝",
+      "photographer": "顾勤",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo47639986572",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [
+        "追梦青年"
+      ],
+      "category_id": "cat-series",
+      "phone_model": "X200 Ultra、V2454DA",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=993b94deceed19ce7a217b0152b091f8",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=993b94deceed19ce7a217b0152b091f8",
+      "work_id_ext": "993b94deceed19ce7a217b0152b091f8",
+      "description": "在光与水中触摸青春与梦想。逐梦生蓝项目是以江苏省残疾人游泳队为关注对象，记录下了这些运动员们的拼搏、坚强与自信。残障只是人的一种身体行动受限的状态，残疾人体育运动是超越缺陷，通过意志、技能、体能的较量，向生命的潜能挑战。正如体育精神的真正意义在于参与而非获胜。人生的意义不在于他人的目光，而在于自我的努力和奋斗。对于江苏省残疾人游泳队的青年们来说，泳池就是他们生命新的方向，是一个重新发现自我存在意义的地方。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "这是一组记录残疾人游泳队运动员的优秀纪实摄影作品，组图里有队员训练时的合影，沉入水底的瞬间、休息时的友谊、练习的坚韧精神和姿态，传达了他们对游泳运动的热爱和对胜利的渴望。画面中运动员们专注的精神、有力的动作和水中的拼搏，都充满了力量感和艺术感。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [
+        {
+          "label": "标题对照",
+          "text": "获奖公示模块标题为《追梦青年》，作品集标题为《逐梦生蓝》。两边的说明都指向江苏省残疾人游泳队，按同一件作品归档。",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "f4fd2c20a597a34b9d05c4e4afa15f3c",
+      "contest_id": "contest-2025",
+      "title": "生命的源泉",
+      "photographer": "田鼠大婶",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo13746783776",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-series",
+      "phone_model": "X200 Ultra",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=f4fd2c20a597a34b9d05c4e4afa15f3c",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=f4fd2c20a597a34b9d05c4e4afa15f3c",
+      "work_id_ext": "f4fd2c20a597a34b9d05c4e4afa15f3c",
+      "description": "我们辛勤地劳动，我们快乐地生活，我们栽的梭梭树绿了，我们铺的草方格固定了沙子，给沙漠披上金色外衣，就为了那一湾水啊，生命的源泉！看那茫茫大漠中的一棵树，多像我的父老乡亲， 不畏艰难，乐观向上，为了美好的明天更加努力，早日让我们的黄沙大漠成为希望的绿水青山！",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": null,
+          "text": "摄影师在这组作品中运用了线条和形状来引导观者的视线，例如人物的动作、地平线的延伸、草方格的排列以及工具的使用方向等元素，这些细节有效地突出了作品的主题，通过真实的色彩还原，增强了视觉的冲击力。作者通过捕捉劳作中的人们和新生的植物，成功地传达了一种坚韧不拔的精神、充满希望的情感，使得这组作品具有强烈的社会意义，在记录了沙漠治理的过程时，也反映了人们对生态环境保护的重视和行动。",
+          "source_label": "官网获奖公示模块评语（未署名）",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "组图",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "04be19d06a9087d87ff04cea862f4b73",
+      "contest_id": "contest-2025",
+      "title": "大地之树",
+      "photographer": "赵扬",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo82721974235",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=04be19d06a9087d87ff04cea862f4b73",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=04be19d06a9087d87ff04cea862f4b73",
+      "work_id_ext": "04be19d06a9087d87ff04cea862f4b73",
+      "description": "拍摄于江西上饶德兴铜矿，我用无人机将手机升空，俯瞰下的大地纹理如一棵巨树，展现自然与工业的奇妙共生。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "令人着迷的是，从空中俯瞰时，这片土地竟然能呈现出如此令人难以忘怀的美感和感染力。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这张极具吸引力的风光摄影作品，初看便让观者对其拍摄主体和画面比例充满疑问。唯有细细端详，才能试着猜测或辨认出其中究竟呈现了什么。这使得拍摄主体极具魅力，引人深入探究。凭借简约柔和的色彩以及树枝分叉的视觉效果，这张风景照完全符合一幅富有美感、构图精妙的摄影作品的所有标准。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅影像呈现出极具冲击力的视觉沉思。从高空俯瞰，景致化作一幅鲜活的画布：那仿佛镌刻在大地上的树木图案，构成了引人注目的视觉元素。摄影师的视角引人深思，既展现了美学之美，又蕴含着深刻的概念内涵。它提醒我们，大地自有其独特的图案、形态与韵律。这是一幅极具冲击力且引人深思的航拍杰作，将手机摄影提升至富有诗意与批判精神的艺术层面。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "什么是世界的真相，正如“瞎子摸象”每一个人说的都没错，也都错了。如果作者不把手机带上无人机俯拍，就看不到它是一棵树。在地面，低矮的视角只能看见一些它的局部。因为作者是一个有准备的人，经验告诉他，提升维度，可以看见另一个世界。他看见了，并呈现给我们。大面积的奶白色 让“树影”呈现出别有的淡雅和秀丽。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "垂直震撼的俯视视角，彻底重构了观者对地表形态的认知。从另一个视角捕捉大地的复杂纹理与色彩韵律（肌理、线条、色块）， 将其从杂乱无序中提炼为具象“树形”，展现出摄影者对自然伟力的深刻完美视觉发现，具有非凡的抽象提炼与构图能力。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "d7573a0ce9b3675d383d440fe61c659b",
+      "contest_id": "contest-2025",
+      "title": "《我要飞得更高》",
+      "photographer": "冷正刚",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo46649270374",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [
+        "我要飞得更高"
+      ],
+      "category_id": "cat-landscape",
+      "phone_model": "S15 Pro",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=d7573a0ce9b3675d383d440fe61c659b",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=d7573a0ce9b3675d383d440fe61c659b",
+      "work_id_ext": "d7573a0ce9b3675d383d440fe61c659b",
+      "description": "这里是武汉市秀湖公园。这里的鸟儿十分的多。随着环境的渐好，鸟儿越来越多。你睢它们多开心，在树梢间飞来飞去，十分热闹。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Alex Webb",
+          "text": "我尤其被飞过树干剪影中的鸟儿所吸引。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这是一幅构图精心、取景考究且瞬间捕捉完美的作品。垂直视角为树木营造出极具张力的消失点透视效果。鸟儿在天空中央的小片区域内分布，在动植物之间形成了美妙的和谐感。 几乎不含灰度的黑白单色处理与高对比度赋予画面一种图形化的视觉效果。这是一个捕捉到位的主题，拍摄得十分用心。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这张照片鲜明地展现了视角、动感与希望。摄影师透过光秃秃的树枝网向上仰望，营造出一条视觉隧道，将观者的目光引向天空中自由翱翔的飞鸟。黑白配色强化了情感冲击力，让形态与对比比色彩更具说服力。这是一个静谧中蕴含活力的瞬间，也是自由与新生的象征。在一个常被局限的世界里，这幅影像邀请我们看得更高、梦想得更大，并相信树冠之上总有光芒。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "在绘画里，有一种表现形式叫版画。最早的版画出自中国的唐代，中国发明了雕版印刷术。之后在欧洲得以发展。水墨画当然就不必讨论了，始于古代中国，唐代的王维被后世尊为水墨画的鼻祖。眼前的这幅作品，乍一看就是一副活脱脱的版画，也似一副焦墨风景画。这幅作品的最独特之处，作者拍摄与冬天树叶飘落，能看见挺拔的树干，利用广角的透视，让树林充满了画面。可独在“飞白”之处，一群大鸟飞过。这是不可思议的神来之笔。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "这幅作品以仰视视角捕捉水杉林间的飞鸟群像，灵动构图赋予画面强烈的向上动势，完美呼应“飞得更高”的题眼。摄影师精准凝固了鸟儿展翅在空白天空的瞬间形态，动态模糊与清晰主体的对比强化了飞翔的速度感与生命力。并通过这一可视化的生态细节，无声胜有声地传递出人与自然和谐共生的愉悦愿景。影像充满欢快的韵律感与积极能量。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "19a1aae11ab013fb4a8f3ebf67f61530",
+      "contest_id": "contest-2025",
+      "title": "瑟切达的金色时刻",
+      "photographer": "陈斌",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo66753160583",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=19a1aae11ab013fb4a8f3ebf67f61530",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=19a1aae11ab013fb4a8f3ebf67f61530",
+      "work_id_ext": "19a1aae11ab013fb4a8f3ebf67f61530",
+      "description": "seceda的傍晚究竟有多震撼？ 狂风，暴雨，双彩虹后的阳光洒在唯美的云上和刀峰山上，天边的金色和被余晖照亮的紫色野花，相映成趣，让这一刻充满了神圣",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "经典的风景摄影佳作，离不开恰到好处的氛围、清晰且精心调整的构图，以及对色调与色彩丰富而细腻的呈现。这张照片将所有这些要素都完美地展现了出来——低角度的阳光与天空、云层形成的冷暖对比，为这片景致增添了几分神秘韵味。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这张照片捕捉到了专业风光摄影的精髓：时机、构图与情感深度。天空壮丽，沐浴在金色霞光中，与瑟切达山崎岖的峰峦完美相融，画面既气势恢宏又不失细腻。前景中绚烂的野花形成了鲜明对比与平衡，引导观者的视线游走于整个场景。这不仅是一幅美丽的风景，更体现了扎实的技术功底与对光影的敏锐感知。正是这些品质，让寻常景致也能绽放出不寻常的光彩。这是一段关于自然之美的视觉礼赞，充满力量与诗意。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "58a5017fd0493a92c38109d837e9cd49",
+      "contest_id": "contest-2025",
+      "title": "夜树繁花",
+      "photographer": "丁发鑫",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo45158365148",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-night",
+      "phone_model": "S20",
+      "phone_note": null,
+      "like_count": 2,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=58a5017fd0493a92c38109d837e9cd49",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=58a5017fd0493a92c38109d837e9cd49",
+      "work_id_ext": "58a5017fd0493a92c38109d837e9cd49",
+      "description": "夜幕如黛，蓝幕轻垂。洁白烟花似璀璨星芒，于幽蓝天际肆意绽放，迸射出万千银缕。其间枝叶悄然勾勒，似在与绚烂烟火低语，共绘一幕梦幻之景，尽显夜的灵动与绮丽。",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "树木的深色枝干与深蓝色天幕中绚烂的烟花，构成了一幅妙趣横生的画面。画面色彩被精简为黑、白、蓝三色，由此形成了一个极具图形感的超现实主题。天空中烟花绽放的形态，亦可看作是树枝的自然延伸——这一主题正因存在多种解读可能而显得格外迷人！",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅影像捕捉到了一种新颖而富有创意的世界观。原本可能只是一张普通的烟花照片，却在此呈现出更为丰富的内涵：光与枝丫的意外交融，既魔幻又真实。摄影师展现出敏锐的直觉，捕捉并定格了这一瞬间，让天空化作一片闪烁着奇异形状的花园。画面中透着随性与好奇，使得这张照片充满了生命力。它巧妙地提醒我们，摄影的真谛在于专注——这份专注在此化作了格外特别的存在。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "摄影师最大的本领，就是学会观察，永远保持好奇心。再加上一些运气。作者在除夕夜的一次随意抬头便得到了一个大礼物。天色并没有太晚，呈现出一抹蓝色。树枝突然“开出”耀眼的花束，绚烂无比。作品的构图看似即兴，可布局讲究，花束的疏密有致。营造出一片祥和喜悦的气氛。它是一种视觉巧合，更是沉浸在节日之中人们的心愿。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "作品舍弃传统烟花拍摄五彩斑斓的色彩表达，采用蓝白染色的方式，构建高级感。深蓝如天鹅绒布，衬托出烟花的晶体质感。恰到好处的快门控制，让烟花形成拉丝绽放状态，和暗部树枝动静结合，似乎时间凝固。构图上，化点为面，无序中又有精妙的秩序感，不禁让人驻足。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "夜色",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "639dc6613532a3ff17fb31ab6975705f",
+      "contest_id": "contest-2025",
+      "title": "独行",
+      "photographer": "徐行",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo56456557353",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X100 Ultra",
+      "phone_note": null,
+      "like_count": 1,
+      "share_count": 0,
+      "detail_path": "/cn/works/detail?workId=639dc6613532a3ff17fb31ab6975705f",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=639dc6613532a3ff17fb31ab6975705f",
+      "work_id_ext": "639dc6613532a3ff17fb31ab6975705f",
+      "description": "拍摄于青海黑独山",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "这是一幅经典的风光摄影作品，色调柔和，灰色层次细腻丰富，营造出一种兼具绘画质感与超现实氛围的感觉。画面中融入的人物元素，为解读人与自然的关系、以及人类在所处环境中的分量和意义提供了富有洞察力的阐释空间。这是一幅在恰到好处的光线条件下捕捉并呈现的山间景致，观察敏锐、表现出色，令人印象深刻。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅影像因其空间感与氛围营造而格外引人注目。广袤的景致与独行的身影交织，既传递出强烈的孤独感，也蕴含着自由的气息。摄影师在构图上展现出细腻的感知力，让场景的纹理与色调自然诉说。这是一幅宁静的作品，却能留下深刻的印记，它提醒我们：相较于自然，人类何其渺小，然而身处其中时，我们又能感受到何等深切的联结。对于一位目光敏锐、表达有力的年轻摄影师而言，这是一部成熟且富有思考的佳作。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "黑独山位于中国青海，上苍的造山运动进行到这里，是色彩用完了，还是拿出它珍藏的乌金不惜一切，挥毫作画。展示出霸气的坚定与刚毅。作者是幸运的，能置身其中，在这个强大的能量场中信息交换。彻底领悟人和宇宙共存关系。作品的基调呈灰黑色，显得澄净庄严。画面中的人物与山峰同在中轴线上，重心平衡。大气磅礴。摄影师是一位学生，这次的拍摄经历也许会影响他一生。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "非常有层次的构图，远（山）中（沙丘）近（人）形成了近乎垂直轴的“三重奏” ，牵引视角层层递进。\n色彩影调上，应用中性灰和中长调带来视觉上的冲击，同时灰阶过渡又相对柔和，冲击与和谐体现在一个画面里，构思巧妙。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    },
+    {
+      "id": "e274abe6d78499a46f436acd6be1de21",
+      "contest_id": "contest-2025",
+      "title": "落日调色盘",
+      "photographer": "裴俊博",
+      "photographer_source": "获奖公示页作者名",
+      "name_aliases": [
+        {
+          "name": "vivo34505921131",
+          "source": "作品集账号",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "title_aliases": [],
+      "category_id": "cat-landscape",
+      "phone_model": "X100s",
+      "phone_note": null,
+      "like_count": 0,
+      "share_count": 3,
+      "detail_path": "/cn/works/detail?workId=e274abe6d78499a46f436acd6be1de21",
+      "detail_url": "https://visionplus.vivo.com/cn/works/detail?workId=e274abe6d78499a46f436acd6be1de21",
+      "work_id_ext": "e274abe6d78499a46f436acd6be1de21",
+      "description": "图为清华信息楼",
+      "is_award_winning": true,
+      "is_excellent": false,
+      "year": 2025,
+      "official_comments": [
+        {
+          "speaker": "Bertram Hönlinger",
+          "text": "一张构图优美、聚焦核心的长焦摄影作品，形成了鲜明的图形化图案。只有再看一眼，才能发现真正的拍摄主体。侧射的阳光带来独特的橙黄色调，造成了色彩的过度饱和，从而打造出一幅以简洁取胜、极具冲击力的画面。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "Francesco Gola",
+          "text": "这幅影像以简洁的构图和大胆的色彩运用脱颖而出。建筑重复的几何结构被恰到好处的细微变化打破，赋予画面节奏感与生命力。浓郁的橙色调散发着温暖与动感，仿佛捕捉到了日间最后一缕映照在玻璃上的光线。令人赞叹的是，摄影师将一面普通的城市建筑立面转化为极具冲击力的视觉表达，展现出对形态、平衡与色彩和谐的敏锐洞察力。这充分证明，在一位用心的摄影师手中，建筑与日常环境也能成为极具表现力的拍摄主题。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "肖全",
+          "text": "这是一张很容易被忽视的作品，因为它只是一个平面，一个渐变的平面。没有呈现波澜壮阔，所有的格子一模一样大小。但仔细一看，它是窗户，玻璃上还有树影的反光。越看越觉得有名堂，这不是键盘吗，既是钢琴的键盘，也是电脑的键盘。既是城市的奏鸣曲，也是人们大脑与手的通道，通向世界的大门。作者透过极简主义的表现手法，把人们视而不见的大楼建筑，抽象成一副壮丽的图画。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        },
+        {
+          "speaker": "于猛",
+          "text": "摄影师充分利用夕阳的入射角度、光谱特征，用看似平平无奇的构图，巧妙的对色彩进行“切片”，构建出落日调色盘。色彩层次的丰富与质感是表达关键，长焦镜头优秀的成像素质很好支撑了创作；超长焦距压缩了画面空间，让调色盘的形式更加平面化。",
+          "source_label": "官网获奖公示模块署名评语",
+          "source_url": "https://visionplus.vivo.com/competition.html/worksGalleries"
+        }
+      ],
+      "public_notes": [],
+      "gallery_unit_name": "风光",
+      "created_at": "2026-11-03T00:00:00.000Z",
+      "updated_at": "2026-11-03T00:00:00.000Z"
+    }
+  ],
+  "awards": [
+    {
+      "id": "award-ede1b66256d662838015377a0f79a333-年度最佳",
+      "work_id": "ede1b66256d662838015377a0f79a333",
+      "award_type": "年度最佳",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "年度最佳作品",
+      "official_name_en": "Best Photograph of the Year"
+    },
+    {
+      "id": "award-8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7-类别第一名",
+      "work_id": "8e1306105a4a3d78c63861729ebee8e88e19dbe429bed0f62528df9d5288786765594ccbfc5fbb363024e4a75629f9a7",
+      "award_type": "类别第一名",
+      "year": 2026,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8-类别第一名",
+      "work_id": "dfd68b25bba68b476b384dc3f22519d5ea8f6975029138f85f416911e544c4d8",
+      "award_type": "类别第一名",
+      "year": 2026,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8-类别第一名",
+      "work_id": "5279ee7e42d749f5803f961bbddfa119ea8f6975029138f85f416911e544c4d8",
+      "award_type": "类别第一名",
+      "year": 2026,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63-类别第一名",
+      "work_id": "7002cef82448db494420b3316d388bd4a15f68ee638ec4e6eb01ecec88f01f27d0045c56728986d61cb8fc5cce994e63",
+      "award_type": "类别第一名",
+      "year": 2026,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756-类别第一名",
+      "work_id": "cb8a24e0a652ad11f06b2ab6a57d9ec5e8f6a854e98100105cee8c719921be216e7ddbc2b67ecbe6662519e06403e756",
+      "award_type": "类别第一名",
+      "year": 2026,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-1d855962f70aad89a34f9cadb13377eb-类别优胜",
+      "work_id": "1d855962f70aad89a34f9cadb13377eb",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：风光",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-adaef08714608e3ce428540d24646384-类别优胜",
+      "work_id": "adaef08714608e3ce428540d24646384",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：风光",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8-类别优胜",
+      "work_id": "4aa2b89c4944f1bc72f0a7a877946824ea8f6975029138f85f416911e544c4d8",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-0275227a6230cd9ba0e05e940ac4fd4e-类别优胜",
+      "work_id": "0275227a6230cd9ba0e05e940ac4fd4e",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d-类别优胜",
+      "work_id": "992d3f60244829ed88bc3d9896cb30a236132fd38745091a08146a8d76972f36cad08914eb6c279e9473abe68a520d7d",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-13a899d197e1b94168473cdec03b4a4e-类别优胜",
+      "work_id": "13a899d197e1b94168473cdec03b4a4e",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-b236bc5f9b39fca7a46e76d074fce87e-类别优胜",
+      "work_id": "b236bc5f9b39fca7a46e76d074fce87e",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-ea9ea874ffef130cac116bdc762b070b-类别优胜",
+      "work_id": "ea9ea874ffef130cac116bdc762b070b",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-7d10788c9f9113adb66e2b096ca846fd-类别优胜",
+      "work_id": "7d10788c9f9113adb66e2b096ca846fd",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8-类别优胜",
+      "work_id": "6000f43ee57e310d0a035ec1566908ecea8f6975029138f85f416911e544c4d8",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-dfc07302078d5027b2805a71f151ff55-类别优胜",
+      "work_id": "dfc07302078d5027b2805a71f151ff55",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-561cf9ad24d7b539a0106436c859b7f8-类别优胜",
+      "work_id": "561cf9ad24d7b539a0106436c859b7f8",
+      "award_type": "类别优胜",
+      "year": 2026,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-05587b6c9797fcacbbe41ce7da487e01-组委会特别推荐奖",
+      "work_id": "05587b6c9797fcacbbe41ce7da487e01",
+      "award_type": "组委会特别推荐奖",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "组委会特别推荐奖",
+      "official_name_en": "Committee's Special Recommendation Award"
+    },
+    {
+      "id": "award-abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53-X 系列最佳",
+      "work_id": "abf0b73c62bdf6571853d5f5e572c4d7de447f8155d2f2ad457fb15baa74a9ffe07c3614071e15ba784c421791dcff53",
+      "award_type": "X 系列最佳",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "X系列最佳影像奖",
+      "official_name_en": "X Series Best Photograph Award"
+    },
+    {
+      "id": "award-2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8-S/V 系列最佳",
+      "work_id": "2922fcae4475a5b92af64a2932d7aeaeea8f6975029138f85f416911e544c4d8",
+      "award_type": "S/V 系列最佳",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "S系列/V系列最佳影像奖",
+      "official_name_en": "S/V Series Best Photograph Award"
+    },
+    {
+      "id": "award-da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8-蔡司专业风格奖",
+      "work_id": "da57c9254f04eac156be3983816d208eea8f6975029138f85f416911e544c4d8",
+      "award_type": "蔡司专业风格奖",
+      "year": 2026,
+      "rank_hint": "官网奖项名：蔡司专业影像奖",
+      "official_name_zh": "蔡司专业影像奖",
+      "official_name_en": "ZEISS Professional Style Award"
+    },
+    {
+      "id": "award-9ae7331f1fd31d19d2184e8721811be2-学生摄影师奖",
+      "work_id": "9ae7331f1fd31d19d2184e8721811be2",
+      "award_type": "学生摄影师奖",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    },
+    {
+      "id": "award-d4adf505e75ddc8be9b2b4841247bccb-学生摄影师奖",
+      "work_id": "d4adf505e75ddc8be9b2b4841247bccb",
+      "award_type": "学生摄影师奖",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    },
+    {
+      "id": "award-770247b86361a3fc98ae55adf8ed38b8-学生摄影师奖",
+      "work_id": "770247b86361a3fc98ae55adf8ed38b8",
+      "award_type": "学生摄影师奖",
+      "year": 2026,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    },
+    {
+      "id": "award-5285a4cf0f1cfa4447051949324e6d30-年度最佳",
+      "work_id": "5285a4cf0f1cfa4447051949324e6d30",
+      "award_type": "年度最佳",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "年度最佳作品",
+      "official_name_en": "Best Photograph of the Year"
+    },
+    {
+      "id": "award-fa1b46eb5b92ac0189a602e31144daf9-类别第一名",
+      "work_id": "fa1b46eb5b92ac0189a602e31144daf9",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：风光",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-95d49cc82e1588b5a3bc430725c24021-类别第一名",
+      "work_id": "95d49cc82e1588b5a3bc430725c24021",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-9950d6db5458eefe9c72fe6ad209372c-类别第一名",
+      "work_id": "9950d6db5458eefe9c72fe6ad209372c",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-3c235106dbb5131f3b41e0377189e617-类别第一名",
+      "work_id": "3c235106dbb5131f3b41e0377189e617",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-6b75702708980f1759b62d82db86f5bf-类别第一名",
+      "work_id": "6b75702708980f1759b62d82db86f5bf",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-5285a4cf0f1cfa4447051949324e6d30-类别第一名",
+      "work_id": "5285a4cf0f1cfa4447051949324e6d30",
+      "award_type": "类别第一名",
+      "year": 2025,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元冠军",
+      "official_name_en": "Category 1st Place"
+    },
+    {
+      "id": "award-b6d36d92af95dda219c5b1f4c9cb2ff7-类别优胜",
+      "work_id": "b6d36d92af95dda219c5b1f4c9cb2ff7",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-538026c8f567f1bf474c3ace45f8a570-类别优胜",
+      "work_id": "538026c8f567f1bf474c3ace45f8a570",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：长焦与微距",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-f80fb0a704b330fe9342c71eae381045-类别优胜",
+      "work_id": "f80fb0a704b330fe9342c71eae381045",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：风光",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-74d40ea20d817ee380775910a3c1c9e0-类别优胜",
+      "work_id": "74d40ea20d817ee380775910a3c1c9e0",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：风光",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-4e56ed93358b5f331e0daabc669caa25-类别优胜",
+      "work_id": "4e56ed93358b5f331e0daabc669caa25",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-889769c810d73b12be6001913c29de35-类别优胜",
+      "work_id": "889769c810d73b12be6001913c29de35",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：夜色",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-3a60cc31f83a9c2500bdd9c62176ed73-类别优胜",
+      "work_id": "3a60cc31f83a9c2500bdd9c62176ed73",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-6749e470fa3c7ac25393f7dbed143170-类别优胜",
+      "work_id": "6749e470fa3c7ac25393f7dbed143170",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：人像",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-ebf87941355550a2a5ea058c9ddb7168-类别优胜",
+      "work_id": "ebf87941355550a2a5ea058c9ddb7168",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-fd0839778dbe0587dbd12b09c51763b2-类别优胜",
+      "work_id": "fd0839778dbe0587dbd12b09c51763b2",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：运动",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-bb316c060be5d74274359032fbfc8a97-类别优胜",
+      "work_id": "bb316c060be5d74274359032fbfc8a97",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-993b94deceed19ce7a217b0152b091f8-类别优胜",
+      "work_id": "993b94deceed19ce7a217b0152b091f8",
+      "award_type": "类别优胜",
+      "year": 2025,
+      "rank_hint": "官网单元：组图",
+      "official_name_zh": "单元优胜奖",
+      "official_name_en": "Category Winner"
+    },
+    {
+      "id": "award-f4fd2c20a597a34b9d05c4e4afa15f3c-组委会特别推荐奖",
+      "work_id": "f4fd2c20a597a34b9d05c4e4afa15f3c",
+      "award_type": "组委会特别推荐奖",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "组委会特别推荐奖",
+      "official_name_en": "Committee's Special Recommendation Award"
+    },
+    {
+      "id": "award-04be19d06a9087d87ff04cea862f4b73-X 系列最佳",
+      "work_id": "04be19d06a9087d87ff04cea862f4b73",
+      "award_type": "X 系列最佳",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "X系列最佳影像奖",
+      "official_name_en": "X Series Best Photograph Award"
+    },
+    {
+      "id": "award-d7573a0ce9b3675d383d440fe61c659b-S/V 系列最佳",
+      "work_id": "d7573a0ce9b3675d383d440fe61c659b",
+      "award_type": "S/V 系列最佳",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "S系列/V系列最佳影像奖",
+      "official_name_en": "S/V Series Best Photograph Award"
+    },
+    {
+      "id": "award-19a1aae11ab013fb4a8f3ebf67f61530-蔡司专业风格奖",
+      "work_id": "19a1aae11ab013fb4a8f3ebf67f61530",
+      "award_type": "蔡司专业风格奖",
+      "year": 2025,
+      "rank_hint": "官网奖项名：蔡司专业影像奖",
+      "official_name_zh": "蔡司专业影像奖",
+      "official_name_en": "ZEISS Professional Style Award"
+    },
+    {
+      "id": "award-58a5017fd0493a92c38109d837e9cd49-学生摄影师奖",
+      "work_id": "58a5017fd0493a92c38109d837e9cd49",
+      "award_type": "学生摄影师奖",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    },
+    {
+      "id": "award-639dc6613532a3ff17fb31ab6975705f-学生摄影师奖",
+      "work_id": "639dc6613532a3ff17fb31ab6975705f",
+      "award_type": "学生摄影师奖",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    },
+    {
+      "id": "award-e274abe6d78499a46f436acd6be1de21-学生摄影师奖",
+      "work_id": "e274abe6d78499a46f436acd6be1de21",
+      "award_type": "学生摄影师奖",
+      "year": 2025,
+      "rank_hint": null,
+      "official_name_zh": "学生摄影师奖",
+      "official_name_en": "Student Photographer Award"
+    }
+  ]
+}
