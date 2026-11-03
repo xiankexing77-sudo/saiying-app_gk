@@ -5,6 +5,7 @@ import { FactMark, InferenceMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
 import { RequestAnalysis } from "@/components/request-analysis";
+import { JuryValidation } from "@/components/validation-panel";
 import { getJury, juryAssignments, juryProfile, listJuries, quotesBySpeaker } from "@/lib/catalog";
 import { trackZh } from "@/lib/labels";
 
@@ -105,6 +106,7 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
           </p>
         </section>
       </div>
+      <JuryValidation juryId={jury.id} />
       <p className="mt-4 text-sm">
         <Link href="/juries" className="underline">
           返回评委列表

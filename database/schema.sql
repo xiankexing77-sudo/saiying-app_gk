@@ -222,3 +222,43 @@ CREATE TABLE agent_runs (
     status TEXT NOT NULL,
     summary TEXT NOT NULL
 );
+
+-- Multi-source extracts and cross-validation.
+-- One observation per source field. A conflict keeps every source value;
+-- preferred_value is only the display choice, not a silent overwrite.
+
+CREATE TABLE source_observations (
+    id TEXT PRIMARY KEY,
+    edition_year INTEGER NOT NULL,
+    entity_key TEXT NOT NULL,
+    entity_label TEXT NOT NULL,
+    field_name TEXT NOT NULL,
+    field_value TEXT,
+    source_id TEXT NOT NULL REFERENCES sources(id),
+    source_url TEXT NOT NULL,
+    source_page_title TEXT NOT NULL,
+    fetched_at TIMESTAMPTZ NOT NULL,
+    content_hash TEXT,
+    parser_version TEXT NOT NULL,
+    extraction_version TEXT NOT NULL,
+    source_role TEXT NOT NULL CHECK (source_role IN ('official_primary', 'official_related', 'organizer_mirror')),
+    work_id TEXT,
+    jury_id TEXT,
+    note TEXT
+);
+
+CREATE TABLE field_validations (
+    id TEXT PRIMARY KEY,
+    edition_year INTEGER NOT NULL,
+    entity_key TEXT NOT NULL,
+    entity_label TEXT NOT NULL,
+    field_name TEXT NOT NULL,
+    verdict TEXT NOT NULL CHECK (verdict IN ('agree', 'conflict', 'single_source')),
+    preferred_value TEXT,
+    preferred_source_id TEXT NOT NULL REFERENCES sources(id),
+    preferred_source_url TEXT NOT NULL,
+    preferred_reason TEXT NOT NULL,
+    confidence NUMERIC,
+    confidence_label TEXT NOT NULL,
+    UNIQUE (edition_year, entity_key, field_name)
+);

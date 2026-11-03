@@ -32,8 +32,8 @@ export function runStubGraph(years: number[]): { state: AgentState; nodes: NodeR
     },
     {
       stage: "collection",
-      status: "stub",
-      summary: `SonyAdapter 未访问网络。种子届次 ${report.editions.map((edition) => edition.year).join("、")}。`,
+      status: "passed",
+      summary: `多来源交叉验证（夹具，未访问网络）：一致 ${report.validation.agree}，冲突 ${report.validation.conflict}，单一来源 ${report.validation.singleSource}。冲突保留各方原文。`,
     },
     {
       stage: "normalization",
@@ -67,6 +67,8 @@ export function runStubGraph(years: number[]): { state: AgentState; nodes: NodeR
     },
   ];
   state.stage = "report";
-  state.notes.push("本图是桩，不是 LangGraph 运行时。");
+  state.entityIds.push(...report.editions.map((edition) => `swpa-${edition.year}`));
+  state.notes.push("本图是桩，不是 LangGraph 运行时。交叉验证由采集器完成，Agent 不改写冲突字段。");
+  state.notes.push("State 不保存图片二进制，也不保存来源原文。");
   return { state, nodes };
 }

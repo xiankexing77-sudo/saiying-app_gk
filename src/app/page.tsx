@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { dashboardStats, qualityReport } from "@/lib/catalog";
+import { collectCompetition } from "@/lib/collection";
 import { database } from "@/lib/data/seed";
 import { FactMark, InferenceMark, SeedMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
@@ -7,6 +8,7 @@ import { PageHeader, PageMain } from "@/components/page-header";
 export default function HomePage() {
   const stats = dashboardStats();
   const quality = qualityReport();
+  const validation = collectCompetition();
   return (
     <PageMain>
       <PageHeader
@@ -29,7 +31,20 @@ export default function HomePage() {
         <Stat label="分析模板" value={stats.analysesTemplate} href="/analyze" />
         <Stat label="阻塞任务" value={stats.blockedTasks} href="/tasks" />
       </section>
-      <section className="mt-8 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
+      <section className="mt-8 rounded-2xl border border-border bg-white/60 p-5">
+        <h2 className="text-2xl">多来源交叉验证</h2>
+        <p className="mt-2 text-sm leading-6 text-stone-600">
+          一致 {validation.summary.agree} · 冲突 {validation.summary.conflict} · 单一来源 {validation.summary.singleSource}。冲突不会被盖掉。采集夹具不访问网络。
+        </p>
+        <div className="mt-3 flex gap-4 text-sm">
+          {validation.editions.map((edition) => (
+            <Link key={edition.editionId} href={`/editions/${edition.editionId}`} className="underline">
+              {edition.editionYear}：冲突 {edition.summary.conflict}
+            </Link>
+          ))}
+        </div>
+      </section>
+      <section className="mt-4 grid gap-4 lg:grid-cols-[1.1fr_0.9fr]">
         <article className="rounded-2xl border border-border bg-card p-5">
           <h2 className="text-2xl">正在使用的数据</h2>
           <ul className="mt-3 space-y-2 text-sm leading-6">

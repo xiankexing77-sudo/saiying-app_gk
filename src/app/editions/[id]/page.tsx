@@ -2,10 +2,12 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { editionSnapshot } from "@/lib/catalog";
+import { collectEditionById } from "@/lib/collection";
 import { displayTitle, peopleLine, trackZh } from "@/lib/labels";
 import { FactMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
+import { ValidationPanel } from "@/components/validation-panel";
 
 export function generateStaticParams() {
   return [{ id: "swpa-2025" }, { id: "swpa-2026" }];
@@ -28,6 +30,7 @@ async function Edition({ params }: { params: Promise<{ id: string }> }) {
   const { id } = await params;
   const snapshot = editionSnapshot(id);
   if (!snapshot) notFound();
+  const validation = collectEditionById(id);
   const { edition, tracks, works, juries, honors, byTrack } = snapshot;
   return (
     <PageMain>
@@ -41,6 +44,7 @@ async function Edition({ params }: { params: Promise<{ id: string }> }) {
           </Link>
         }
       />
+      {validation ? <ValidationPanel report={validation} limitAgrees /> : null}
       <div className="mt-6 flex flex-wrap gap-2">
         {byTrack.map((row) => (
           <span key={row.track} className="rounded-full border border-border px-3 py-1 text-xs">
