@@ -17,19 +17,15 @@ const geistMono = Geist_Mono({
 
 export const metadata: Metadata = {
   title: {
-    default: "赛影",
-    template: "%s · 赛影",
+    default: "Photo Jury Intelligence",
+    template: "%s · Photo Jury Intelligence",
   },
-  description:
-    "面向摄影新手的 vivo VISION+ Mobile PhotoAwards 2025 / 2026 学习助手。浏览获奖作品与评委，阅读标明推断的入选原因。",
+  description: "摄影赛事评委研究与 AI 视觉分析平台。首期试点为 Sony World Photography Awards 2025 与 2026。事实与推断分开呈现。",
 };
 
 export default function RootLayout({ children }: { children: ReactNode }) {
   return (
-    <html
-      lang="zh-CN"
-      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
-    >
+    <html lang="zh-CN" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
       <body className="flex min-h-full flex-col">
         <Suspense fallback={<SiteHeaderFallback />}>
           <SiteHeader />
