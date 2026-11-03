@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { Suspense } from "react";
 import { ENTRY_ALLOWLIST } from "../../../../collectors/sony/allowlist";
 import { getCompetition, listEditions, listTracks } from "@/lib/catalog";
+import { collectEdition } from "@/lib/collection";
 import { PageHeader, PageMain } from "@/components/page-header";
 
 export function generateStaticParams() {
@@ -32,26 +33,33 @@ async function Competition({ params }: { params: Promise<{ id: string }> }) {
       <PageHeader
         kicker={competition.nameZh}
         title={competition.name}
-        lede="采集从官方入口清单起步。下面的届次、组别和评委来自已核对种子，不是这次请求当场抓取的。"
+        lede="采集从官方入口清单和已登记的主办方页面、合作方新闻稿起步。每一届先按来源抽出事实，再交叉验证。下面的作品库仍是已核对种子，不是这次请求当场抓取的。"
       />
       <div className="mt-8 grid gap-4 lg:grid-cols-2">
-        {editions.map((edition) => (
-          <section key={edition.id} className="rounded-2xl border border-border bg-card p-5">
-            <Link href={`/editions/${edition.id}`} className="text-2xl underline-offset-2 hover:underline">
-              {edition.year}
-            </Link>
-            <ul className="mt-3 space-y-2 text-sm">
-              {listTracks(edition.id).map((track) => (
-                <li key={track.id} className="flex flex-wrap justify-between gap-2 border-b border-border/70 py-2">
-                  <span>{track.rawName}</span>
-                  <span className="text-stone-500">
-                    {track.normalizedLabel} · {track.workForm === "series" ? "系列结构" : "单张结构"}
-                  </span>
-                </li>
-              ))}
-            </ul>
-          </section>
-        ))}
+        {editions.map((edition) => {
+          const validation = collectEdition(edition.year);
+          return (
+            <section key={edition.id} className="rounded-2xl border border-border bg-card p-5">
+              <Link href={`/editions/${edition.id}`} className="text-2xl underline-offset-2 hover:underline">
+                {edition.year}
+              </Link>
+              <p className="mt-2 text-xs leading-5 text-stone-600">
+                交叉验证：一致 {validation.summary.agree} · 冲突 {validation.summary.conflict} · 单一来源{" "}
+                {validation.summary.singleSource}
+              </p>
+              <ul className="mt-3 space-y-2 text-sm">
+                {listTracks(edition.id).map((track) => (
+                  <li key={track.id} className="flex flex-wrap justify-between gap-2 border-b border-border/70 py-2">
+                    <span>{track.rawName}</span>
+                    <span className="text-stone-500">
+                      {track.normalizedLabel} · {track.workForm === "series" ? "系列结构" : "单张结构"}
+                    </span>
+                  </li>
+                ))}
+              </ul>
+            </section>
+          );
+        })}
       </div>
       <section className="mt-6 rounded-2xl border border-border bg-white/60 p-5">
         <h2 className="text-xl">官方入口清单</h2>

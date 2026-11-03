@@ -24,6 +24,13 @@ npm run export-seed
 
 `export-seed` 把内存里的种子写成 `database/seed/swpa.json`。应用运行时直接读取 `src/lib/data/seed.ts`，不需要 PostgreSQL、Redis 或模型密钥。
 
+交叉验证是本地夹具，不抓官网。打开 [2025 届](http://127.0.0.1:41731/editions/swpa-2025) 或 [2026 届](http://127.0.0.1:41731/editions/swpa-2026)，页面列出一致和冲突。2026 年 Open Creative 的摄影师拼写是冲突示例；2025 年 Wildlife & Nature 的 Zed Nelson 是多来源一致示例。完整 JSON：
+
+```bash
+curl -s http://127.0.0.1:41731/api/v1/editions/swpa-2026/validation
+curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
+```
+
 可选环境变量见 `.env.example`。`VISION_MODEL` 和 `TEXT_MODEL` 留空。本试点不调用它们。
 
 ## 首期范围
@@ -60,7 +67,7 @@ npm run export-seed
 | Bilha 的 8 个画幅标题与说明 | 来自该系列官方作品页 |
 | 其他系列的逐帧照片 | 未采集，张数为空 |
 | 获奖原图 | 不抓取、不托管、不在页面里外链显示。权限状态为 `rights_blocked` |
-| SonyAdapter、去重、域名校验 | 可运行的本地桩，读种子，不发 HTTP |
+| SonyAdapter、去重、域名校验 | 可运行。作品库仍读种子。另有多来源夹具和交叉验证，不发 HTTP |
 | LangGraph、Celery、Redis、PostgreSQL、pgvector | 未部署。`database/schema.sql` 是目标表结构；`agents/graph.ts` 只描述阶段 |
 | 视觉分析、评委审美画像、跨届审美趋势 | 模板。字段为空，明确标记推断 |
 | 任务队列 | 进程内状态。创建和重试只改状态，没有 worker |
@@ -69,7 +76,8 @@ npm run export-seed
 
 - `src/app`：总览、赛事、届次、作品、系列、评委、报告、任务、上传分析、来源，以及 `/api/v1` 接口
 - `src/lib/data`：类型、来源和种子
-- `collectors/sony`：入口清单、名称规范化、去重、SonyAdapter
+- `collectors/sony`：入口清单、名称规范化、去重、SonyAdapter、多来源摘录
+- `collectors/cross-validate.ts`：一致 / 冲突 / 单一来源。官方主入口优先，冲突原文都保留
 - `agents`：研究流程桩
 - `database/schema.sql`：目标 PostgreSQL 结构
 - `tests/honesty.test.ts`：入口清单、事实与推断分离、跨赛制比较防护

@@ -1,6 +1,7 @@
 import { listCategories, listLibrary, listTracks } from "../../src/lib/catalog";
 import { database } from "../../src/lib/data/seed";
 import type { CompetitionAdapter, EditionRef, ExtractedJury, ExtractedWinner } from "../base";
+import { collectCompetition, collectEdition } from "../multi-source";
 import { assertEntryUrl, ENTRY_ALLOWLIST } from "./allowlist";
 import { dedupeRecords } from "./dedupe";
 
@@ -119,20 +120,30 @@ export class SonyAdapter implements CompetitionAdapter {
         rightsStatus: "rights_blocked",
       }));
   }
+
+  collect(edition: EditionRef) {
+    return collectEdition(edition.year);
+  }
 }
 
 export function collectionReport() {
   const adapter = new SonyAdapter();
   const editions = adapter.discoverEditions();
+  const validation = collectCompetition(editions.map((edition) => edition.year));
   return {
     adapter: adapter.id,
     network: false,
     entrypoints: [...ENTRY_ALLOWLIST],
-    editions: editions.map((edition) => ({
-      ...edition,
-      winners: adapter.extractWinners(edition).length,
-      juries: adapter.extractJuries(edition).length,
-      imagesHosted: 0,
-    })),
+    validation: validation.summary,
+    editions: editions.map((edition) => {
+      const collected = validation.editions.find((item) => item.editionYear === edition.year);
+      return {
+        ...edition,
+        winners: adapter.extractWinners(edition).length,
+        juries: adapter.extractJuries(edition).length,
+        imagesHosted: 0,
+        validation: collected?.summary ?? null,
+      };
+    }),
   };
 }

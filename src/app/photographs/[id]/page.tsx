@@ -7,6 +7,7 @@ import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
 import { RequestAnalysis } from "@/components/request-analysis";
 import { RightsPlaceholder } from "@/components/rights-placeholder";
+import { WorkValidation } from "@/components/validation-panel";
 import { awardsFor, getCategory, getEdition, getImageAsset, getPhotograph, listPhotographs, listTracks, photographersByIds, singleAnalysis } from "@/lib/catalog";
 import { displayTitle } from "@/lib/labels";
 
@@ -68,6 +69,7 @@ async function Photograph({ params }: { params: Promise<{ id: string }> }) {
           <ProvenanceLine provenance={photo.provenance} />
         </section>
       </div>
+      {edition ? <WorkValidation workId={photo.id} year={edition.year} /> : null}
       {analysis ? (
         <div className="mt-6">
           <AnalysisPanel

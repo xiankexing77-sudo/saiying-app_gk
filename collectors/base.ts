@@ -1,3 +1,5 @@
+import type { EditionCollection } from "./types";
+
 export type EditionRef = {
   year: number;
   officialLabel: string;
@@ -35,4 +37,5 @@ export interface CompetitionAdapter {
   extractWinners(edition: EditionRef): ExtractedWinner[];
   extractJuries(edition: EditionRef): ExtractedJury[];
   extractOfficialImages(edition: EditionRef): { workKey: string; officialImageUrl: string | null; rightsStatus: string }[];
+  collect(edition: EditionRef): EditionCollection;
 }

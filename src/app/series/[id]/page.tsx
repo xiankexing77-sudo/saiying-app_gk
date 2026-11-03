@@ -7,6 +7,7 @@ import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
 import { RequestAnalysis } from "@/components/request-analysis";
 import { RightsPlaceholder } from "@/components/rights-placeholder";
+import { WorkValidation } from "@/components/validation-panel";
 import { awardsFor, getCategory, getEdition, getImageAsset, getSeries, listSeries, listTracks, photographersByIds, seriesAnalysis, seriesFrames } from "@/lib/catalog";
 import { displayTitle } from "@/lib/labels";
 
@@ -68,6 +69,7 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
           <ProvenanceLine provenance={series.provenance} />
         </section>
       </div>
+      {edition ? <WorkValidation workId={series.id} year={edition.year} /> : null}
       <section className="mt-6 rounded-2xl border border-border bg-card p-5">
         <h2 className="text-2xl">系列中的照片</h2>
         {frames.length === 0 ? (

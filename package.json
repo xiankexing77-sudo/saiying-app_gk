@@ -7,7 +7,7 @@
     "build": "next build",
     "start": "next start -H 0.0.0.0 -p 41731",
     "lint": "eslint",
-    "test": "tsx --test tests/honesty.test.ts",
+    "test": "tsx --test tests/*.test.ts",
     "export-seed": "tsx scripts/export-seed.ts"
   },
   "dependencies": {
