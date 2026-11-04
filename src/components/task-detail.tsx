@@ -9,18 +9,28 @@ export function TaskDetail({ id }: { id: string }) {
   const [message, setMessage] = useState<string | null>(null);
 
   useEffect(() => {
+    let stopped = false;
+    async function load() {
+      const response = await fetch(`/api/v1/tasks/${id}`);
+      if (stopped) return;
+      if (response.status === 404) {
+        setMissing(true);
+        return;
+      }
+      const body = (await response.json()) as { task: AgentTask };
+      setTask(body.task);
+    }
     const timer = window.setTimeout(() => {
-      void (async () => {
-        const response = await fetch(`/api/v1/tasks/${id}`);
-        if (response.status === 404) {
-          setMissing(true);
-          return;
-        }
-        const body = (await response.json()) as { task: AgentTask };
-        setTask(body.task);
-      })();
+      void load();
     }, 0);
-    return () => window.clearTimeout(timer);
+    const poll = window.setInterval(() => {
+      void load();
+    }, 1200);
+    return () => {
+      stopped = true;
+      window.clearTimeout(timer);
+      window.clearInterval(poll);
+    };
   }, [id]);
 
   async function retry() {
@@ -43,6 +53,17 @@ export function TaskDetail({ id }: { id: string }) {
       <p className="mt-1">当前对象：{task.currentItem ?? "—"}</p>
       <p className="mt-1">开始：{task.startedAt ?? "—"}</p>
       <p>结束：{task.finishedAt ?? "—"}</p>
+      {task.stages.length ? (
+        <ol className="mt-4 space-y-2">
+          {task.stages.map((stage) => (
+            <li key={`${stage.stage}-${stage.summary}`}>
+              <span className="font-medium">{stage.stage}</span>
+              <span className="ml-2 text-xs text-stone-500">{stage.status}</span>
+              <p className="text-xs leading-5 text-stone-600">{stage.summary}</p>
+            </li>
+          ))}
+        </ol>
+      ) : null}
       {task.errorLog.length ? (
         <ul className="mt-4 list-disc space-y-1 pl-5">
           {task.errorLog.map((line) => (

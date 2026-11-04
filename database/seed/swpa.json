@@ -6994,31 +6994,58 @@
       "photographId": "single-2025-architecture",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
-      "composition": null,
+      "subjectScene": "时代广场",
+      "composition": "说明写到广角",
       "light": null,
       "color": null,
       "visualWeight": null,
-      "spatialDepth": null,
+      "spatialDepth": "说明写到从上方观看",
       "mood": null,
       "narrative": null,
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.5,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "composition",
+          "label": "说明写到广角",
+          "quote": "Center of the Cosmos shows New York’s iconic Times Square from above, using a very wide angle to highlight the expanse of the city.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「very wide angle」，所以只填写「说明写到广角」。未读取像素。"
+        },
+        {
+          "dimension": "spatialDepth",
+          "label": "说明写到从上方观看",
+          "quote": "Center of the Cosmos shows New York’s iconic Times Square from above, using a very wide angle to highlight the expanse of the city.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「from above」，所以只填写「说明写到从上方观看」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "时代广场",
+          "quote": "Center of the Cosmos shows New York’s iconic Times Square from above, using a very wide angle to highlight the expanse of the city.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「times square」，所以只填写「时代广场」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-creative",
       "photographId": "single-2025-creative",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
       "subjectScene": null,
       "composition": null,
@@ -7030,46 +7057,89 @@
       "narrative": null,
       "theme": null,
       "uniqueness": null,
-      "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "technique": "拼贴",
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "technique",
+          "label": "拼贴",
+          "quote": "Kem the Unstoppable is an elegantly photographed collage portrait, alluding to Renaissance traditions of portraiture.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「collage」，所以只填写「拼贴」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-landscape",
       "photographId": "single-2025-landscape",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "溪流与草地",
       "composition": null,
       "light": null,
-      "color": null,
+      "color": "黑白",
       "visualWeight": null,
-      "spatialDepth": null,
-      "mood": null,
+      "spatialDepth": "说明写到远处",
+      "mood": "说明称迷人",
       "narrative": null,
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.55,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "spatialDepth",
+          "label": "说明写到远处",
+          "quote": "A mesmerising black-and-white shot of a stream meandering through grasslands into a lake in the distance, taken in Wenhai, Lijiang.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「in the distance」，所以只填写「说明写到远处」。未读取像素。"
+        },
+        {
+          "dimension": "color",
+          "label": "黑白",
+          "quote": "A mesmerising black-and-white shot of a stream meandering through grasslands into a lake in the distance, taken in Wenhai, Lijiang.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「black-and-white」，所以只填写「黑白」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "溪流与草地",
+          "quote": "A mesmerising black-and-white shot of a stream meandering through grasslands into a lake in the distance, taken in Wenhai, Lijiang.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「stream meandering」，所以只填写「溪流与草地」。未读取像素。"
+        },
+        {
+          "dimension": "mood",
+          "label": "说明称迷人",
+          "quote": "A mesmerising black-and-white shot of a stream meandering through grasslands into a lake in the distance, taken in Wenhai, Lijiang.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「mesmerising」，所以只填写「说明称迷人」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-lifestyle",
       "photographId": "single-2025-lifestyle",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
-      "composition": null,
+      "subjectScene": "街头摊贩",
+      "composition": "说明称构图讲究",
       "light": null,
       "color": null,
       "visualWeight": null,
@@ -7079,44 +7149,80 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "composition",
+          "label": "说明称构图讲究",
+          "quote": "A meticulously composed image of a street vendor selling electronic parts in Akihabara, once Japan's largest electronics town following a period of rapid economic growth in the late 1950s.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「meticulously composed」，所以只填写「说明称构图讲究」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "街头摊贩",
+          "quote": "A meticulously composed image of a street vendor selling electronic parts in Akihabara, once Japan's largest electronics town following a period of rapid economic growth in the late 1950s.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「street vendor」，所以只填写「街头摊贩」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-motion",
       "photographId": "single-2025-motion",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "骑手落马",
       "composition": null,
       "light": null,
       "color": null,
       "visualWeight": null,
       "spatialDepth": null,
       "mood": null,
-      "narrative": null,
+      "narrative": "说明写到想呈现另一面",
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "骑手落马",
+          "quote": "With this image, the photographer wanted to share another side of the event, and show how dangerous it can be when a rider is thrown from their mount.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/open/motion",
+          "rationale": "原句命中「thrown from their mount」，所以只填写「骑手落马」。未读取像素。"
+        },
+        {
+          "dimension": "narrative",
+          "label": "说明写到想呈现另一面",
+          "quote": "With this image, the photographer wanted to share another side of the event, and show how dangerous it can be when a rider is thrown from their mount.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/open/motion",
+          "rationale": "原句命中「another side of the event」，所以只填写「说明写到想呈现另一面」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-wildlife",
       "photographId": "single-2025-wildlife",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "北极熊",
       "composition": null,
       "light": null,
       "color": null,
@@ -7127,20 +7233,31 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "北极熊",
+          "quote": "The Whale Raft depicts a group of polar bears feasting on the carcass of a whale in east Greenland.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「polar bears」，所以只填写「北极熊」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-object",
       "photographId": "single-2025-object",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "风筝",
       "composition": null,
       "light": null,
       "color": null,
@@ -7151,71 +7268,132 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "风筝",
+          "quote": "Octopuses in the Sky, showcasing elaborate handmade kites at the Fanø International Kite Fliers Meeting, one of the world’s largest kite flying events.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「handmade kites」，所以只填写「风筝」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-portraiture",
       "photographId": "single-2025-portraiture",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "卧室；两个人",
       "composition": null,
       "light": null,
       "color": null,
       "visualWeight": null,
       "spatialDepth": null,
-      "mood": null,
-      "narrative": null,
+      "mood": "说明称温柔",
+      "narrative": "说明写到想留住这一刻",
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.5,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "卧室",
+          "quote": "Encounter is a tender portrait of two people shot in the intimacy of a bedroom.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「bedroom」，所以只填写「卧室」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "两个人",
+          "quote": "Encounter is a tender portrait of two people shot in the intimacy of a bedroom.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「two people」，所以只填写「两个人」。未读取像素。"
+        },
+        {
+          "dimension": "mood",
+          "label": "说明称温柔",
+          "quote": "Encounter is a tender portrait of two people shot in the intimacy of a bedroom.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「tender」，所以只填写「说明称温柔」。未读取像素。"
+        },
+        {
+          "dimension": "narrative",
+          "label": "说明写到想留住这一刻",
+          "quote": "The photographer wanted to immortalise this moment for the sitters.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「immortalise this moment」，所以只填写「说明写到想留住这一刻」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-street",
       "photographId": "single-2025-street",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "球迷与照明弹",
       "composition": null,
       "light": null,
       "color": null,
       "visualWeight": null,
       "spatialDepth": null,
-      "mood": null,
+      "mood": "说明写到喜悦",
       "narrative": null,
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "球迷与照明弹",
+          "quote": "Celebrating Football Club Victories pictures the elation of fans celebrating a win by their local football club by lighting flares in Bandung, West Java.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「lighting flares」，所以只填写「球迷与照明弹」。未读取像素。"
+        },
+        {
+          "dimension": "mood",
+          "label": "说明写到喜悦",
+          "quote": "Celebrating Football Club Victories pictures the elation of fans celebrating a win by their local football club by lighting flares in Bandung, West Java.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「elation」，所以只填写「说明写到喜悦」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-travel",
       "photographId": "single-2025-travel",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "萨满",
       "composition": null,
       "light": null,
-      "color": null,
+      "color": "说明写到鲜艳涂装",
       "visualWeight": null,
       "spatialDepth": null,
       "mood": null,
@@ -7223,18 +7401,99 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "color",
+          "label": "说明写到鲜艳涂装",
+          "quote": "Ask a Shaman depicts a group of shamans in La Paz, Bolivia, where they play a major role in Native Bolivian traditional culture, shot against the brightly painted local architecture.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「brightly painted」，所以只填写「说明写到鲜艳涂装」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "萨满",
+          "quote": "Ask a Shaman depicts a group of shamans in La Paz, Bolivia, where they play a major role in Native Bolivian traditional culture, shot against the brightly painted local architecture.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+          "rationale": "原句命中「shamans」，所以只填写「萨满」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2025-youth",
       "photographId": "single-2025-youth",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": "滑板",
+      "composition": null,
+      "light": "黄金时刻；日落；剪影",
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": "说明写到想表达那一刻的能量",
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": 0.5,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "light",
+          "label": "黄金时刻",
+          "quote": "Dian Ji Wu took this photo during summer break in 2024, at Venice Beach Skatepark in LA during golden hour.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「golden hour」，所以只填写「黄金时刻」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "日落",
+          "quote": "The photographer captured this image of a skater mid-air, silhouetted against the sunset, expressing the raw energy of that moment.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「sunset」，所以只填写「日落」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "剪影",
+          "quote": "The photographer captured this image of a skater mid-air, silhouetted against the sunset, expressing the raw energy of that moment.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「silhouetted」，所以只填写「剪影」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "滑板",
+          "quote": "The photographer captured this image of a skater mid-air, silhouetted against the sunset, expressing the raw energy of that moment.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「skater」，所以只填写「滑板」。未读取像素。"
+        },
+        {
+          "dimension": "narrative",
+          "label": "说明写到想表达那一刻的能量",
+          "quote": "The photographer captured this image of a skater mid-air, silhouetted against the sunset, expressing the raw energy of that moment.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「raw energy」，所以只填写「说明写到想表达那一刻的能量」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-1",
+      "photographId": "series-2026-creative-frame-1",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
       "subjectScene": null,
       "composition": null,
@@ -7251,86 +7510,389 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-2",
+      "photographId": "series-2026-creative-frame-2",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-3",
+      "photographId": "series-2026-creative-frame-3",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-4",
+      "photographId": "series-2026-creative-frame-4",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-5",
+      "photographId": "series-2026-creative-frame-5",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-6",
+      "photographId": "series-2026-creative-frame-6",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-7",
+      "photographId": "series-2026-creative-frame-7",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": null,
+      "uniqueness": null,
+      "technique": null,
+      "confidence": null,
+      "modelName": null,
+      "modelVersion": null,
+      "analyzedAt": null,
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
+    },
+    {
+      "id": "analysis-series-2026-creative-frame-8",
+      "photographId": "series-2026-creative-frame-8",
+      "kind": "inference",
+      "schema": "single_image",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
+      "basicDescription": null,
+      "subjectScene": null,
+      "composition": null,
+      "light": null,
+      "color": null,
+      "visualWeight": null,
+      "spatialDepth": null,
+      "mood": null,
+      "narrative": null,
+      "theme": "说明写到原住民社群",
+      "uniqueness": null,
+      "technique": null,
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "theme",
+          "label": "说明写到原住民社群",
+          "quote": "Mitzy is part of Indigenous Futures, a network that discusses the climate crisis from the perspective of Indigenous peoples.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/professional/bilha-stories-my-sisters-citlali",
+          "rationale": "原句命中「indigenous peoples」，所以只填写「说明写到原住民社群」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-architecture",
       "photographId": "single-2026-architecture",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "造纸厂",
       "composition": null,
-      "light": null,
+      "light": "夜景；说明写到阴影",
       "color": null,
       "visualWeight": null,
-      "spatialDepth": null,
+      "spatialDepth": "说明写到层次",
       "mood": null,
       "narrative": null,
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.5,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "spatialDepth",
+          "label": "说明写到层次",
+          "quote": "Industrial Layers captures a paper mill in Obbola, Sweden on a dark November night, revealing layers of shadows, concrete, clouds and sky.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「revealing layers」，所以只填写「说明写到层次」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "夜景",
+          "quote": "Industrial Layers captures a paper mill in Obbola, Sweden on a dark November night, revealing layers of shadows, concrete, clouds and sky.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「dark november night」，所以只填写「夜景」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "说明写到阴影",
+          "quote": "Industrial Layers captures a paper mill in Obbola, Sweden on a dark November night, revealing layers of shadows, concrete, clouds and sky.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「layers of shadows」，所以只填写「说明写到阴影」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "造纸厂",
+          "quote": "Industrial Layers captures a paper mill in Obbola, Sweden on a dark November night, revealing layers of shadows, concrete, clouds and sky.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「paper mill」，所以只填写「造纸厂」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-creative",
       "photographId": "single-2026-creative",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
       "subjectScene": null,
-      "composition": null,
+      "composition": "说明称构图讲究",
       "light": null,
       "color": null,
       "visualWeight": null,
       "spatialDepth": null,
-      "mood": null,
-      "narrative": null,
-      "theme": null,
+      "mood": "说明称痛切",
+      "narrative": "说明写到摆拍与象征",
+      "theme": "说明写到伊朗女性",
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.55,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "composition",
+          "label": "说明称构图讲究",
+          "quote": "Lost Hope is a carefully composed portrait, using staged and symbolic elements in a poignant ode to Iranian women.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「carefully composed」，所以只填写「说明称构图讲究」。未读取像素。"
+        },
+        {
+          "dimension": "mood",
+          "label": "说明称痛切",
+          "quote": "Lost Hope is a carefully composed portrait, using staged and symbolic elements in a poignant ode to Iranian women.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「poignant」，所以只填写「说明称痛切」。未读取像素。"
+        },
+        {
+          "dimension": "narrative",
+          "label": "说明写到摆拍与象征",
+          "quote": "Lost Hope is a carefully composed portrait, using staged and symbolic elements in a poignant ode to Iranian women.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「staged and symbolic」，所以只填写「说明写到摆拍与象征」。未读取像素。"
+        },
+        {
+          "dimension": "theme",
+          "label": "说明写到伊朗女性",
+          "quote": "Lost Hope is a carefully composed portrait, using staged and symbolic elements in a poignant ode to Iranian women.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「iranian women」，所以只填写「说明写到伊朗女性」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-landscape",
       "photographId": "single-2026-landscape",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
-      "composition": null,
-      "light": null,
+      "subjectScene": "沙丘",
+      "composition": "说明写到几何",
+      "light": "晨光；说明写到阴影",
       "color": null,
       "visualWeight": null,
-      "spatialDepth": null,
+      "spatialDepth": "说明写到层次",
       "mood": null,
       "narrative": null,
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.55,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "composition",
+          "label": "说明写到几何",
+          "quote": "Shapes and Patterns of the Desert shows the Sossusvlei dunes in Namibia under an early morning glow, utilising the shadows and layers to create a geometric landscape.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「geometric landscape」，所以只填写「说明写到几何」。未读取像素。"
+        },
+        {
+          "dimension": "spatialDepth",
+          "label": "说明写到层次",
+          "quote": "Shapes and Patterns of the Desert shows the Sossusvlei dunes in Namibia under an early morning glow, utilising the shadows and layers to create a geometric landscape.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「shadows and layers」，所以只填写「说明写到层次」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "晨光",
+          "quote": "Shapes and Patterns of the Desert shows the Sossusvlei dunes in Namibia under an early morning glow, utilising the shadows and layers to create a geometric landscape.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「early morning glow」，所以只填写「晨光」。未读取像素。"
+        },
+        {
+          "dimension": "light",
+          "label": "说明写到阴影",
+          "quote": "Shapes and Patterns of the Desert shows the Sossusvlei dunes in Namibia under an early morning glow, utilising the shadows and layers to create a geometric landscape.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「utilising the shadows」，所以只填写「说明写到阴影」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "沙丘",
+          "quote": "Shapes and Patterns of the Desert shows the Sossusvlei dunes in Namibia under an early morning glow, utilising the shadows and layers to create a geometric landscape.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「dunes」，所以只填写「沙丘」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-lifestyle",
       "photographId": "single-2026-lifestyle",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
       "subjectScene": null,
       "composition": null,
@@ -7339,24 +7901,35 @@
       "visualWeight": null,
       "spatialDepth": null,
       "mood": null,
-      "narrative": null,
+      "narrative": "说明写到在记录这一刻",
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "narrative",
+          "label": "说明写到在记录这一刻",
+          "quote": "Vanta Coda III documents the moment a young girl Charlotte, and her cow Dolly, keeps cool between events of the 100th State Fair of West Virginia in Lewisburg.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「documents the moment」，所以只填写「说明写到在记录这一刻」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-motion",
       "photographId": "single-2026-motion",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "朋克演出",
       "composition": null,
       "light": null,
       "color": null,
@@ -7367,20 +7940,31 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "朋克演出",
+          "quote": "Franklin Littlefield’s energy-packed image depicts a punk show in Providence, Rhode Island, featuring the band Sailboat.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「punk show」，所以只填写「朋克演出」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-wildlife",
       "photographId": "single-2026-wildlife",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "北极狐；暴风雪",
       "composition": null,
       "light": null,
       "color": null,
@@ -7391,23 +7975,41 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "北极狐",
+          "quote": "A blue arctic fox in a blizzard, photographed on the Varanger Peninsula, Norway.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/open/natural-world-wildlife",
+          "rationale": "原句命中「arctic fox」，所以只填写「北极狐」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "暴风雪",
+          "quote": "A blue arctic fox in a blizzard, photographed on the Varanger Peninsula, Norway.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/open/natural-world-wildlife",
+          "rationale": "原句命中「blizzard」，所以只填写「暴风雪」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-object",
       "photographId": "single-2026-object",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
       "subjectScene": null,
-      "composition": null,
+      "composition": "说明写到画面中心",
       "light": null,
-      "color": null,
+      "color": "说明写到色彩",
       "visualWeight": null,
       "spatialDepth": null,
       "mood": null,
@@ -7415,20 +8017,38 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "composition",
+          "label": "说明写到画面中心",
+          "quote": "Taken in the Bo-Kaap neighbourhood of Cape Town, South Africa, this image centres on a parked car set against a sharply divided colourful facade.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/open/object",
+          "rationale": "原句命中「centres on」，所以只填写「说明写到画面中心」。未读取像素。"
+        },
+        {
+          "dimension": "color",
+          "label": "说明写到色彩",
+          "quote": "Taken in the Bo-Kaap neighbourhood of Cape Town, South Africa, this image centres on a parked car set against a sharply divided colourful facade.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/open/object",
+          "rationale": "原句命中「colourful」，所以只填写「说明写到色彩」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-portraiture",
       "photographId": "single-2026-portraiture",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "火山岩",
       "composition": null,
       "light": null,
       "color": null,
@@ -7439,20 +8059,31 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "火山岩",
+          "quote": "Elle Leontiev wins for The Barefoot Volcanologist, a striking portrait of Phillip Yamah, an internationally recognised, self-taught volcano scientist, standing atop a volcanic rock bomb on the island of Tanna, Vanuatu.",
+          "sourceUrl": "https://www.sony.com.my/pressrelease?prName=overall-winners-2026",
+          "rationale": "原句命中「volcanic rock」，所以只填写「火山岩」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-street",
       "photographId": "single-2026-street",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "一家人看风景",
       "composition": null,
       "light": null,
       "color": null,
@@ -7463,22 +8094,33 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "一家人看风景",
+          "quote": "Giulia Pissagroia captures the distinct expressions of a family admiring the view from Ørnevegen (Eagle Road), Norway.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「family admiring」，所以只填写「一家人看风景」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-travel",
       "photographId": "single-2026-travel",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "跃入河中",
       "composition": null,
-      "light": null,
+      "light": "说明写到火把",
       "color": null,
       "visualWeight": null,
       "spatialDepth": null,
@@ -7487,20 +8129,38 @@
       "theme": null,
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "light",
+          "label": "说明写到火把",
+          "quote": "Megumi Murakami photographs a dynamic finale of the Abare Festival, showing men leaping into the river amidst fiercely burning torches.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「burning torches」，所以只填写「说明写到火把」。未读取像素。"
+        },
+        {
+          "dimension": "subjectScene",
+          "label": "跃入河中",
+          "quote": "Megumi Murakami photographs a dynamic finale of the Abare Festival, showing men leaping into the river amidst fiercely burning torches.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/17-02-26/2026-open-competition-category-winners-and-shortlists-announced",
+          "rationale": "原句命中「leaping into the river」，所以只填写「跃入河中」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-single-2026-youth",
       "photographId": "single-2026-youth",
       "kind": "inference",
       "schema": "single_image",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "basicDescription": null,
-      "subjectScene": null,
+      "subjectScene": "消防员运送作品",
       "composition": null,
       "light": null,
       "color": null,
@@ -7508,14 +8168,30 @@
       "spatialDepth": null,
       "mood": null,
       "narrative": null,
-      "theme": null,
+      "theme": "说明写到火灾中抢救作品",
       "uniqueness": null,
       "technique": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "推断模板。未配置视觉模型，也未读取图像像素。官方文字说明留在事实栏，不改写成视觉结论。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "subjectScene",
+          "label": "消防员运送作品",
+          "quote": "Kangas captured a moment showing firefighters transporting art pieces to safety, following a fire at the Royal Academy of Fine Arts in central Stockholm.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/16-04-26/sony-world-photography-awards-2026-overall-winners-announced",
+          "rationale": "原句命中「firefighters transporting art」，所以只填写「消防员运送作品」。未读取像素。"
+        },
+        {
+          "dimension": "theme",
+          "label": "说明写到火灾中抢救作品",
+          "quote": "Kangas captured a moment showing firefighters transporting art pieces to safety, following a fire at the Royal Academy of Fine Arts in central Stockholm.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/16-04-26/sony-world-photography-awards-2026-overall-winners-announced",
+          "rationale": "原句命中「following a fire」，所以只填写「说明写到火灾中抢救作品」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     }
   ],
   "seriesAnalyses": [
@@ -7524,7 +8200,9 @@
       "seriesId": "series-2025-architecture-design",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7535,14 +8213,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-creative",
       "seriesId": "series-2025-creative",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7553,14 +8234,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-documentary",
       "seriesId": "series-2025-documentary",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7571,14 +8255,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-environment",
       "seriesId": "series-2025-environment",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7589,14 +8276,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-landscape",
       "seriesId": "series-2025-landscape",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7607,14 +8297,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-perspectives",
       "seriesId": "series-2025-perspectives",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7625,14 +8318,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-portraiture",
       "seriesId": "series-2025-portraiture",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7643,14 +8339,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-sport",
       "seriesId": "series-2025-sport",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7661,14 +8360,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-still-life",
       "seriesId": "series-2025-still-life",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7679,50 +8381,96 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-wildlife",
       "seriesId": "series-2025-wildlife",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
-      "themeDevelopment": null,
+      "themeDevelopment": "说明写到六年、四大洲；说明写到模拟环境；说明写到人类对自然的影响",
       "pacing": null,
       "completeness": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到六年、四大洲",
+          "quote": "Over six years, and across four continents, Zed Nelson has explored how we immerse ourselves in increasingly choreographed and simulated environments to mask our destructive impact on the natural world.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「across four continents」，所以只填写「说明写到六年、四大洲」。未读取像素。"
+        },
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到模拟环境",
+          "quote": "Over six years, and across four continents, Zed Nelson has explored how we immerse ourselves in increasingly choreographed and simulated environments to mask our destructive impact on the natural world.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「simulated environments」，所以只填写「说明写到模拟环境」。未读取像素。"
+        },
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到人类对自然的影响",
+          "quote": "Over six years, and across four continents, Zed Nelson has explored how we immerse ourselves in increasingly choreographed and simulated environments to mask our destructive impact on the natural world.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「destructive impact on the natural world」，所以只填写「说明写到人类对自然的影响」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2025-student",
       "seriesId": "series-2025-student",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
-      "imageRelations": null,
-      "themeDevelopment": null,
+      "imageRelations": "说明列出系列里的几类照片",
+      "themeDevelopment": "说明写到系列在探讨的对象",
       "pacing": null,
       "completeness": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "imageRelations",
+          "label": "说明列出系列里的几类照片",
+          "quote": "The series consists of photographs of the architecture of the prisons, the neighbourhoods they are in, and the dynamics at the visitor and family member entrances.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「the series consists of photographs」，所以只填写「说明列出系列里的几类照片」。未读取像素。"
+        },
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到系列在探讨的对象",
+          "quote": "This project explores the complexity of female prison spaces and the people who inhabit them, from the inmates to their families.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+          "rationale": "原句命中「this project explores」，所以只填写「说明写到系列在探讨的对象」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-architecture-design",
       "seriesId": "series-2026-architecture-design",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7733,32 +8481,53 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-creative",
       "seriesId": "series-2026-creative",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
-      "themeDevelopment": null,
+      "themeDevelopment": "说明写到想通过合作确立先例；说明写到原住民社群",
       "pacing": null,
       "completeness": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "confidence": 0.39999999999999997,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到想通过合作确立先例",
+          "quote": "This photographic series seeks to create a precedent through collaboration with activists and artists from various Indigenous communities in southern Mexico, particularly from Oaxaca state.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/professional/bilha-stories-my-sisters-citlali",
+          "rationale": "原句命中「seeks to create a precedent」，所以只填写「说明写到想通过合作确立先例」。未读取像素。"
+        },
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到原住民社群",
+          "quote": "This photographic series seeks to create a precedent through collaboration with activists and artists from various Indigenous communities in southern Mexico, particularly from Oaxaca state.",
+          "sourceUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/professional/bilha-stories-my-sisters-citlali",
+          "rationale": "原句命中「indigenous communities」，所以只填写「说明写到原住民社群」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-documentary",
       "seriesId": "series-2026-documentary",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7769,14 +8538,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-environment",
       "seriesId": "series-2026-environment",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7787,14 +8559,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-landscape",
       "seriesId": "series-2026-landscape",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7805,14 +8580,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-perspectives",
       "seriesId": "series-2026-perspectives",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7823,14 +8601,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-portraiture",
       "seriesId": "series-2026-portraiture",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7841,14 +8622,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-sport",
       "seriesId": "series-2026-sport",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7859,14 +8643,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-still-life",
       "seriesId": "series-2026-still-life",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7877,14 +8664,17 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-wildlife",
       "seriesId": "series-2026-wildlife",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "insufficient_text",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
       "visualUnity": null,
       "imageRelations": null,
@@ -7895,25 +8685,44 @@
       "modelName": null,
       "modelVersion": null,
       "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "evidence": [],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     },
     {
       "id": "analysis-series-2026-student",
       "seriesId": "series-2026-student",
       "kind": "inference",
       "schema": "series",
-      "status": "template_unconfigured",
+      "status": "text_grounded",
+      "basis": "official_text",
+      "pixelsRead": false,
       "narrativeCoherence": null,
-      "visualUnity": null,
+      "visualUnity": "说明称这一系列是梦幻、诗意的",
       "imageRelations": null,
-      "themeDevelopment": null,
+      "themeDevelopment": "说明写到社区正在被混凝土取代",
       "pacing": null,
       "completeness": null,
-      "confidence": null,
-      "modelName": null,
-      "modelVersion": null,
-      "analyzedAt": null,
-      "evidenceNote": "系列分析使用独立 schema，不复用单张字段冒充组图结论。当前为未执行的模板。"
+      "confidence": 0.44999999999999996,
+      "modelName": "pji-text-evidence",
+      "modelVersion": "phrase-1.0.0",
+      "analyzedAt": "2026-11-03T15:00:00.000Z",
+      "evidence": [
+        {
+          "dimension": "themeDevelopment",
+          "label": "说明写到社区正在被混凝土取代",
+          "quote": "Through a dreamy, poetic style, Jubair photographs its vibrant community and tranquil landscape, now disappearing under concrete.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/16-04-26/sony-world-photography-awards-2026-overall-winners-announced",
+          "rationale": "原句命中「disappearing under concrete」，所以只填写「说明写到社区正在被混凝土取代」。未读取像素。"
+        },
+        {
+          "dimension": "visualUnity",
+          "label": "说明称这一系列是梦幻、诗意的",
+          "quote": "Through a dreamy, poetic style, Jubair photographs its vibrant community and tranquil landscape, now disappearing under concrete.",
+          "sourceUrl": "https://www.worldphoto.org/blogs/16-04-26/sony-world-photography-awards-2026-overall-winners-announced",
+          "rationale": "原句命中「dreamy, poetic style」，所以只填写「说明称这一系列是梦幻、诗意的」。未读取像素。"
+        }
+      ],
+      "evidenceNote": "推断。未读取像素，原图权限为 rights_blocked。只在官方说明的原句命中词表时填写维度；没写到的留空。不把说明改写成基础视觉描述，也不采用评委引语。"
     }
   ],
   "tasks": [
@@ -7930,7 +8739,18 @@
       "errorLog": [],
       "startedAt": "2026-11-03T15:00:00.000Z",
       "finishedAt": "2026-11-03T15:05:00.000Z",
-      "idempotencyKey": "seed-swpa-2025"
+      "idempotencyKey": "seed-swpa-2025",
+      "years": [
+        2025
+      ],
+      "scope": null,
+      "stages": [
+        {
+          "stage": "collection",
+          "status": "passed",
+          "summary": "种子导入完成，未访问网络。"
+        }
+      ]
     },
     {
       "id": "task-seed-2026",
@@ -7945,7 +8765,18 @@
       "errorLog": [],
       "startedAt": "2026-11-03T15:05:00.000Z",
       "finishedAt": "2026-11-03T15:10:00.000Z",
-      "idempotencyKey": "seed-swpa-2026"
+      "idempotencyKey": "seed-swpa-2026",
+      "years": [
+        2026
+      ],
+      "scope": null,
+      "stages": [
+        {
+          "stage": "collection",
+          "status": "passed",
+          "summary": "种子导入完成，未访问网络。"
+        }
+      ]
     },
     {
       "id": "task-image-analysis",
@@ -7959,11 +8790,30 @@
       "currentItem": null,
       "errorLog": [
         "图像权限为 rights_blocked，未保存原图。",
-        "VISION_MODEL 未配置。任务停在入队之后，没有同步调用模型。"
+        "VISION_MODEL 未配置。像素分析停在这里。说明原文的词表对照另记在作品页，不代替看图。"
       ],
       "startedAt": "2026-11-03T15:10:00.000Z",
       "finishedAt": "2026-11-03T15:10:00.000Z",
-      "idempotencyKey": "analyze-swpa-2025-2026"
+      "idempotencyKey": "analyze-swpa-2025-2026",
+      "years": [
+        2025,
+        2026
+      ],
+      "scope": {
+        "winners": true,
+        "shortlists": false,
+        "juries": false,
+        "juryPortfolios": false,
+        "imageAnalysis": true,
+        "reportGeneration": false
+      },
+      "stages": [
+        {
+          "stage": "image_analysis",
+          "status": "blocked",
+          "summary": "原图 rights_blocked，未配置视觉模型。"
+        }
+      ]
     },
     {
       "id": "task-jury-research",
@@ -7978,14 +8828,26 @@
       "errorLog": [],
       "startedAt": "2026-11-03T15:12:00.000Z",
       "finishedAt": "2026-11-03T15:12:00.000Z",
-      "idempotencyKey": "research-juries-swpa"
+      "idempotencyKey": "research-juries-swpa",
+      "years": [
+        2025,
+        2026
+      ],
+      "scope": null,
+      "stages": [
+        {
+          "stage": "jury_research",
+          "status": "passed",
+          "summary": "不足 3 组的评委没有风格标签。"
+        }
+      ]
     },
     {
       "id": "task-report",
       "type": "report",
       "title": "2025 / 2026 同组别事实对照",
       "status": "succeeded",
-      "stage": "事实对照已生成，审美推断未生成",
+      "stage": "事实对照已生成。像素趋势未生成。",
       "total": 1,
       "completed": 1,
       "failed": 0,
@@ -7993,7 +8855,19 @@
       "errorLog": [],
       "startedAt": "2026-11-03T15:20:00.000Z",
       "finishedAt": "2026-11-03T15:25:00.000Z",
-      "idempotencyKey": "report-facts-only"
+      "idempotencyKey": "report-facts-only",
+      "years": [
+        2025,
+        2026
+      ],
+      "scope": null,
+      "stages": [
+        {
+          "stage": "report",
+          "status": "passed",
+          "summary": "同赛制事实对照。没有像素趋势。"
+        }
+      ]
     }
   ],
   "sources": [

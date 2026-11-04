@@ -62,13 +62,34 @@ async function Report({ params }: { params: Promise<{ track: string }> }) {
         <InferenceMark />
         <h2 className="mt-3 text-2xl">审美趋势</h2>
         <p className="mt-2 text-sm leading-6">{comparison.inference.reason}</p>
-        <ul className="mt-3 list-disc pl-5 text-sm text-amber-950">
-          <li>题材分布变化：未生成</li>
-          <li>构图方式变化：未生成</li>
-          <li>色彩倾向变化：未生成</li>
-          <li>叙事方式变化：未生成</li>
-          <li>主题表达变化：未生成</li>
-          <li>视觉风格变化：未生成</li>
+        <p className="mt-2 text-xs text-amber-950">像素趋势：未生成</p>
+        <ul className="mt-4 space-y-4">
+          {comparison.inference.dimensions.map((dimension) => (
+            <li key={dimension.id} className="rounded-xl bg-white/70 px-3 py-3 text-sm">
+              <p className="font-medium">{dimension.label}</p>
+              <p className="mt-1 text-xs leading-5 text-amber-950">{dimension.status === "text_quoted" ? "说明原句" : "未生成"} · {dimension.reason}</p>
+              {dimension.years.map((year) => (
+                <div key={year.year} className="mt-2">
+                  <p className="text-xs text-stone-500">{year.year}</p>
+                  {year.items.length === 0 ? (
+                    <p className="text-xs text-stone-500">这一年的说明没有写到这一维。</p>
+                  ) : (
+                    <ul className="mt-1 space-y-2">
+                      {year.items.map((item) => (
+                        <li key={`${item.workId}-${item.label}`}>
+                          <Link href={item.workId.startsWith("series-") ? `/series/${item.workId}` : `/photographs/${item.workId}`} className="underline">
+                            {displayTitle(item.title)}
+                          </Link>
+                          <span className="ml-2">{item.label}</span>
+                          <blockquote className="mt-1 border-l-2 border-amber-900/30 pl-2 text-xs leading-5">{item.quote}</blockquote>
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              ))}
+            </li>
+          ))}
         </ul>
       </section>
       <p className="mt-4 text-sm">

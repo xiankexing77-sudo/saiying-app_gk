@@ -14,12 +14,12 @@ export default function HomePage() {
       <PageHeader
         kicker="SWPA pilot"
         title="摄影赛事评委研究"
-        lede="Photo Jury Intelligence 收录 Sony World Photography Awards 2025 与 2026 的公开获奖记录和评委资料。获奖作品的视觉分析仍未执行。评委风格标签只在本人作品满 3 组后，根据作品陈述生成；样本不足时不写偏好。"
+        lede="Photo Jury Intelligence 收录 Sony World Photography Awards 2025 与 2026 的公开获奖记录和评委资料。获奖原图不读取。官方说明里写明的维度会引用原句，没写到的留空。评委风格标签只在本人作品满 3 组后，根据作品陈述生成。"
       />
       <div className="mt-6 flex flex-wrap gap-2">
         <SeedMark />
         <FactMark>四个比赛体系</FactMark>
-        <InferenceMark>模板 · 未调用模型</InferenceMark>
+        <InferenceMark>说明证据 · 未读像素</InferenceMark>
       </div>
       <section className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-4">
         <Stat label="赛事" value={stats.competitions} href="/competitions" />
@@ -28,8 +28,8 @@ export default function HomePage() {
         <Stat label="评委" value={stats.juries} href="/juries" />
         <Stat label="风格标签已生成" value={stats.juriesWithStyleTags} href="/juries/bindi-vora" />
         <Stat label="系列 / 单张" value={`${stats.series} / ${stats.singles}`} href="/photographs" />
-        <Stat label="已完成视觉分析" value={stats.analysesComplete} href="/reports" />
-        <Stat label="分析模板" value={stats.analysesTemplate} href="/analyze" />
+        <Stat label="说明证据已填写" value={stats.analysesComplete} href="/reports/single_image" />
+        <Stat label="说明不足留空" value={stats.analysesInsufficient} href="/series/series-2025-creative" />
         <Stat label="阻塞任务" value={stats.blockedTasks} href="/tasks" />
       </section>
       <section className="mt-8 rounded-2xl border border-border bg-white/60 p-5">

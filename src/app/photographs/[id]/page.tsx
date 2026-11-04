@@ -5,7 +5,6 @@ import { AnalysisPanel } from "@/components/analysis-panel";
 import { FactMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
-import { RequestAnalysis } from "@/components/request-analysis";
 import { RightsPlaceholder } from "@/components/rights-placeholder";
 import { WorkValidation } from "@/components/validation-panel";
 import { awardsFor, getCategory, getEdition, getImageAsset, getPhotograph, listPhotographs, listTracks, photographersByIds, singleAnalysis } from "@/lib/catalog";
@@ -49,6 +48,7 @@ async function Photograph({ params }: { params: Promise<{ id: string }> }) {
             <Row label="规范化赛制" value={track?.normalizedLabel ?? "—"} />
             <Row label="官方组别" value={category?.rawName ?? "—"} />
             <Row label="规范化组别" value={category?.normalizedName ?? "—"} />
+            <Row label="摄影师" value={people.map((person) => (person.country ? `${person.name}（${person.country}）` : person.name)).join("、")} />
             <Row label="奖项" value={awards.map((item) => item.award.name).join(" · ") || "—"} />
             <Row label="图片权限" value={asset?.rightsStatus ?? "rights_blocked"} />
           </dl>
@@ -59,6 +59,11 @@ async function Photograph({ params }: { params: Promise<{ id: string }> }) {
               </p>
             ) : null,
           )}
+          {awards.map((item) => (
+            <p key={item.link.id} className="mt-2 text-xs leading-5 text-stone-600">
+              {item.award.name} 的来源：{item.award.provenance.sourcePageTitle}
+            </p>
+          ))}
           <h2 className="mt-5 text-lg">作品说明</h2>
           <p className="mt-2 text-sm leading-6">{photo.description ?? "来源页暂无作品说明。"}</p>
           <p className="mt-3 text-sm">
@@ -72,11 +77,7 @@ async function Photograph({ params }: { params: Promise<{ id: string }> }) {
       {edition ? <WorkValidation workId={photo.id} year={edition.year} /> : null}
       {analysis ? (
         <div className="mt-6">
-          <AnalysisPanel
-            schema="single_image"
-            evidenceNote={analysis.evidenceNote}
-            action={<RequestAnalysis url={`/api/v1/photographs/${photo.id}/analyze`} label="请求分析" />}
-          />
+          <AnalysisPanel analysis={analysis} endpoint={`/api/v1/photographs/${photo.id}/analyze`} />
         </div>
       ) : null}
       <p className="mt-4 text-xs text-stone-500">

@@ -6,5 +6,8 @@ export async function POST(_request: Request, context: { params: Promise<{ id: s
   if (!result.ok) {
     return Response.json({ message: result.message, task: "task" in result ? result.task : undefined }, { status: result.status });
   }
-  return Response.json({ message: "任务已重新入队。没有 worker 会继续执行。", task: result.task });
+  return Response.json({
+    message: "任务已重新入队。进程内会再跑可执行的阶段，不会抓取官网，也不会读取原图。",
+    task: result.task,
+  });
 }

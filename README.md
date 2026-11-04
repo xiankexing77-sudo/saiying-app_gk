@@ -2,7 +2,7 @@
 
 摄影赛事评委研究与 AI 视觉分析平台。首期试点只做 **Sony World Photography Awards（SWPA）2025 与 2026**。
 
-这是一个可运行的研究界面和数据模型证明，不是完整的采集集群。页面能按赛事、届次、组别、奖项浏览获奖作品和评委；事实与推断分开；来源、记录时间和解析版本写在事实记录上。
+这是一个可运行的研究界面和数据模型证明，不是完整的采集集群。页面能按赛事、届次、组别、奖项浏览获奖作品和评委；事实与推断分开；来源、记录时间和解析版本写在事实记录上。获奖原图不读取。官方说明里写到的维度会引用原句，没写到的留空。
 
 ## 怎么运行
 
@@ -65,8 +65,8 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - 评委本人作品不足 3 组时，画像标记「样本不足」，风格、色彩、构图全部为空。达到 3 组时，风格标签只引用这些作品页面上的陈述，不读像素，也不用职务简介。
 - SWPA 是匿名评审。公开引语如果称「评委会」，只作为引语保存，不解释成某位评委选了某件作品。
 - 跨届对照只发生在同一规范化赛制、同一组别。Open 的 Architecture 不与 Professional 的 Architecture & Design 混比。
-- 没有视觉分析结果时，报告不写题材、色彩或叙事趋势。
-- 用户上传的照片只在浏览器里读取文件名、类型、大小和尺寸，不上传二进制，也不做相似图检索。
+- 没有像素分析结果时，报告不把题材、色彩或叙事写成视觉趋势。同赛制页面可以并列官方说明里的原句；说明没写到的维度保持未生成。
+- 用户上传的照片只在浏览器里读取文件名、类型、大小、尺寸，并在本地计算亮度与颜色样本。二进制不上传，也不做相似图检索。语义维度只对照用户自己写下的说明。
 - 平台给出的是历史记录和研究参照，不是下一届比赛的结果预测。
 
 ## 什么是真的，什么是桩
@@ -79,10 +79,10 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 | 其他系列的逐帧照片 | 未采集，张数为空 |
 | 获奖原图 | 不抓取、不托管、不在页面里外链显示。权限状态为 `rights_blocked` |
 | SonyAdapter、去重、域名校验 | 可运行。作品库仍读种子。另有多来源夹具和交叉验证，不发 HTTP |
-| LangGraph、Celery、Redis、PostgreSQL、pgvector | 未部署。`database/schema.sql` 是目标表结构；`agents/graph.ts` 只描述阶段 |
-| 获奖作品视觉分析、跨届审美趋势 | 模板。字段为空，明确标记推断 |
-| 评委本人作品与风格标签 | 夹具采集，不发 HTTP。满 3 组才由 `pji-style-tags` 根据作品陈述归并标签 |
-| 任务队列 | 进程内状态。创建和重试只改状态，没有 worker |
+| LangGraph、Celery、Redis、PostgreSQL、pgvector | 未部署。`database/schema.sql` 是目标表结构；`agents/graph.ts` 在进程内列出阶段，不调用 LangGraph |
+| 获奖作品视觉分析、跨届审美趋势 | 不读像素。`pji-text-evidence` 只在官方说明原句命中词表时填写维度，并附原句。像素趋势保持未生成 |
+| 评委本人作品与风格标签 | 夹具采集，不发 HTTP。满 3 组才由 `pji-style-tags` 根据作品陈述归并标签。评委页另有研究关系，不连到个人投票 |
+| 任务队列 | 进程内执行可跑的阶段（夹具验证、说明证据、评委样本、报告）。创建请求先返回。像素分析与 Shortlist 保持阻塞。没有 Celery |
 
 ## 目录
 
@@ -91,8 +91,11 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - `collectors/sony`：入口清单、名称规范化、去重、SonyAdapter、多来源摘录
 - `collectors/portfolio`：本人作品样本组。允许的主机、夹具、同一作品并组
 - `agents/style-tags.ts`：只读已采集的样本组，生成风格标签
+- `agents/text-evidence.ts`：只读官方说明或用户说明里的原句，填写命中的视觉维度
 - `collectors/cross-validate.ts`：一致 / 冲突 / 单一来源。官方主入口优先，冲突原文都保留
-- `agents`：研究流程桩
+- `agents`：研究流程在进程内按阶段结算，不是 LangGraph 运行时
+- `.cursor/skills/bgx-development-workflow/SKILL.md`：项目级 BGX 开发流程技能
+- `docs/bgx`：按 BGX111、BGX222、BGX333 留下的规范、架构审查和开发计划
 - `database/schema.sql`：目标 PostgreSQL 结构
 - `tests/honesty.test.ts`：入口清单、事实与推断分离、跨赛制比较防护
 
@@ -104,4 +107,24 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 - `GET /api/v1/tasks/{id}`
 - `POST /api/v1/tasks/{id}/retry`
 
-作品分析的 POST 仍只返回模板。评委画像的 POST 用已采集的样本组重跑风格标签规则，不调用外部模型；不足 3 组时返回「样本不足」。
+作品和系列分析的 POST 返回已经生成的说明证据，不读取像素。用户说明走 `POST /api/v1/uploads/analyze`，只接受文字，拒绝图像字段。评委画像的 POST 用已采集的样本组重跑风格标签规则，不调用外部模型；不足 3 组时返回「样本不足」。研究关系：`GET /api/v1/juries/{id}/graph`。
+
+可以打开这些页面看结果：
+
+- [广角与俯视有原句](http://127.0.0.1:41731/photographs/single-2025-architecture)
+- [没有系列说明，组图维度留空](http://127.0.0.1:41731/series/series-2025-creative)
+- [系列说明原句，不采用评委引语](http://127.0.0.1:41731/series/series-2026-creative)
+- [同赛制说明对照，像素趋势未生成](http://127.0.0.1:41731/reports/single_image)
+- [本地测量与说明对照](http://127.0.0.1:41731/analyze)
+- [任务会在进程内往下走](http://127.0.0.1:41731/tasks)
+- [评委研究关系](http://127.0.0.1:41731/juries/bindi-vora)
+
+```bash
+curl -s -X POST http://127.0.0.1:41731/api/v1/uploads/analyze \
+  -H 'content-type: application/json' \
+  -d '{"caption":"a black-and-white portrait in a bedroom"}'
+curl -s http://127.0.0.1:41731/api/v1/juries/bindi-vora/graph
+curl -s -X POST http://127.0.0.1:41731/api/v1/competitions/swpa/research \
+  -H 'content-type: application/json' \
+  -d '{"years":[2025,2026],"scope":{"winners":true,"shortlists":false,"juries":true,"juryPortfolios":true,"imageAnalysis":true,"reportGeneration":true}}'
+```

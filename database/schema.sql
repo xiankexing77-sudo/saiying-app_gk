@@ -237,6 +237,8 @@ CREATE TABLE style_tags (
     CHECK (scope <> 'single_group' OR sample_count = 1)
 );
 
+-- status 为 text_grounded 或 insufficient_text。pixels_read 在未授权、未保存原图时保持 false。
+-- 非空维度必须能回到 analysis_evidence.quote，且 quote 是官方说明或用户说明的原句。
 CREATE TABLE image_analyses (
     id TEXT PRIMARY KEY,
     photograph_id TEXT REFERENCES photographs(id),
@@ -244,6 +246,8 @@ CREATE TABLE image_analyses (
     kind TEXT NOT NULL CHECK (kind = 'inference'),
     analysis_schema TEXT NOT NULL CHECK (analysis_schema IN ('single_image', 'series')),
     status TEXT NOT NULL,
+    basis TEXT,
+    pixels_read BOOLEAN NOT NULL DEFAULT FALSE,
     confidence NUMERIC,
     model_name TEXT,
     model_version TEXT,
@@ -254,6 +258,16 @@ CREATE TABLE image_analyses (
         (analysis_schema = 'single_image' AND photograph_id IS NOT NULL)
         OR (analysis_schema = 'series' AND series_id IS NOT NULL)
     )
+);
+
+CREATE TABLE analysis_evidence (
+    id TEXT PRIMARY KEY,
+    analysis_id TEXT NOT NULL REFERENCES image_analyses(id) ON DELETE CASCADE,
+    dimension TEXT NOT NULL,
+    label TEXT NOT NULL,
+    quote TEXT NOT NULL,
+    source_url TEXT,
+    rationale TEXT NOT NULL
 );
 
 CREATE TABLE collection_tasks (

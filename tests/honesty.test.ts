@@ -60,13 +60,22 @@ test("seed quality checks pass and images are not hosted", () => {
   assert.equal(database.imageAssets.every((asset) => asset.officialImageUrl === null), true);
 });
 
-test("series and single analyses use different schemas and do not invent observations", () => {
+test("series and single analyses use different schemas and only quote official text", () => {
   assert.ok(database.seriesAnalyses.length > 0);
   assert.ok(database.singleAnalyses.length > 0);
-  assert.equal(database.seriesAnalyses.every((row) => row.schema === "series" && row.narrativeCoherence === null), true);
-  assert.equal(database.singleAnalyses.every((row) => row.schema === "single_image" && row.composition === null), true);
+  assert.equal(database.seriesAnalyses.every((row) => row.schema === "series" && row.narrativeCoherence === null && row.pixelsRead === false), true);
+  assert.equal(database.singleAnalyses.every((row) => row.schema === "single_image" && row.basicDescription === null && row.pixelsRead === false), true);
+  const wide = database.singleAnalyses.find((row) => row.photographId === "single-2025-architecture");
+  assert.equal(wide?.status, "text_grounded");
+  assert.match(wide?.composition ?? "", /广角/);
+  assert.equal(wide?.evidence.some((item) => item.quote.toLowerCase().includes("very wide angle")), true);
+  const untitled = database.seriesAnalyses.find((row) => row.seriesId === "series-2025-creative");
+  assert.equal(untitled?.status, "insufficient_text");
+  assert.equal(untitled?.themeDevelopment, null);
   const bilha = database.series.find((item) => item.id === "series-2026-creative");
   assert.equal(bilha?.imageCount, 8);
+  const bilhaAnalysis = database.seriesAnalyses.find((row) => row.seriesId === "series-2026-creative");
+  assert.equal(bilhaAnalysis?.evidence.some((item) => item.quote.includes("The jury applauded")), false);
   const faithful = database.series.find((item) => item.id === "series-2026-portraiture");
   assert.equal(faithful?.photographerIds.length, 2);
 });
@@ -100,7 +109,7 @@ test("cross-track comparison is refused and same-track rows stay paired", () => 
   assert.equal(comparison.rows.length, 1);
   assert.equal(comparison.rows[0]?.left?.title, "Rhi-Entry");
   assert.equal(comparison.rows[0]?.right?.title, "Bilha, Stories of my Sisters");
-  assert.equal(comparison.inference.status, "not_generated");
+  assert.equal(comparison.inference.pixelTrend, "not_generated");
   const architecture = compareEditions("single_image", "cat-single_image-architecture");
   assert.equal(architecture.ok, true);
   if (!architecture.ok) return;
@@ -121,5 +130,8 @@ test("SonyAdapter reads the seed without claiming a live crawl", () => {
     assert.equal(adapter.extractOfficialImages(edition).every((image) => image.officialImageUrl === null), true);
   }
   const graph = runStubGraph([2025, 2026]);
-  assert.equal(graph.nodes.some((node) => node.stage === "image_analysis" && node.status === "blocked"), true);
+  const imageNode = graph.nodes.find((node) => node.stage === "image_analysis");
+  assert.equal(imageNode?.status, "blocked");
+  assert.match(imageNode?.summary ?? "", /像素/);
+  assert.match(imageNode?.summary ?? "", /文本/);
 });

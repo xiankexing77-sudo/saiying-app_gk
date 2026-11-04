@@ -26,7 +26,9 @@ export async function POST(request: Request, context: { params: Promise<{ id: st
     {
       created: result.created,
       task: result.task,
-      message: result.created ? "任务已入队，请求本身不执行采集。" : "相同范围的任务已经存在。",
+      message: result.created
+        ? "任务已入队。请求立即返回，进程内接着跑可执行的阶段，不在这次响应里抓取或看图。"
+        : "相同范围的任务已经存在。",
     },
     { status: result.created ? 202 : 200 },
   );
