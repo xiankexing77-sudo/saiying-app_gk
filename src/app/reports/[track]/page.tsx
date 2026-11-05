@@ -1,11 +1,13 @@
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { Suspense } from "react";
-import { compareEditions, TRACK_LABEL } from "@/lib/catalog";
+import { compareEditions } from "@/lib/catalog";
 import type { NormalizedTrack } from "@/lib/data/types";
 import { displayTitle, peopleLine } from "@/lib/labels";
 import { FactMark, InferenceMark } from "@/components/marks";
-import { PageHeader, PageMain } from "@/components/page-header";
+import { PageMain } from "@/components/page-header";
+import { ReportIntro } from "@/components/report-intro";
+import { Tr } from "@/components/preferences";
 
 const tracks: NormalizedTrack[] = ["series", "single_image", "student", "youth"];
 
@@ -15,7 +17,13 @@ export function generateStaticParams() {
 
 export default function Page({ params }: { params: Promise<{ track: string }> }) {
   return (
-    <Suspense fallback={<PageMain>正在整理对照…</PageMain>}>
+    <Suspense
+      fallback={
+        <PageMain>
+          <Tr k="reports.loading" />
+        </PageMain>
+      }
+    >
       <Report params={params} />
     </Suspense>
   );
@@ -29,28 +37,31 @@ async function Report({ params }: { params: Promise<{ track: string }> }) {
   if (!comparison.ok) notFound();
   return (
     <PageMain>
-      <PageHeader
-        kicker="2025 / 2026"
-        title={`${TRACK_LABEL[normalized].zh}事实对照`}
-        lede={`2025 官方名称「${comparison.rawNames[2025]}」，2026 官方名称「${comparison.rawNames[2026]}」。两边都是${comparison.workForm === "series" ? "系列" : "单张"}结构。`}
+      <ReportIntro
+        track={normalized}
+        raw2025={comparison.rawNames[2025]}
+        raw2026={comparison.rawNames[2026]}
+        series={comparison.workForm === "series"}
       />
-      <div className="mt-8 overflow-x-auto rounded-2xl border border-border">
-        <table className="w-full min-w-[640px] text-left text-sm">
-          <thead className="bg-stone-900 text-stone-50">
+      <div className="glass-table">
+        <table className="w-full min-w-[640px] text-sm">
+          <thead>
             <tr>
-              <th className="px-3 py-2 font-medium">组别原文</th>
-              <th className="px-3 py-2 font-medium">2025</th>
-              <th className="px-3 py-2 font-medium">2026</th>
+              <th className="font-medium">
+                <Tr k="reports.rawCategory" />
+              </th>
+              <th className="font-num font-medium">2025</th>
+              <th className="font-num font-medium">2026</th>
             </tr>
           </thead>
           <tbody>
             {comparison.rows.map((row) => (
-              <tr key={row.categoryId} className="border-t border-border bg-white/70 align-top">
-                <td className="px-3 py-3">{row.rawCategory}</td>
-                <td className="px-3 py-3">
+              <tr key={row.categoryId} className="border-t border-border">
+                <td>{row.rawCategory}</td>
+                <td>
                   <WorkCell item={row.left} />
                 </td>
-                <td className="px-3 py-3">
+                <td>
                   <WorkCell item={row.right} />
                 </td>
               </tr>
@@ -58,30 +69,38 @@ async function Report({ params }: { params: Promise<{ track: string }> }) {
           </tbody>
         </table>
       </div>
-      <section className="mt-6 rounded-2xl border border-amber-900/25 bg-amber-50/80 p-5">
+      <section className="glass glass-ember mt-8 p-6">
         <InferenceMark />
-        <h2 className="mt-3 text-2xl">审美趋势</h2>
-        <p className="mt-2 text-sm leading-6">{comparison.inference.reason}</p>
-        <p className="mt-2 text-xs text-amber-950">像素趋势：未生成</p>
-        <ul className="mt-4 space-y-4">
+        <h2 className="mt-4 text-xl font-medium">
+          <Tr k="reports.trend" />
+        </h2>
+        <p className="mt-4 text-sm leading-6">{comparison.inference.reason}</p>
+        <p className="mt-2 text-xs text-muted-foreground">
+          <Tr k="reports.pixel" />
+        </p>
+        <ul className="mt-4 flex flex-col gap-4">
           {comparison.inference.dimensions.map((dimension) => (
-            <li key={dimension.id} className="rounded-xl bg-white/70 px-3 py-3 text-sm">
+            <li key={dimension.id} className="rounded-2xl border border-border px-4 py-4 text-sm">
               <p className="font-medium">{dimension.label}</p>
-              <p className="mt-1 text-xs leading-5 text-amber-950">{dimension.status === "text_quoted" ? "说明原句" : "未生成"} · {dimension.reason}</p>
+              <p className="mt-2 text-xs leading-6 text-muted-foreground">
+                <Tr k={dimension.status === "text_quoted" ? "reports.quoted" : "reports.notGenerated"} /> · {dimension.reason}
+              </p>
               {dimension.years.map((year) => (
                 <div key={year.year} className="mt-2">
-                  <p className="text-xs text-stone-500">{year.year}</p>
+                  <p className="font-num text-xs text-muted-foreground">{year.year}</p>
                   {year.items.length === 0 ? (
-                    <p className="text-xs text-stone-500">这一年的说明没有写到这一维。</p>
+                    <p className="text-xs text-muted-foreground">
+                      <Tr k="reports.yearEmpty" />
+                    </p>
                   ) : (
-                    <ul className="mt-1 space-y-2">
+                    <ul className="mt-2 flex flex-col gap-2">
                       {year.items.map((item) => (
                         <li key={`${item.workId}-${item.label}`}>
                           <Link href={item.workId.startsWith("series-") ? `/series/${item.workId}` : `/photographs/${item.workId}`} className="underline">
                             {displayTitle(item.title)}
                           </Link>
                           <span className="ml-2">{item.label}</span>
-                          <blockquote className="mt-1 border-l-2 border-amber-900/30 pl-2 text-xs leading-5">{item.quote}</blockquote>
+                          <blockquote className="mt-2 border-l-2 border-border pl-4 text-xs leading-6">{item.quote}</blockquote>
                         </li>
                       ))}
                     </ul>
@@ -92,22 +111,35 @@ async function Report({ params }: { params: Promise<{ track: string }> }) {
           ))}
         </ul>
       </section>
-      <p className="mt-4 text-sm">
-        <FactMark /> <Link href="/reports" className="ml-2 underline">返回报告列表</Link>
+      <p className="mt-4 flex items-center gap-2 text-sm">
+        <FactMark />
+        <Link href="/reports" className="underline">
+          <Tr k="reports.back" />
+        </Link>
       </p>
     </PageMain>
   );
 }
 
-function WorkCell({ item }: { item: { href: string; title: string | null; photographers: { name: string }[]; awards: string[] } | null }) {
-  if (!item) return <span className="text-stone-500">来源中没有这条冠军记录</span>;
+function WorkCell({
+  item,
+}: {
+  item: { href: string; title: string | null; photographers: { name: string }[]; awards: string[] } | null;
+}) {
+  if (!item) {
+    return (
+      <span className="text-muted-foreground">
+        <Tr k="reports.missingWinner" />
+      </span>
+    );
+  }
   return (
     <div>
       <Link href={item.href} className="underline-offset-2 hover:underline">
         {displayTitle(item.title)}
       </Link>
-      <p className="text-xs text-stone-600">{peopleLine(item.photographers.map((person) => person.name))}</p>
-      <p className="text-xs text-stone-500">{item.awards.join(" · ")}</p>
+      <p className="text-xs text-muted-foreground">{peopleLine(item.photographers.map((person) => person.name))}</p>
+      <p className="text-xs text-muted-foreground">{item.awards.join(" · ")}</p>
     </div>
   );
 }

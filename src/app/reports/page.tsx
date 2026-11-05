@@ -1,32 +1,39 @@
 import Link from "next/link";
+import { ArrowUpRight } from "lucide-react";
 import { TRACK_LABEL } from "@/lib/catalog";
-import { PageHeader, PageMain } from "@/components/page-header";
 import { InferenceMark } from "@/components/marks";
+import { LinearIcon } from "@/components/linear-icon";
+import { PageHeader, PageMain } from "@/components/page-header";
+import { Tr } from "@/components/preferences";
 
 export const metadata = { title: "报告" };
 
 const tracks = ["series", "single_image", "student", "youth"] as const;
+const glows = ["glass-plum", "glass-cobalt", "glass-ember", "glass-plum"] as const;
 
 export default function ReportsPage() {
   return (
     <PageMain>
-      <PageHeader
-        kicker="Reports"
-        title="研究报告"
-        lede="对照限于同一规范化赛制。Professional 的 Architecture & Design 不会和 Open 的 Architecture 混在一张表里。像素上的审美变化不生成；只有官方说明原句写到的维度才会按年列出。"
-      />
-      <div className="mt-8 grid gap-3 sm:grid-cols-2">
-        {tracks.map((track) => (
-          <Link key={track} href={`/reports/${track}`} className="rounded-2xl border border-border bg-card p-5 hover:border-stone-500">
-            <p className="text-xs text-stone-500">{TRACK_LABEL[track].rawExample}</p>
-            <h2 className="mt-2 text-2xl">{TRACK_LABEL[track].zh}</h2>
-            <p className="mt-2 text-sm text-stone-600">规范化名称 {TRACK_LABEL[track].normalized}</p>
+      <PageHeader kicker={<Tr k="reports.kicker" />} title={<Tr k="reports.title" />} lede={<Tr k="reports.lede" />} />
+      <div className="grid gap-4 sm:grid-cols-2">
+        {tracks.map((track, index) => (
+          <Link key={track} href={`/reports/${track}`} className={`glass ${glows[index]} block p-6`}>
+            <p className="flex items-center justify-between text-xs text-muted-foreground">
+              <span>{TRACK_LABEL[track].rawExample}</span>
+              <LinearIcon icon={ArrowUpRight} />
+            </p>
+            <h2 className="mt-4 text-xl font-medium">
+              <Tr k={`reports.${track}`} />
+            </h2>
+            <p className="mt-2 text-sm text-muted-foreground">
+              <Tr k="reports.normalized" v={{ name: TRACK_LABEL[track].normalized }} />
+            </p>
           </Link>
         ))}
       </div>
-      <p className="mt-6 flex items-center gap-2 text-sm">
+      <p className="mt-8 flex items-center gap-2 text-sm">
         <InferenceMark />
-        没有像素分析。说明里没写到的色彩、构图或叙事保持未生成。
+        <Tr k="reports.note" />
       </p>
     </PageMain>
   );

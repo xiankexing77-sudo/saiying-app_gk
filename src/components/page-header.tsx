@@ -6,17 +6,17 @@ export function PageHeader({
   lede,
   actions,
 }: {
-  kicker: string;
-  title: string;
-  lede?: string;
+  kicker: ReactNode;
+  title: ReactNode;
+  lede?: ReactNode;
   actions?: ReactNode;
 }) {
   return (
-    <header className="flex flex-col gap-4 border-b border-border pb-6 sm:flex-row sm:items-end sm:justify-between">
-      <div>
-        <p className="text-[11px] font-medium tracking-[0.22em] text-muted-foreground uppercase">{kicker}</p>
-        <h1 className="mt-2 text-3xl leading-tight sm:text-4xl">{title}</h1>
-        {lede ? <p className="mt-3 max-w-3xl text-sm leading-6 text-muted-foreground">{lede}</p> : null}
+    <header className="flex flex-col gap-8 pb-8 sm:flex-row sm:items-end sm:justify-between">
+      <div className="flex max-w-3xl flex-col gap-4">
+        <p className="font-num text-xs tracking-[0.16em] text-muted-foreground uppercase">{kicker}</p>
+        <h1 className="font-title">{title}</h1>
+        {lede ? <p className="text-sm leading-6 text-muted-foreground">{lede}</p> : null}
       </div>
       {actions}
     </header>
@@ -24,5 +24,9 @@ export function PageHeader({
 }
 
 export function PageMain({ children }: { children: ReactNode }) {
-  return <main className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-6">{children}</main>;
+  return (
+    <main data-space-unit="8" className="mx-auto w-full max-w-6xl px-4 py-8 sm:px-8">
+      {children}
+    </main>
+  );
 }

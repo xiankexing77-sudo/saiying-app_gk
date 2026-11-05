@@ -1,9 +1,14 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { RotateCcw } from "lucide-react";
 import type { AgentTask } from "@/lib/data/types";
+import { translate } from "@/lib/i18n/messages";
+import { LinearIcon } from "./linear-icon";
+import { useI18n } from "./preferences";
 
 export function TaskDetail({ id }: { id: string }) {
+  const { m } = useI18n();
   const [task, setTask] = useState<AgentTask | null>(null);
   const [missing, setMissing] = useState(false);
   const [message, setMessage] = useState<string | null>(null);
@@ -40,19 +45,34 @@ export function TaskDetail({ id }: { id: string }) {
     if (body.task) setTask(body.task);
   }
 
-  if (missing) return <p>没有这个任务。</p>;
-  if (!task) return <p className="text-sm text-stone-500">正在读取任务状态…</p>;
+  if (missing) return <p>{m.tasks.missing}</p>;
+  if (!task) return <p className="text-sm text-muted-foreground">{m.tasks.loading}</p>;
+  const statusLabel = {
+    queued: m.tasks.queued,
+    running: m.tasks.running,
+    succeeded: m.tasks.succeeded,
+    failed: m.tasks.failed,
+    blocked: m.tasks.blocked,
+  }[task.status];
 
   return (
-    <article className="mt-8 rounded-2xl border border-border bg-card p-5 text-sm">
-      <p>状态：{task.status}</p>
-      <p className="mt-1">阶段：{task.stage}</p>
-      <p className="mt-1">
-        进度 {task.completed} / {task.total}，失败 {task.failed}
+    <article className="glass glass-cobalt mt-8 p-6 text-sm">
+      <p>
+        {m.tasks.statusLine}：{statusLabel}
       </p>
-      <p className="mt-1">当前对象：{task.currentItem ?? "—"}</p>
-      <p className="mt-1">开始：{task.startedAt ?? "—"}</p>
-      <p>结束：{task.finishedAt ?? "—"}</p>
+      <p className="mt-2">
+        {m.tasks.stageLine}：{task.stage}
+      </p>
+      <p className="font-num mt-2">{translate(m, "tasks.progressLine", { done: task.completed, total: task.total, failed: task.failed })}</p>
+      <p className="mt-2">
+        {m.tasks.current}：{task.currentItem ?? "—"}
+      </p>
+      <p className="mt-2">
+        {m.tasks.started}：{task.startedAt ?? "—"}
+      </p>
+      <p>
+        {m.tasks.finished}：{task.finishedAt ?? "—"}
+      </p>
       {task.stages.length ? (
         <ol className="mt-4 space-y-2">
           {task.stages.map((stage) => (
@@ -72,11 +92,12 @@ export function TaskDetail({ id }: { id: string }) {
         </ul>
       ) : null}
       {task.status === "blocked" || task.status === "failed" ? (
-        <button type="button" className="mt-4 rounded-full bg-stone-900 px-4 py-2 text-stone-50" onClick={() => void retry()}>
-          重试
+        <button type="button" className="btn-glow mt-4" onClick={() => void retry()}>
+          <LinearIcon icon={RotateCcw} />
+          {m.tasks.retry}
         </button>
       ) : null}
-      {message ? <p className="mt-3">{message}</p> : null}
+      {message ? <p className="mt-4">{message}</p> : null}
     </article>
   );
 }
