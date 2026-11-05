@@ -328,28 +328,41 @@ export type JuryInference = {
   statement: string;
 };
 
+export type AnalysisEvidence = {
+  dimension: string;
+  label: string;
+  quote: string;
+  sourceUrl: string | null;
+  rationale: string;
+};
+
+export type TextBasis = "official_text" | "user_caption";
+
 export type SingleImageAnalysis = {
   id: string;
   photographId: string;
   kind: "inference";
   schema: "single_image";
-  status: "template_unconfigured";
+  status: "text_grounded" | "insufficient_text";
+  basis: TextBasis;
+  pixelsRead: false;
   basicDescription: null;
-  subjectScene: null;
-  composition: null;
-  light: null;
-  color: null;
+  subjectScene: string | null;
+  composition: string | null;
+  light: string | null;
+  color: string | null;
   visualWeight: null;
-  spatialDepth: null;
-  mood: null;
-  narrative: null;
-  theme: null;
+  spatialDepth: string | null;
+  mood: string | null;
+  narrative: string | null;
+  theme: string | null;
   uniqueness: null;
-  technique: null;
-  confidence: null;
-  modelName: null;
-  modelVersion: null;
-  analyzedAt: null;
+  technique: string | null;
+  confidence: number | null;
+  modelName: string | null;
+  modelVersion: string | null;
+  analyzedAt: string | null;
+  evidence: AnalysisEvidence[];
   evidenceNote: string;
 };
 
@@ -358,18 +371,36 @@ export type SeriesAnalysis = {
   seriesId: string;
   kind: "inference";
   schema: "series";
-  status: "template_unconfigured";
+  status: "text_grounded" | "insufficient_text";
+  basis: "official_text";
+  pixelsRead: false;
   narrativeCoherence: null;
-  visualUnity: null;
-  imageRelations: null;
-  themeDevelopment: null;
+  visualUnity: string | null;
+  imageRelations: string | null;
+  themeDevelopment: string | null;
   pacing: null;
   completeness: null;
-  confidence: null;
-  modelName: null;
-  modelVersion: null;
-  analyzedAt: null;
+  confidence: number | null;
+  modelName: string | null;
+  modelVersion: string | null;
+  analyzedAt: string | null;
+  evidence: AnalysisEvidence[];
   evidenceNote: string;
+};
+
+export type ResearchScope = {
+  winners: boolean;
+  shortlists: boolean;
+  juries: boolean;
+  juryPortfolios: boolean;
+  imageAnalysis: boolean;
+  reportGeneration: boolean;
+};
+
+export type TaskStageLog = {
+  stage: string;
+  status: "passed" | "blocked" | "skipped";
+  summary: string;
 };
 
 export type AgentTask = {
@@ -386,6 +417,9 @@ export type AgentTask = {
   startedAt: string | null;
   finishedAt: string | null;
   idempotencyKey: string;
+  years: number[];
+  scope: ResearchScope | null;
+  stages: TaskStageLog[];
 };
 
 export type Database = {

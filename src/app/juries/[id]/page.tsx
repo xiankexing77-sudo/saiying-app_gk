@@ -7,7 +7,9 @@ import { PersonalWorksPanel } from "@/components/personal-works-panel";
 import { ProvenanceLine } from "@/components/provenance";
 import { RequestAnalysis } from "@/components/request-analysis";
 import { JuryValidation } from "@/components/validation-panel";
+import { JuryGraph } from "@/components/jury-graph";
 import { getJury, juryAssignments, juryProfile, listJuries, quotesBySpeaker } from "@/lib/catalog";
+import { juryResearchGraph } from "@/lib/jury-graph";
 import { trackZh } from "@/lib/labels";
 
 export function generateStaticParams() {
@@ -30,6 +32,7 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
   const profile = juryProfile(jury.id);
   const quotes = quotesBySpeaker(jury.name);
   const inference = profile.inference;
+  const graph = juryResearchGraph(jury.id);
   return (
     <PageMain>
       <PageHeader
@@ -123,6 +126,7 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
           </p>
         </section>
       </div>
+      {graph ? <JuryGraph graph={graph} /> : null}
       <JuryValidation juryId={jury.id} />
       <p className="mt-4 text-sm">
         <Link href="/juries" className="underline">

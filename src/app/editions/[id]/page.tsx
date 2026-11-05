@@ -44,6 +44,7 @@ async function Edition({ params }: { params: Promise<{ id: string }> }) {
           </Link>
         }
       />
+      <ProvenanceLine provenance={edition.provenance} />
       {validation ? <ValidationPanel report={validation} limitAgrees /> : null}
       <div className="mt-6 flex flex-wrap gap-2">
         {byTrack.map((row) => (

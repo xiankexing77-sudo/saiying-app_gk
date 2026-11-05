@@ -5,6 +5,7 @@ import { ENTRY_ALLOWLIST } from "../../../../collectors/sony/allowlist";
 import { getCompetition, listEditions, listTracks } from "@/lib/catalog";
 import { collectEdition } from "@/lib/collection";
 import { PageHeader, PageMain } from "@/components/page-header";
+import { ProvenanceLine } from "@/components/provenance";
 
 export function generateStaticParams() {
   return [{ id: "swpa" }];
@@ -35,6 +36,7 @@ async function Competition({ params }: { params: Promise<{ id: string }> }) {
         title={competition.name}
         lede="采集从官方入口清单和已登记的主办方页面、合作方新闻稿起步。每一届先按来源抽出事实，再交叉验证。下面的作品库仍是已核对种子，不是这次请求当场抓取的。"
       />
+      <ProvenanceLine provenance={competition.provenance} />
       <div className="mt-8 grid gap-4 lg:grid-cols-2">
         {editions.map((edition) => {
           const validation = collectEdition(edition.year);

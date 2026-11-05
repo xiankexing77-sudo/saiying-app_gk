@@ -1,29 +1,28 @@
 import { connection } from "next/server";
+import { settleTask } from "../../agents/settle-task";
 import { database } from "./data/seed";
-import type { AgentTask } from "./data/types";
+import type { AgentTask, ResearchScope } from "./data/types";
 
 export type ResearchRequest = {
   years: number[];
-  scope: {
-    winners: boolean;
-    shortlists: boolean;
-    juries: boolean;
-    juryPortfolios: boolean;
-    imageAnalysis: boolean;
-    reportGeneration: boolean;
-  };
+  scope: ResearchScope;
   forceRefresh: boolean;
 };
 
 type Store = { tasks: AgentTask[] };
 
-const globalStore = globalThis as typeof globalThis & { __pjiTaskStore?: Store };
+const globalStore = globalThis as typeof globalThis & { __pjiTaskStore?: Store; __pjiTaskRunning?: Set<string> };
 
 function store() {
   if (!globalStore.__pjiTaskStore) {
     globalStore.__pjiTaskStore = { tasks: structuredClone(database.tasks) };
   }
   return globalStore.__pjiTaskStore;
+}
+
+function running() {
+  if (!globalStore.__pjiTaskRunning) globalStore.__pjiTaskRunning = new Set();
+  return globalStore.__pjiTaskRunning;
 }
 
 export async function listTasks() {
@@ -38,6 +37,34 @@ export async function getTask(id: string) {
 
 export function seedTask(id: string) {
   return database.tasks.find((task) => task.id === id) ?? null;
+}
+
+function runStoredTask(id: string) {
+  const task = store().tasks.find((item) => item.id === id);
+  if (!task || running().has(id)) return task ?? null;
+  if (task.status === "succeeded") return task;
+  running().add(id);
+  task.status = "running";
+  task.stage = "进程内执行";
+  task.startedAt = task.startedAt ?? new Date().toISOString();
+  try {
+    const settled = settleTask(task, new Date().toISOString());
+    Object.assign(task, settled);
+  } finally {
+    running().delete(id);
+  }
+  return task;
+}
+
+function schedule(id: string) {
+  setTimeout(() => {
+    runStoredTask(id);
+  }, 40);
+}
+
+export async function executeTask(id: string) {
+  await connection();
+  return runStoredTask(id);
 }
 
 export async function createResearchTask(input: ResearchRequest) {
@@ -64,17 +91,21 @@ export async function createResearchTask(input: ResearchRequest) {
     type: "research",
     title: `研究 SWPA ${years.join(" / ")}`,
     status: "queued",
-    stage: "已入队，等待 worker",
-    total: years.length,
+    stage: "已入队",
+    total: 8,
     completed: 0,
     failed: 0,
     currentItem: null,
-    errorLog: ["HTTP 请求只创建任务。本 POC 没有 Celery / LangGraph 运行时，不会在请求里同步抓取或调用模型。"],
+    errorLog: [],
     startedAt: null,
     finishedAt: null,
     idempotencyKey,
+    years,
+    scope: input.scope,
+    stages: [],
   };
   store().tasks = [task, ...store().tasks];
+  schedule(task.id);
   return { ok: true as const, created: true, task };
 }
 
@@ -89,9 +120,7 @@ export async function retryTask(id: string) {
   task.stage = "已重新入队";
   task.finishedAt = null;
   task.currentItem = null;
-  task.errorLog = [
-    ...task.errorLog,
-    "重试只把状态改回队列。没有 worker 会继续抓取页面或分析图像。",
-  ];
+  task.errorLog = [...task.errorLog, "已重新入队。进程内会再跑一遍可执行的阶段，不会抓取官网或读取原图。"];
+  schedule(task.id);
   return { ok: true as const, task };
 }

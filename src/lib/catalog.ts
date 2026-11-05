@@ -1,3 +1,4 @@
+import { buildTrendDimensions } from "../../agents/text-evidence";
 import { database } from "./data/seed";
 import type {
   Award,
@@ -9,6 +10,8 @@ import type {
   Photographer,
   Photograph,
   Series,
+  SeriesAnalysis,
+  SingleImageAnalysis,
   WorkForm,
 } from "./data/types";
 
@@ -271,6 +274,23 @@ export function compareEditions(track: NormalizedTrack, categoryId?: string) {
     left: library.find((item) => item.editionId === leftEdition && item.categoryId === category.id) ?? null,
     right: library.find((item) => item.editionId === rightEdition && item.categoryId === category.id) ?? null,
   }));
+  const dimensions = buildTrendDimensions(
+    rows.flatMap((row) => {
+      const pair: { year: 2025 | 2026; item: LibraryItem | null }[] = [
+        { year: 2025, item: row.left },
+        { year: 2026, item: row.right },
+      ];
+      return pair
+        .filter((entry): entry is { year: 2025 | 2026; item: LibraryItem } => Boolean(entry.item))
+        .map((entry) => ({
+          year: entry.year,
+          workId: entry.item.id,
+          title: entry.item.title,
+          analysis: analysisForLibraryItem(entry.item),
+        }));
+    }),
+  );
+  const quoted = dimensions.some((dimension) => dimension.status === "text_quoted");
   return {
     ok: true as const,
     track,
@@ -279,10 +299,24 @@ export function compareEditions(track: NormalizedTrack, categoryId?: string) {
     rows,
     inference: {
       kind: "inference" as const,
-      status: "not_generated" as const,
-      reason:
-        "视觉模型未运行，图像也未入库。题材、色彩、构图、叙事的跨届变化不能从职务或标题里补写。下面只对照已核验的获奖事实。",
+      pixelTrend: "not_generated" as const,
+      status: quoted ? ("text_quoted" as const) : ("not_generated" as const),
+      reason: "没有读取像素。跨届只对照同一规范化赛制里、官方说明原句已经写到的维度。没写到的维度保持未生成。",
+      dimensions,
     },
+  };
+}
+
+function analysisForLibraryItem(item: LibraryItem): SingleImageAnalysis | SeriesAnalysis | null {
+  return item.form === "series" ? seriesAnalysis(item.id) : singleAnalysis(item.id);
+}
+
+export function textEvidenceCounts() {
+  const rows = [...database.singleAnalyses, ...database.seriesAnalyses];
+  return {
+    grounded: rows.filter((row) => row.status === "text_grounded").length,
+    insufficient: rows.filter((row) => row.status === "insufficient_text").length,
+    pixelsRead: rows.filter((row) => row.pixelsRead).length,
   };
 }
 
@@ -303,7 +337,8 @@ export function dashboardStats() {
     frames: database.photographs.filter((photo) => photo.role === "series_frame").length,
     juries: database.juries.length,
     juriesWithStyleTags: database.juryInferences.filter((row) => row.sampleStatus === "sufficient").length,
-    analysesComplete: database.singleAnalyses.filter((row) => row.analyzedAt).length,
+    analysesComplete: [...database.singleAnalyses, ...database.seriesAnalyses].filter((row) => row.status === "text_grounded").length,
+    analysesInsufficient: [...database.singleAnalyses, ...database.seriesAnalyses].filter((row) => row.status === "insufficient_text").length,
     analysesTemplate: database.singleAnalyses.length + database.seriesAnalyses.length,
     blockedTasks: database.tasks.filter((task) => task.status === "blocked" || task.status === "failed").length,
     runningTasks: database.tasks.filter((task) => task.status === "running" || task.status === "queued").length,
@@ -329,6 +364,43 @@ export function editionSnapshot(editionId: string) {
       count: works.filter((item) => item.track === track).length,
     })),
   };
+}
+
+const SINGLE_FIELDS = ["subjectScene", "composition", "light", "color", "spatialDepth", "mood", "narrative", "theme", "technique"] as const;
+const SERIES_FIELDS = ["visualUnity", "imageRelations", "themeDevelopment"] as const;
+
+function evidenceStaysInsideSource(row: SingleImageAnalysis | SeriesAnalysis) {
+  if (row.pixelsRead) return false;
+  if (row.schema === "single_image") {
+    if (row.basicDescription !== null || row.visualWeight !== null || row.uniqueness !== null) return false;
+  } else if (row.narrativeCoherence !== null || row.pacing !== null || row.completeness !== null) {
+    return false;
+  }
+  const source =
+    row.schema === "single_image" ? (getPhotograph(row.photographId)?.description ?? "") : (getSeries(row.seriesId)?.description ?? "");
+  if (row.evidence.some((item) => item.quote.includes("The jury applauded"))) return false;
+  if (row.evidence.some((item) => !source.includes(item.quote))) return false;
+  const fields = row.schema === "single_image" ? SINGLE_FIELDS : SERIES_FIELDS;
+  const read = (field: string) => {
+    const value = (row as unknown as Record<string, unknown>)[field];
+    return typeof value === "string" ? value : null;
+  };
+  if (row.status === "insufficient_text") {
+    return (
+      row.evidence.length === 0 &&
+      row.confidence === null &&
+      row.modelName === null &&
+      row.analyzedAt === null &&
+      fields.every((field) => read(field) === null)
+    );
+  }
+  if (row.modelName !== "pji-text-evidence" || row.confidence === null || row.confidence > 0.55) return false;
+  return fields.every((field) => {
+    const value = read(field);
+    const labels = row.evidence.filter((item) => item.dimension === field).map((item) => item.label);
+    if (!value) return labels.length === 0;
+    return value.split("；").every((label) => labels.includes(label));
+  });
 }
 
 export type QualityCheck = { name: string; ok: boolean; detail: string };
@@ -439,6 +511,11 @@ export function qualityReport(): { ok: boolean; checks: QualityCheck[] } {
       database.singleAnalyses.every((row) => row.schema === "single_image") &&
       database.seriesAnalyses.every((row) => row.schema === "series"),
     detail: `单张 ${database.singleAnalyses.length} / 系列 ${database.seriesAnalyses.length}`,
+  });
+  checks.push({
+    name: "说明证据能回到原文，未读像素",
+    ok: [...database.singleAnalyses, ...database.seriesAnalyses].every((row) => evidenceStaysInsideSource(row)),
+    detail: `命中 ${textEvidenceCounts().grounded}，留空 ${textEvidenceCounts().insufficient}`,
   });
   const openArchitecture = library.filter((item) => item.rawCategory === "Architecture");
   const professionalArchitecture = library.filter((item) => item.rawCategory === "Architecture & Design");

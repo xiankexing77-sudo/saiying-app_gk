@@ -7,6 +7,6 @@ export async function GET(_request: Request, context: { params: Promise<{ id: st
   return Response.json({
     photograph,
     awards: awardsFor({ photographId: id }),
-    analysis: photograph.role === "standalone" ? singleAnalysis(id) : null,
+    analysis: singleAnalysis(id),
   });
 }

@@ -30,7 +30,13 @@ export function TaskBoard({ stages }: { stages: Stage[] }) {
     const timer = window.setTimeout(() => {
       void refresh();
     }, 0);
-    return () => window.clearTimeout(timer);
+    const poll = window.setInterval(() => {
+      void refresh();
+    }, 1200);
+    return () => {
+      window.clearTimeout(timer);
+      window.clearInterval(poll);
+    };
   }, []);
 
   function toggleYear(year: number) {
@@ -115,7 +121,7 @@ export function TaskBoard({ stages }: { stages: Stage[] }) {
           }}
         >
           <h2 className="text-xl">新建研究任务</h2>
-          <p className="mt-2 text-xs leading-5 text-muted-foreground">请求只返回任务 ID。Shortlist 默认关闭。</p>
+          <p className="mt-2 text-xs leading-5 text-muted-foreground">请求只返回任务 ID，随后在进程内推进。Shortlist 默认关闭；勾上也不会去抓入围名单。</p>
           <div className="mt-3 flex gap-3 text-sm">
             {[2025, 2026].map((year) => (
               <label key={year} className="flex items-center gap-2">

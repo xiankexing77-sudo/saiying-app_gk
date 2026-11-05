@@ -13,7 +13,7 @@ export default function ReportsPage() {
       <PageHeader
         kicker="Reports"
         title="研究报告"
-        lede="对照限于同一规范化赛制。Professional 的 Architecture & Design 不会和 Open 的 Architecture 混在一张表里。审美变化一节保持未生成。"
+        lede="对照限于同一规范化赛制。Professional 的 Architecture & Design 不会和 Open 的 Architecture 混在一张表里。像素上的审美变化不生成；只有官方说明原句写到的维度才会按年列出。"
       />
       <div className="mt-8 grid gap-3 sm:grid-cols-2">
         {tracks.map((track) => (
@@ -26,7 +26,7 @@ export default function ReportsPage() {
       </div>
       <p className="mt-6 flex items-center gap-2 text-sm">
         <InferenceMark />
-        没有视觉分析结果，报告不写色彩、构图或叙事趋势。
+        没有像素分析。说明里没写到的色彩、构图或叙事保持未生成。
       </p>
     </PageMain>
   );

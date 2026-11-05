@@ -11,7 +11,7 @@ export default function TasksPage() {
       <PageHeader
         kicker="Tasks"
         title="采集与研究任务"
-        lede="长任务只入队。重试把阻塞任务放回队列，不会在浏览器请求里抓取官网或调用模型。"
+        lede="创建请求立刻返回任务。进程内接着跑可执行的阶段：夹具交叉验证、说明证据和评委样本。不会抓取官网，也不会读取原图。像素分析和 Shortlist 会停在阻塞。"
       />
       <div className="mt-8">
         <TaskBoard stages={graph.nodes} />

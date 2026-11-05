@@ -5,10 +5,9 @@ import { AnalysisPanel } from "@/components/analysis-panel";
 import { FactMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { ProvenanceLine } from "@/components/provenance";
-import { RequestAnalysis } from "@/components/request-analysis";
 import { RightsPlaceholder } from "@/components/rights-placeholder";
 import { WorkValidation } from "@/components/validation-panel";
-import { awardsFor, getCategory, getEdition, getImageAsset, getSeries, listSeries, listTracks, photographersByIds, seriesAnalysis, seriesFrames } from "@/lib/catalog";
+import { awardsFor, getCategory, getEdition, getImageAsset, getSeries, listSeries, listTracks, photographersByIds, seriesAnalysis, seriesFrames, singleAnalysis } from "@/lib/catalog";
 import { displayTitle } from "@/lib/labels";
 
 export function generateStaticParams() {
@@ -47,6 +46,7 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
             <Row label="官方赛制" value={track?.rawName ?? "—"} />
             <Row label="规范化赛制" value={track?.normalizedLabel ?? "—"} />
             <Row label="官方组别" value={category?.rawName ?? "—"} />
+            <Row label="摄影师" value={people.map((person) => (person.country ? `${person.name}（${person.country}）` : person.name)).join("、")} />
             <Row label="奖项" value={awards.map((item) => item.award.name).join(" · ")} />
             <Row label="系列张数" value={series.imageCount === null ? "未采集" : String(series.imageCount)} />
             <Row label="图片权限" value={asset?.rightsStatus ?? "rights_blocked"} />
@@ -59,6 +59,11 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
               </p>
             ) : null,
           )}
+          {awards.map((item) => (
+            <p key={item.link.id} className="mt-2 text-xs leading-5 text-stone-600">
+              {item.award.name} 的来源：{item.award.provenance.sourcePageTitle}
+            </p>
+          ))}
           <h2 className="mt-5 text-lg">系列说明</h2>
           <p className="mt-2 text-sm leading-6">{series.description ?? "来源页暂无系列说明。"}</p>
           <p className="mt-3 text-sm">
@@ -82,6 +87,7 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
                 <div>
                   <h3 className="text-lg">{frame.photograph?.title}</h3>
                   <p className="mt-1 text-sm leading-6">{frame.photograph?.description}</p>
+                  <FrameEvidence photographId={frame.photographId} />
                 </div>
               </li>
             ))}
@@ -99,11 +105,7 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
       ))}
       {analysis ? (
         <div className="mt-6">
-          <AnalysisPanel
-            schema="series"
-            evidenceNote={analysis.evidenceNote}
-            action={<RequestAnalysis url={`/api/v1/series/${series.id}/analyze`} label="请求系列分析" />}
-          />
+          <AnalysisPanel analysis={analysis} endpoint={`/api/v1/series/${series.id}/analyze`} />
         </div>
       ) : null}
       <p className="mt-4 text-xs">
@@ -112,6 +114,18 @@ async function SeriesPage({ params }: { params: Promise<{ id: string }> }) {
         </Link>
       </p>
     </PageMain>
+  );
+}
+
+function FrameEvidence({ photographId }: { photographId: string }) {
+  const analysis = singleAnalysis(photographId);
+  if (!analysis || analysis.status !== "text_grounded") {
+    return <p className="mt-1 text-xs text-stone-500">这张画幅的说明没有命中视觉词表。身份和经历留在事实栏。</p>;
+  }
+  return (
+    <p className="mt-1 text-xs leading-5 text-amber-950">
+      说明证据：{analysis.evidence.map((item) => item.label).join("；")}。未读像素。
+    </p>
   );
 }
 
