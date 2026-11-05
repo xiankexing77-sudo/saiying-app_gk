@@ -35,6 +35,18 @@ test("spacing, icon stroke, and glass alpha stay inside the cut", () => {
   assert.equal(clampGlass(0.08), 0.08);
 });
 
+test("appearance panel closes from the backdrop and escape", () => {
+  const source = readFileSync("src/components/shell-controls.tsx", "utf8");
+  assert.match(source, /data-slot="appearance-panel"/);
+  assert.match(source, /data-slot="appearance-backdrop"/);
+  assert.match(source, /role="dialog"/);
+  assert.match(source, /event\.key !== "Escape"/);
+  assert.match(source, /zIndex: 30/);
+  const dialog = readFileSync("src/components/ui/dialog.tsx", "utf8");
+  assert.match(dialog, /DialogPrimitive\.Backdrop/);
+  assert.doesNotMatch(dialog, /disablePointerDismissal/);
+});
+
 test("vendored fonts keep their SIL OFL licenses and are not Arial", () => {
   const geist = readFileSync("src/fonts/OFL-Geist.txt", "utf8");
   const departure = readFileSync("src/fonts/OFL-DepartureMono.txt", "utf8");

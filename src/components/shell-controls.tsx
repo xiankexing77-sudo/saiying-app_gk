@@ -1,6 +1,7 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useId, useRef, useState } from "react";
+import { createPortal } from "react-dom";
 import { Languages, Moon, SlidersHorizontal, Sun } from "lucide-react";
 import { GLASS_ALPHA_MAX, GLASS_ALPHA_MIN, type Palette } from "@/lib/design/tokens";
 import { LinearIcon } from "./linear-icon";
@@ -9,6 +10,29 @@ import { usePreferences } from "./preferences";
 export function ShellControls() {
   const { m, theme, locale, palette, grid, setTheme, setLocale, updatePalette, setGrid, resetPalette } = usePreferences();
   const [open, setOpen] = useState(false);
+  const rootRef = useRef<HTMLDivElement>(null);
+  const panelId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    function onPointerDown(event: PointerEvent) {
+      const target = event.target;
+      if (target instanceof Node && rootRef.current?.contains(target)) return;
+      setOpen(false);
+    }
+    function onKeyDown(event: KeyboardEvent) {
+      if (event.key !== "Escape" || event.defaultPrevented) return;
+      event.preventDefault();
+      setOpen(false);
+    }
+    document.addEventListener("pointerdown", onPointerDown, true);
+    document.addEventListener("keydown", onKeyDown);
+    return () => {
+      document.removeEventListener("pointerdown", onPointerDown, true);
+      document.removeEventListener("keydown", onKeyDown);
+    };
+  }, [open]);
+
   return (
     <div className="flex items-center gap-2">
       <div className="flex h-8 items-center gap-2" role="group" aria-label={m.controls.theme}>
@@ -30,13 +54,27 @@ export function ShellControls() {
           {m.controls.localeEn}
         </button>
       </div>
-      <div className="relative">
-        <button type="button" className={chip(open)} aria-expanded={open} onClick={() => setOpen((value) => !value)}>
+      <div className="relative" ref={rootRef}>
+        <button
+          type="button"
+          className={chip(open)}
+          aria-expanded={open}
+          aria-haspopup="dialog"
+          aria-controls={panelId}
+          onClick={() => setOpen((value) => !value)}
+        >
           <LinearIcon icon={SlidersHorizontal} />
           <span className="hidden md:inline">{m.controls.appearance}</span>
         </button>
         {open ? (
-          <div className="glass glass-plum absolute right-0 z-50 mt-2 w-80 p-4">
+          <div
+            id={panelId}
+            role="dialog"
+            aria-modal="false"
+            aria-label={m.controls.appearance}
+            data-slot="appearance-panel"
+            className="glass glass-plum absolute right-0 z-50 mt-2 w-80 p-4"
+          >
             <div className="flex flex-col gap-4">
               <ColorRow label={m.controls.bgStart} value={palette.bgStart} onChange={(bgStart) => updatePalette({ bgStart })} />
               <ColorRow label={m.controls.bgEnd} value={palette.bgEnd} onChange={(bgEnd) => updatePalette({ bgEnd })} />
@@ -68,7 +106,25 @@ export function ShellControls() {
           </div>
         ) : null}
       </div>
+      {open ? <AppearanceBackdrop onDismiss={() => setOpen(false)} /> : null}
     </div>
+  );
+}
+
+function AppearanceBackdrop({ onDismiss }: { onDismiss: () => void }) {
+  return createPortal(
+    <div
+      data-slot="appearance-backdrop"
+      aria-hidden="true"
+      // Inline position and z-index beat unlayered `body > *` and sit under the
+      // sticky shell (z-index 40), so the panel stays usable while the page does not.
+      style={{ position: "fixed", inset: 0, zIndex: 30, background: "transparent" }}
+      onPointerDown={(event) => {
+        event.preventDefault();
+        onDismiss();
+      }}
+    />,
+    document.body,
   );
 }
 
