@@ -1,15 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import { ScanLine } from "lucide-react";
 import type { LibraryItem } from "@/lib/catalog";
 import { aspectLabel, measureSamples, orientationOf, type SampleMeasurement } from "@/lib/measure";
-import { displayTitle, peopleLine, trackZh } from "@/lib/labels";
+import { displayTitle, peopleLine } from "@/lib/labels";
 import type { NormalizedTrack, SingleImageAnalysis } from "@/lib/data/types";
+import { translate } from "@/lib/i18n/messages";
 import { FactMark, InferenceMark } from "./marks";
-
-const semanticFields = ["主体", "叙事", "主题", "情绪", "构图判断", "比赛匹配"];
+import { LinearIcon } from "./linear-icon";
+import { useI18n } from "./preferences";
 
 export function AnalyzeStudio({ references }: { references: LibraryItem[] }) {
+  const { m } = useI18n();
   const [fileFact, setFileFact] = useState<{ name: string; type: string; size: number; width: number; height: number } | null>(null);
   const [measurement, setMeasurement] = useState<SampleMeasurement | null>(null);
   const [track, setTrack] = useState<NormalizedTrack>("single_image");
@@ -29,7 +32,7 @@ export function AnalyzeStudio({ references }: { references: LibraryItem[] }) {
     const image = await loadImage(url);
     setFileFact({
       name: file.name,
-      type: file.type || "未知类型",
+      type: file.type || m.analyze.unknownType,
       size: file.size,
       width: image?.naturalWidth ?? 0,
       height: image?.naturalHeight ?? 0,
@@ -46,138 +49,129 @@ export function AnalyzeStudio({ references }: { references: LibraryItem[] }) {
         body: JSON.stringify({ caption }),
       });
       const body = (await response.json()) as { message?: string; analysis?: SingleImageAnalysis };
-      setMessage(body.message ?? "已返回");
+      setMessage(body.message ?? m.analyze.returned);
       setCaptionAnalysis(body.analysis ?? null);
     } catch {
-      setMessage("请求没有完成");
+      setMessage(m.analyze.requestFailed);
     } finally {
       setPending(false);
     }
   }
 
   const related = references.filter((item) => item.track === track).slice(0, 6);
+  const tracks = ["series", "single_image", "student", "youth"] as const;
+  const emptyFields = [m.analyze.subject, m.analyze.narrative, m.analyze.theme, m.analyze.mood, m.analyze.compositionJudge, m.analyze.match];
 
   return (
-    <div className="grid gap-6 lg:grid-cols-2">
-      <section className="rounded-2xl border border-teal-900/15 bg-white/70 p-5">
-        <FactMark>本地文件事实</FactMark>
-        <h2 className="mt-3 text-2xl">你的照片留在浏览器里</h2>
-        <p className="mt-2 text-sm leading-6 text-muted-foreground">
-          选择文件后只在本地读取文件名、类型、大小、尺寸，并用缩小后的像素样本计算亮度与颜色。二进制不会提交到服务器，也不会进入获奖作品库。
-        </p>
-        <input
-          className="mt-4 block w-full text-sm"
-          type="file"
-          accept="image/*"
-          onChange={(event) => void onFile(event.target.files?.[0] ?? null)}
-        />
+    <div className="grid gap-8 lg:grid-cols-2">
+      <section className="glass glass-cobalt p-6">
+        <FactMark>{m.analyze.localFact}</FactMark>
+        <h2 className="mt-4 text-xl font-medium">{m.analyze.localTitle}</h2>
+        <p className="mt-4 text-sm leading-6 text-muted-foreground">{m.analyze.localBody}</p>
+        <input className="mt-4 block w-full text-sm" type="file" accept="image/*" onChange={(event) => void onFile(event.target.files?.[0] ?? null)} />
         {preview ? (
           // User's own local file preview, not a contest image.
           // eslint-disable-next-line @next/next/no-img-element
-          <img src={preview} alt="本地预览" className="mt-4 max-h-72 w-full rounded-xl object-contain" />
+          <img src={preview} alt={m.analyze.previewAlt} className="mt-4 max-h-72 w-full rounded-2xl object-contain" />
         ) : (
-          <div className="mt-4 rounded-xl border border-dashed border-stone-300 px-4 py-10 text-sm text-stone-500">尚未选择文件</div>
+          <div className="mt-4 rounded-2xl border border-dashed border-border px-4 py-8 text-sm text-muted-foreground">{m.analyze.emptyFile}</div>
         )}
         {fileFact ? (
           <dl className="mt-4 grid grid-cols-2 gap-2 text-sm">
-            <FactRow label="文件名" value={fileFact.name} />
-            <FactRow label="类型" value={fileFact.type} />
-            <FactRow label="大小" value={`${fileFact.size} 字节`} />
-            <FactRow label="尺寸" value={`${fileFact.width} × ${fileFact.height}`} />
-            <FactRow label="宽高比" value={aspectLabel(fileFact.width, fileFact.height)} />
-            <FactRow label="画幅" value={orientationOf(fileFact.width, fileFact.height)} />
+            <FactRow label={m.analyze.fileName} value={fileFact.name} />
+            <FactRow label={m.analyze.type} value={fileFact.type} />
+            <FactRow label={m.analyze.size} value={translate(m, "analyze.bytes", { n: fileFact.size })} />
+            <FactRow label={m.analyze.dimensions} value={`${fileFact.width} × ${fileFact.height}`} />
+            <FactRow label={m.analyze.aspect} value={aspectLabel(fileFact.width, fileFact.height)} />
+            <FactRow label={m.analyze.orientation} value={orientationOf(fileFact.width, fileFact.height)} />
           </dl>
         ) : null}
         {measurement ? (
           <div className="mt-4">
-            <FactMark>本地测量</FactMark>
-            <p className="mt-2 text-xs leading-5 text-stone-600">{measurement.method} 这不是主体识别，也不是赛事匹配。</p>
-            <dl className="mt-3 grid grid-cols-2 gap-2 text-sm">
-              <FactRow label="样本数" value={String(measurement.sampleCount)} />
-              <FactRow label="平均亮度" value={measurement.meanLuminance === null ? "—" : String(measurement.meanLuminance)} />
-              <FactRow label="暗部占比" value={share(measurement.shadowShare)} />
-              <FactRow label="高光占比" value={share(measurement.highlightShare)} />
-              <FactRow label="平均饱和度" value={measurement.meanSaturation === null ? "—" : String(measurement.meanSaturation)} />
-              <FactRow label="暖冷差（R−B）" value={measurement.warmCool === null ? "—" : String(measurement.warmCool)} />
-              <FactRow label="占优色相" value={measurement.dominantHue ?? "不命名"} />
+            <FactMark>{m.analyze.measured}</FactMark>
+            <p className="mt-2 text-xs leading-6 text-muted-foreground">{translate(m, "analyze.measuredNote", { method: measurement.method })}</p>
+            <dl className="mt-4 grid grid-cols-2 gap-2 text-sm">
+              <FactRow label={m.analyze.samples} value={String(measurement.sampleCount)} numeric />
+              <FactRow label={m.analyze.luminance} value={measurement.meanLuminance === null ? "—" : String(measurement.meanLuminance)} numeric />
+              <FactRow label={m.analyze.shadow} value={share(measurement.shadowShare)} numeric />
+              <FactRow label={m.analyze.highlight} value={share(measurement.highlightShare)} numeric />
+              <FactRow label={m.analyze.saturation} value={measurement.meanSaturation === null ? "—" : String(measurement.meanSaturation)} numeric />
+              <FactRow label={m.analyze.warm} value={measurement.warmCool === null ? "—" : String(measurement.warmCool)} numeric />
+              <FactRow label={m.analyze.hue} value={measurement.dominantHue ?? m.analyze.unnamed} />
             </dl>
           </div>
         ) : null}
       </section>
-      <section className="space-y-4">
-        <div className="rounded-2xl border border-amber-900/25 bg-amber-50/80 p-5">
+      <section className="flex flex-col gap-4">
+        <div className="glass glass-ember p-6">
           <InferenceMark />
-          <h2 className="mt-3 text-2xl">说明证据</h2>
-          <p className="mt-2 text-sm leading-6 text-amber-950">
-            本地测量不判断主体、叙事或主题。如果你写下这张照片在拍什么，服务器只对这段文字做词表对照，不接收图像。
-          </p>
+          <h2 className="mt-4 text-xl font-medium">{m.analyze.captionTitle}</h2>
+          <p className="mt-4 text-sm leading-6 text-muted-foreground">{m.analyze.captionBody}</p>
           <textarea
             value={caption}
             onChange={(event) => setCaption(event.target.value)}
-            placeholder="例如：a black-and-white portrait in a bedroom"
-            className="mt-3 min-h-24 w-full rounded-xl border border-amber-900/20 bg-white px-3 py-2 text-sm"
+            placeholder={m.analyze.placeholder}
+            className="mt-4 min-h-24 w-full text-sm"
           />
-          <button
-            type="button"
-            disabled={pending || caption.trim().length === 0}
-            onClick={() => void analyzeCaption()}
-            className="mt-3 rounded-full bg-amber-900 px-4 py-2 text-sm text-amber-50 disabled:opacity-60"
-          >
-            {pending ? "对照中" : "对照这段说明"}
+          <button type="button" disabled={pending || caption.trim().length === 0} onClick={() => void analyzeCaption()} className="btn-glow mt-4">
+            <LinearIcon icon={ScanLine} />
+            {pending ? m.analyze.pending : m.analyze.submit}
           </button>
-          {message ? <p className="mt-3 text-xs leading-5 text-amber-950">{message}</p> : null}
+          {message ? <p className="mt-4 text-xs leading-6 text-muted-foreground">{message}</p> : null}
           {captionAnalysis ? (
             <dl className="mt-4 grid gap-2">
               {(
                 [
-                  ["主体与场景", captionAnalysis.subjectScene],
-                  ["构图", captionAnalysis.composition],
-                  ["光线", captionAnalysis.light],
-                  ["色彩", captionAnalysis.color],
-                  ["叙事", captionAnalysis.narrative],
-                  ["主题", captionAnalysis.theme],
-                  ["情绪", captionAnalysis.mood],
-                  ["技术表现", captionAnalysis.technique],
+                  [m.analyze.subjectScene, captionAnalysis.subjectScene],
+                  [m.analyze.composition, captionAnalysis.composition],
+                  [m.analyze.light, captionAnalysis.light],
+                  [m.analyze.color, captionAnalysis.color],
+                  [m.analyze.narrative, captionAnalysis.narrative],
+                  [m.analyze.theme, captionAnalysis.theme],
+                  [m.analyze.mood, captionAnalysis.mood],
+                  [m.analyze.technique, captionAnalysis.technique],
                 ] as const
               ).map(([label, value]) => (
-                <div key={label} className="rounded-xl bg-white/70 px-3 py-2 text-sm">
-                  <dt className="text-[11px] text-amber-900/80">{label}</dt>
-                  <dd>{value ?? <span className="text-stone-500">未分析</span>}</dd>
+                <div key={label} className="rounded-lg border border-border px-4 py-2 text-sm">
+                  <dt className="text-xs text-muted-foreground">{label}</dt>
+                  <dd>{value ?? <span className="text-muted-foreground">{m.analyze.notAnalyzed}</span>}</dd>
                 </div>
               ))}
             </dl>
           ) : (
-            <ul className="mt-4 space-y-2 text-sm text-stone-600">
-              {semanticFields.map((field) => (
-                <li key={field} className="flex justify-between rounded-xl bg-white/70 px-3 py-2">
+            <ul className="mt-4 flex flex-col gap-2 text-sm">
+              {emptyFields.map((field) => (
+                <li key={field} className="flex justify-between rounded-lg border border-border px-4 py-2">
                   <span>{field}</span>
-                  <span>未分析</span>
+                  <span>{m.analyze.notAnalyzed}</span>
                 </li>
               ))}
             </ul>
           )}
           {captionAnalysis?.evidence.map((item) => (
-            <blockquote key={`${item.dimension}-${item.label}`} className="mt-2 border-l-2 border-amber-900/30 pl-2 text-xs leading-5">
+            <blockquote key={`${item.dimension}-${item.label}`} className="mt-2 border-l-2 border-border pl-4 text-xs leading-6">
               {item.quote}
             </blockquote>
           ))}
         </div>
-        <div className="rounded-2xl border border-border bg-white/70 p-5">
-          <p className="text-xs text-stone-600">同赛制获奖目录，只供人工参照，不是相似图检索，也不是比赛预测。</p>
-          <select className="mt-2 rounded-lg border bg-white px-2 py-2 text-sm" value={track} onChange={(event) => setTrack(event.target.value as NormalizedTrack)}>
-            {(["series", "single_image", "student", "youth"] as const).map((value) => (
+        <div className="glass glass-plum p-6">
+          <p className="text-xs text-muted-foreground">{m.analyze.catalogNote}</p>
+          <select className="mt-4 text-sm" value={track} onChange={(event) => setTrack(event.target.value as NormalizedTrack)}>
+            {tracks.map((value) => (
               <option key={value} value={value}>
-                {trackZh(value)}
+                {m.reports[value]}
               </option>
             ))}
           </select>
-          <ul className="mt-3 space-y-2 text-sm">
+          <ul className="mt-4 flex flex-col gap-2 text-sm">
             {related.map((item) => (
               <li key={item.id}>
                 <a className="underline-offset-2 hover:underline" href={item.href}>
-                  {item.year} · {item.rawCategory} · {displayTitle(item.title)}
+                  <span className="font-num">{item.year}</span>
+                  {" · "}
+                  {item.rawCategory} · {displayTitle(item.title)}
                 </a>
-                <span className="ml-2 text-xs text-stone-600">{peopleLine(item.photographers.map((person) => person.name))}</span>
+                <span className="ml-2 text-xs text-muted-foreground">{peopleLine(item.photographers.map((person) => person.name))}</span>
               </li>
             ))}
           </ul>
@@ -192,11 +186,11 @@ function share(value: number | null) {
   return `${Math.round(value * 1000) / 10}%`;
 }
 
-function FactRow({ label, value }: { label: string; value: string }) {
+function FactRow({ label, value, numeric = false }: { label: string; value: string; numeric?: boolean }) {
   return (
-    <div className="rounded-xl bg-stone-50 px-3 py-2">
-      <dt className="text-[11px] text-stone-500">{label}</dt>
-      <dd className="break-all">{value}</dd>
+    <div className="rounded-lg border border-border px-4 py-2">
+      <dt className="text-xs text-muted-foreground">{label}</dt>
+      <dd className={numeric ? "font-num break-all" : "break-all"}>{value}</dd>
     </div>
   );
 }

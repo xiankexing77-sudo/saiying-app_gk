@@ -5,9 +5,10 @@ import { FactMark, InferenceMark } from "@/components/marks";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { PersonalWorksPanel } from "@/components/personal-works-panel";
 import { ProvenanceLine } from "@/components/provenance";
-import { RequestAnalysis } from "@/components/request-analysis";
+import { JuryConfidence, RequestAnalysis } from "@/components/request-analysis";
 import { JuryValidation } from "@/components/validation-panel";
 import { JuryGraph } from "@/components/jury-graph";
+import { Tr } from "@/components/preferences";
 import { getJury, juryAssignments, juryProfile, listJuries, quotesBySpeaker } from "@/lib/catalog";
 import { juryResearchGraph } from "@/lib/jury-graph";
 import { trackZh } from "@/lib/labels";
@@ -18,7 +19,13 @@ export function generateStaticParams() {
 
 export default function Page({ params }: { params: Promise<{ id: string }> }) {
   return (
-    <Suspense fallback={<PageMain>正在打开评委…</PageMain>}>
+    <Suspense
+      fallback={
+        <PageMain>
+          <Tr k="juries.opening" />
+        </PageMain>
+      }
+    >
       <JuryPage params={params} />
     </Suspense>
   );
@@ -33,104 +40,128 @@ async function JuryPage({ params }: { params: Promise<{ id: string }> }) {
   const quotes = quotesBySpeaker(jury.name);
   const inference = profile.inference;
   const graph = juryResearchGraph(jury.id);
+  const fields = [
+    ["juries.visual", inference?.visualStyle],
+    ["juries.subjects", inference?.commonSubjects],
+    ["juries.color", inference?.colorTendency],
+    ["juries.composition", inference?.compositionTendency],
+    ["juries.narrative", inference?.narrativePreference],
+    ["juries.thematic", inference?.thematicMode],
+  ] as const;
   return (
     <PageMain>
-      <PageHeader
-        kicker="Jury"
-        title={jury.name}
-        lede="左侧是可核对的公开资料。本人作品按组采集；满 3 组才在右侧生成风格标签。样本不足时不写偏好。"
-      />
+      <PageHeader kicker={<Tr k="juries.detailKicker" />} title={jury.name} lede={<Tr k="juries.detailLede" />} />
       {profile.personalWorks ? <PersonalWorksPanel works={profile.personalWorks} inference={inference} /> : null}
-      <div className="mt-8 grid gap-6 lg:grid-cols-2">
-        <section className="rounded-2xl border border-teal-900/15 bg-white/75 p-5">
-          <FactMark>可核实事实</FactMark>
-          <h2 className="mt-3 text-2xl">公开身份</h2>
-          <ul className="mt-4 space-y-4">
+      <div className="mt-8 grid gap-8 lg:grid-cols-2">
+        <section className="glass glass-cobalt p-6">
+          <FactMark>
+            <Tr k="juries.factTitle" />
+          </FactMark>
+          <h2 className="mt-4 text-xl font-medium">
+            <Tr k="juries.publicIdentity" />
+          </h2>
+          <ul className="mt-4 flex flex-col gap-4">
             {assignments.map((assignment) => (
-              <li key={assignment.id} className="border-t border-border pt-3">
+              <li key={assignment.id} className="border-t border-border pt-4">
                 <Link href={`/editions/${assignment.editionId}`} className="text-sm underline">
-                  {assignment.editionId.replace("swpa-", "")} 届
+                  <Tr k="juries.edition" v={{ year: assignment.editionId.replace("swpa-", "") }} />
                 </Link>
-                <p className="mt-1 text-sm">{assignment.roleTitle}</p>
-                <p className="text-xs text-stone-500">
-                  {assignment.institution ?? "来源未单列机构"} · {assignment.tracks.map((track) => trackZh(track)).join("、")}
+                <p className="mt-2 text-sm">{assignment.roleTitle}</p>
+                <p className="text-xs text-muted-foreground">
+                  {assignment.institution ?? <Tr k="juries.institutionMissing" />} · {assignment.tracks.map((track) => trackZh(track)).join("、")}
                 </p>
-                {assignment.biographyExcerpt ? <p className="mt-2 text-sm leading-6">{assignment.biographyExcerpt}</p> : <p className="mt-2 text-sm text-stone-500">这一来源没有更长的简介，页面不补写。</p>}
+                {assignment.biographyExcerpt ? (
+                  <p className="mt-2 text-sm leading-6">{assignment.biographyExcerpt}</p>
+                ) : (
+                  <p className="mt-2 text-sm text-muted-foreground">
+                    <Tr k="juries.noBio" />
+                  </p>
+                )}
                 <p className="mt-2 text-xs">
                   <a className="underline" href={assignment.officialProfileUrl}>
-                    官方评委页
+                    <Tr k="juries.official" />
                   </a>
                 </p>
                 <ProvenanceLine provenance={assignment.provenance} />
               </li>
             ))}
           </ul>
-          <h3 className="mt-6 text-lg">尚未采集的事实字段</h3>
-          <ul className="mt-2 text-sm text-stone-600">
-            <li>教育背景：{profile.facts?.education ?? "来源未给出"}</li>
-            <li>公开出版物：{profile.facts?.publications.length ? profile.facts.publications.join("、") : "未采集"}</li>
-            <li>采访：{profile.facts?.interviews.length ? "有" : "未采集"}</li>
+          <h3 className="mt-8 text-lg font-medium">
+            <Tr k="juries.missingTitle" />
+          </h3>
+          <ul className="mt-2 text-sm text-muted-foreground">
             <li>
-              本人作品：{profile.personalWorks ? `${profile.personalWorks.groups.length}/3 组` : "未采集"}。
+              <Tr k="juries.education" />：{profile.facts?.education ?? <Tr k="juries.notGiven" />}
+            </li>
+            <li>
+              <Tr k="juries.publications" />：{profile.facts?.publications.length ? profile.facts.publications.join("、") : <Tr k="juries.notCollected" />}
+            </li>
+            <li>
+              <Tr k="juries.interviews" />：{profile.facts?.interviews.length ? <Tr k="juries.hasInterview" /> : <Tr k="juries.notCollected" />}
+            </li>
+            <li>
+              <Tr k="juries.personal" />：
+              {profile.personalWorks ? <Tr k="juries.groups" v={{ count: profile.personalWorks.groups.length }} /> : <Tr k="juries.notCollected" />}。
               {profile.portfolios[0]?.note}
             </li>
           </ul>
           {quotes.map(({ quote, series }) => (
-            <article key={series.id} className="mt-4 rounded-xl bg-stone-50 p-3">
-              <FactMark>公开引语</FactMark>
+            <article key={series.id} className="mt-4 rounded-2xl border border-border p-4">
+              <FactMark>
+                <Tr k="juries.quote" />
+              </FactMark>
               <p className="mt-2 text-sm leading-6">{quote.text}</p>
-              <p className="mt-2 text-xs leading-5 text-stone-600">{quote.boundary}</p>
+              <p className="mt-2 text-xs leading-6 text-muted-foreground">{quote.boundary}</p>
               <Link className="text-xs underline" href={`/series/${series.id}`}>
-                相关作品：{series.title}
+                <Tr k="juries.related" />：{series.title}
               </Link>
             </article>
           ))}
         </section>
-        <section className="rounded-2xl border border-amber-900/25 bg-amber-50/80 p-5">
-          <div className="flex flex-wrap items-center justify-between gap-3">
+        <section className="glass glass-ember p-6">
+          <div className="flex flex-wrap items-center justify-between gap-4">
             <div className="flex items-center gap-2">
               <InferenceMark />
-              <h2 className="text-2xl">研究画像</h2>
+              <h2 className="text-xl font-medium">
+                <Tr k="juries.profile" />
+              </h2>
             </div>
-            <RequestAnalysis url={`/api/v1/juries/${jury.id}/analyze`} label="生成风格标签" />
+            <RequestAnalysis url={`/api/v1/juries/${jury.id}/analyze`} />
           </div>
           {inference?.sampleStatus === "insufficient" ? (
-            <p className="mt-4 rounded-xl bg-amber-200/70 px-3 py-2 text-sm">
-              样本不足。本人作品样本组 {inference.sampleCount}/{inference.requiredGroupCount}。
+            <p className="mt-4 rounded-2xl border border-border px-4 py-2 text-sm">
+              <Tr k="juries.insufficient" v={{ count: inference.sampleCount, need: inference.requiredGroupCount }} />
             </p>
           ) : (
-            <p className="mt-4 rounded-xl bg-teal-900/10 px-3 py-2 text-sm text-teal-950">
-              已达到 {inference?.requiredGroupCount} 组。下面只保留至少两组陈述都写到的偏好；单组观察留在上方，不写入这些字段。
+            <p className="mt-4 rounded-2xl border border-border px-4 py-2 text-sm">
+              <Tr k="juries.sufficient" v={{ need: inference?.requiredGroupCount ?? 3 }} />
             </p>
           )}
-          <p className="mt-3 text-sm leading-6">{inference?.statement}</p>
+          <p className="mt-4 text-sm leading-6">{inference?.statement}</p>
           <dl className="mt-4 grid gap-2 text-sm">
-            {[
-              ["视觉风格", inference?.visualStyle],
-              ["常见题材", inference?.commonSubjects],
-              ["色彩倾向", inference?.colorTendency],
-              ["构图倾向", inference?.compositionTendency],
-              ["叙事偏好", inference?.narrativePreference],
-              ["主题表达", inference?.thematicMode],
-            ].map(([label, value]) => (
-              <div key={label} className="flex justify-between rounded-xl bg-white/70 px-3 py-2">
-                <dt>{label}</dt>
-                <dd className="max-w-[16rem] text-right text-stone-500">
-                  {value ?? (inference?.sampleStatus === "sufficient" ? "证据不足，不归纳" : "未分析")}
+            {fields.map(([label, value]) => (
+              <div key={label} className="flex justify-between gap-4 rounded-lg border border-border px-4 py-2">
+                <dt>
+                  <Tr k={label} />
+                </dt>
+                <dd className="max-w-[16rem] text-right text-muted-foreground">
+                  {value ?? (inference?.sampleStatus === "sufficient" ? <Tr k="juries.notEnoughEvidence" /> : <Tr k="juries.notAnalyzed" />)}
                 </dd>
               </div>
             ))}
           </dl>
-          <p className="mt-3 text-xs text-amber-950">
-            置信度 {inference?.confidence ?? "—"} · 模型 {inference?.modelName ?? "未配置"} · 证据 {inference?.evidence.length ?? 0} 条
-          </p>
+          <JuryConfidence
+            confidence={String(inference?.confidence ?? "—")}
+            model={inference?.modelName ?? null}
+            count={inference?.evidence.length ?? 0}
+          />
         </section>
       </div>
       {graph ? <JuryGraph graph={graph} /> : null}
       <JuryValidation juryId={jury.id} />
       <p className="mt-4 text-sm">
         <Link href="/juries" className="underline">
-          返回评委列表
+          <Tr k="juries.back" />
         </Link>
       </p>
     </PageMain>

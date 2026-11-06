@@ -15,6 +15,8 @@ npm run dev
 
 开发服务器在 [http://127.0.0.1:41731](http://127.0.0.1:41731)。
 
+界面使用 8px 间距网格、紫黑渐变和梅紫 / 钴蓝 / 余烬辉光玻璃卡。标题是 Geist 30/500，数据行是 Geist 36/300，核心数字是 Departure Mono。两套字体都是 SIL OFL 1.1，许可文件在 `src/fonts/OFL-Geist.txt` 与 `src/fonts/OFL-DepartureMono.txt`。默认夜间、默认中文。日夜、语言和辉光写在 `localStorage`（`pji-theme`、`pji-locale`、`pji-palette-night`、`pji-palette-day`），刷新后保留。玻璃透明度限制在 7%–10%，默认 8%。导航和主要动作使用 1.6px 线框图标。
+
 ```bash
 npm test
 npm run lint
