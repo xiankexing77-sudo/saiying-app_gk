@@ -1,6 +1,7 @@
 import { connection } from "next/server";
 import { settleTask } from "../../agents/settle-task";
 import { runStageB } from "./stage-b/report";
+import type { PublicPixelSource } from "./stage-b/source";
 import { database } from "./data/seed";
 import type { AgentTask, ResearchScope } from "./data/types";
 
@@ -67,6 +68,7 @@ function runStoredTask(id: string) {
           now,
           force: false,
           injectFailureWorkId: task.stageB?.injectFailureWorkId ?? null,
+          publicSources: task.stageB?.publicSources ?? [],
         });
         task.status = settled.status;
         task.stage = settled.stage;
@@ -150,7 +152,12 @@ export async function createResearchTask(input: ResearchRequest) {
   return { ok: true as const, created: true, task };
 }
 
-export async function createStageBTask(input: { years: number[]; forceRefresh?: boolean; injectFailureWorkId?: string | null }) {
+export async function createStageBTask(input: {
+  years: number[];
+  forceRefresh?: boolean;
+  injectFailureWorkId?: string | null;
+  publicSources?: PublicPixelSource[];
+}) {
   await connection();
   const years = [...new Set(input.years)].sort();
   if (years.some((year) => year === 2027)) {
@@ -163,7 +170,8 @@ export async function createStageBTask(input: { years: number[]; forceRefresh?: 
     return { ok: false as const, status: 400, message: "至少选择一个届次。" };
   }
   const injectFailureWorkId = input.injectFailureWorkId?.trim() || null;
-  const idempotencyKey = JSON.stringify({ stageB: true, years, injectFailureWorkId });
+  const publicSources = input.publicSources ?? [];
+  const idempotencyKey = JSON.stringify({ stageB: true, years, injectFailureWorkId, publicSources });
   if (!input.forceRefresh) {
     const existing = store().tasks.find((task) => task.idempotencyKey === idempotencyKey);
     if (existing) return { ok: true as const, created: false, task: existing };
@@ -192,7 +200,7 @@ export async function createStageBTask(input: { years: number[]; forceRefresh?: 
       reportGeneration: true,
     },
     stages: [],
-    stageB: { injectFailureWorkId },
+    stageB: { injectFailureWorkId, publicSources },
   };
   store().tasks = [task, ...store().tasks];
   schedule(task.id);
@@ -210,10 +218,12 @@ export async function retryTask(id: string) {
   task.stage = "已重新入队";
   task.finishedAt = null;
   task.currentItem = null;
-  if (task.type === "stage_b" && task.stageB) task.stageB = { injectFailureWorkId: null };
+  if (task.type === "stage_b" && task.stageB) {
+    task.stageB = { injectFailureWorkId: null, publicSources: task.stageB.publicSources ?? [] };
+  }
   const note =
     task.type === "stage_b"
-      ? "已重新入队。会按 fixture 里的官方图像 URL 再下载，并只把带有来源 URL 和下载时间的缓存送进视觉读取。"
+      ? "已重新入队。会重试官方图像和已提交的公开网页图像。缺少 sourceUrl、downloadedAt 或 storagePath 的像素不进入视觉读取。登录或付费失败可以再试。"
       : "已重新入队。进程内会再跑一遍可执行的阶段，不会抓取官网或读取原图。";
   task.errorLog = [...task.errorLog, note];
   schedule(task.id);

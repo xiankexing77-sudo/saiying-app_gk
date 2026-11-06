@@ -1,6 +1,7 @@
 import { analyzePhotograph, analyzeSeriesWork } from "../../../agents/text-evidence";
 import { database } from "../data/seed";
 import type { JuryPublicProfile } from "./juries";
+import { isOfficialFactPixel } from "./source";
 import type { VisionMeasurement } from "./vision";
 import type { WinnerAggregate } from "./winners";
 
@@ -125,7 +126,8 @@ export function buildResearchDraft(input: {
 
   const visionByWork = new Map<string, VisionMeasurement>();
   for (const measurement of input.measurements) {
-    if (measurement.kind !== "fact" || !measurement.quote.trim() || !measurement.sourceUrl || !measurement.downloadedAt) continue;
+    if (measurement.kind !== "fact" || !measurement.quote.trim() || !measurement.sourceUrl || !measurement.downloadedAt || !measurement.storagePath) continue;
+    if (!isOfficialFactPixel(measurement)) continue;
     visionByWork.set(measurement.workId, measurement);
     facts.push({
       id: `fact:vision:${measurement.workId}`,

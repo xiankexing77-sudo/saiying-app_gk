@@ -1,24 +1,33 @@
 /**
- * Cut 2026-11-05-B image policy C.
- * Owner confirmed the red-line change at 2026-11-06 00:08 Asia/Shanghai:
- * this cut may download and cache SWPA official winner pixels and feed a vision reader,
- * and every cached image must keep its source URL and download time.
- * Marketplace publish and unlabeled sources stay forbidden.
- * Stage A collectors are unchanged and are not described as a finished live crawl.
+ * Cut 2026-11-06-B2.
+ * Owner approved this cut on 2026-11-06 (Asia/Shanghai). No clock time was given;
+ * confirmedAt is the start of that calendar day in that zone, not a measured instant.
+ * Winner pixels and jury sample pixels may be fetched from any publicly reachable
+ * web page. Every cached pixel must keep sourceUrl, downloadedAt, and storagePath.
+ * Official hosts are sourceKind=official. Every other public page is sourceKind=web_other.
+ * Uncertain identity is unverified_match. Unclear rights are rights_unverified.
+ * Those two are never written into the fact column as official facts.
+ * Marketplace publish stays off. Stage A live crawl is not claimed done.
  */
-export const IMAGE_POLICY = "C" as const;
+export const IMAGE_POLICY = "B2" as const;
 
-export const IMAGE_POLICY_CONFIRMED_AT = "2026-11-06T00:08:00+08:00";
+export const IMAGE_POLICY_CONFIRMED_AT = "2026-11-06T00:00:00+08:00";
 
-export const STAGE_B_CUT = "2026-11-05-B";
+export const STAGE_B_CUT = "2026-11-06-B2" as const;
 
 export const imagePolicyRecord = {
   cut: STAGE_B_CUT,
   policy: IMAGE_POLICY,
   confirmedAt: IMAGE_POLICY_CONFIRMED_AT,
+  approvedOn: "2026-11-06",
+  approvedZone: "Asia/Shanghai",
   downloadAndCache: true,
   requiresSourceUrl: true,
   requiresDownloadedAt: true,
+  requiresStoragePath: true,
+  publicWebSources: true,
+  nonOfficialAuditedSources: true,
+  sourceKinds: ["official", "web_other"],
   marketplacePublish: false,
   unlabeledSources: false,
   stageALiveCrawlClaimed: false,

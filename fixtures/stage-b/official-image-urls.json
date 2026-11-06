@@ -1,9 +1,9 @@
 {
-  "policy": "C",
+  "policy": "B2",
   "exportedAt": "2026-11-06T12:32:00.000Z",
   "liveCrawl": false,
   "stageALiveCrawl": false,
-  "note": "这些 URL 从已经公开的官方获奖页复制。运行时只下载本文件里的地址。没有列入的获奖作品不下载、不入库。这不是 Stage A 采集器的 live crawl，也不表示 Stage A 验收已通过。",
+  "note": "这些 URL 从已经公开的官方获奖页复制，下载后 sourceKind=official。Cut 2026-11-06-B2 也允许另行提交任何公开网页上的获奖图或评委样本；那些地址标 sourceKind=web_other，不写成官方事实。没有 URL 的作品不下载。这不是 Stage A 采集器的 live crawl，也不表示 Stage A 验收已通过。",
   "images": [
     {
       "fixtureId": "series-2025-wildlife",

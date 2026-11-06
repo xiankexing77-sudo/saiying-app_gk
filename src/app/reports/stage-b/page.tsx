@@ -6,6 +6,7 @@ import { StageBRun } from "@/components/stage-b-run";
 import { Tr } from "@/components/preferences";
 import { displayTitle } from "@/lib/labels";
 import { buildStageBReport } from "@/lib/stage-b/report";
+import { isOfficialFactPixel } from "@/lib/stage-b/source";
 
 export const metadata = { title: "阶段 B 研究草稿" };
 
@@ -99,7 +100,7 @@ export default async function Page() {
 
       <section className="mt-8">
         <h2 className="text-xl font-medium">
-          <FactMark /> <Tr k="stageB.audits" />
+          <Tr k="stageB.audits" />
         </h2>
         {report.cache.length === 0 ? (
           <p className="mt-4 text-sm text-muted-foreground">
@@ -107,23 +108,52 @@ export default async function Page() {
           </p>
         ) : (
           <ul className="glass mt-4 divide-y divide-border text-sm">
-            {report.cache.map((item) => (
-              <li key={item.workId} className="px-4 py-4">
-                <p className="font-num text-xs">{item.workId}</p>
-                <a className="mt-2 block break-all underline" href={item.sourceUrl}>
-                  {item.sourceUrl}
-                </a>
-                <p className="font-num mt-2 text-xs">
-                  <Tr k="stageB.downloadedAt" /> {item.downloadedAt}
-                </p>
-                <p className="mt-1 text-xs text-muted-foreground">
-                  <Tr k="stageB.storagePath" /> {item.relativePath}
-                </p>
-              </li>
-            ))}
+            {report.cache.map((item) => {
+              const officialFact = isOfficialFactPixel(item);
+              return (
+                <li key={`${item.subjectKind}-${item.workId}-${item.sourceUrl}`} className="px-4 py-4">
+                  <p className="font-num text-xs">{item.workId}</p>
+                  <p className="mt-2 text-xs">
+                    {item.sourceKind === "official" ? <Tr k="stageB.sourceOfficial" /> : <Tr k="stageB.sourceWebOther" />}
+                    {item.identityMatch === "unverified_match" ? <> · <Tr k="stageB.unverifiedMatch" /></> : null}
+                    {item.rightsStatus === "rights_unverified" ? <> · <Tr k="stageB.rightsUnverified" /></> : null}
+                    {officialFact ? null : <> · <Tr k="stageB.notFact" /></>}
+                  </p>
+                  <a className="mt-2 block break-all underline" href={item.sourceUrl}>
+                    {item.sourceUrl}
+                  </a>
+                  <p className="font-num mt-2 text-xs">
+                    <Tr k="stageB.downloadedAt" /> {item.downloadedAt}
+                  </p>
+                  <p className="mt-1 text-xs text-muted-foreground">
+                    <Tr k="stageB.storagePath" /> {item.relativePath}
+                  </p>
+                </li>
+              );
+            })}
           </ul>
         )}
       </section>
+
+      {report.withheld.length > 0 ? (
+        <section className="mt-8">
+          <h2 className="text-xl font-medium">
+            <Tr k="stageB.withheld" />
+          </h2>
+          <ul className="glass glass-ember mt-4 divide-y divide-border text-sm">
+            {report.withheld.map((item) => (
+              <li key={`${item.workId}-${item.sourceUrl}`} className="px-4 py-4">
+                <p className="font-num text-xs">{item.workId}</p>
+                <p className="mt-2 text-xs">{item.reasons.join(" · ")}</p>
+                <a className="mt-2 block break-all underline" href={item.sourceUrl}>
+                  {item.sourceUrl}
+                </a>
+                {item.measurementQuote ? <p className="mt-2 text-xs text-muted-foreground">{item.measurementQuote}</p> : null}
+              </li>
+            ))}
+          </ul>
+        </section>
+      ) : null}
 
       <section className="mt-8 grid gap-4 lg:grid-cols-2">
         <div className="glass p-4">

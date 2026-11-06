@@ -1,17 +1,25 @@
 import { connection } from "next/server";
-import { readImageAudits } from "@/lib/stage-b/cache";
+import { readImageCache } from "@/lib/stage-b/cache";
+import { IMAGE_POLICY, STAGE_B_CUT } from "@/lib/stage-b/policy";
 
 export async function GET() {
   await connection();
-  const images = readImageAudits();
+  const cache = readImageCache();
   return Response.json({
-    policy: "C",
+    cut: STAGE_B_CUT,
+    policy: IMAGE_POLICY,
     liveCrawl: false,
-    images: images.map((item) => ({
+    stageA: "fixture_only_not_done",
+    images: cache.audits.map((item) => ({
+      subjectKind: item.subjectKind,
       workId: item.workId,
       fixtureId: item.fixtureId,
+      juryId: item.juryId,
       sourceUrl: item.sourceUrl,
       pageUrl: item.pageUrl,
+      sourceKind: item.sourceKind,
+      identityMatch: item.identityMatch,
+      rightsStatus: item.rightsStatus,
       downloadedAt: item.downloadedAt,
       storagePath: item.storagePath,
       relativePath: item.relativePath,
@@ -21,5 +29,6 @@ export async function GET() {
       policy: item.policy,
       liveCrawl: item.liveCrawl,
     })),
+    unlabeled: cache.unlabeled,
   });
 }

@@ -2,6 +2,7 @@ import { readFileSync } from "node:fs";
 import path from "node:path";
 import { parsePublicHttps } from "../../../collectors/safety";
 import { IMAGE_POLICY } from "./policy";
+import { classifySourceKind } from "./source";
 
 export type OfficialImageExport = {
   fixtureId: string;
@@ -28,22 +29,16 @@ export function officialImageFixturePath() {
   return path.join(process.cwd(), "fixtures/stage-b/official-image-urls.json");
 }
 
-export function assertOfficialImageUrl(input: string) {
-  const url = parsePublicHttps(input);
-  const host = url.hostname.toLowerCase();
-  if (host !== "www.worldphoto.org" && host !== "worldphoto.org") {
-    throw new Error(`图像下载拒绝主机：${host}`);
-  }
-  if (!url.pathname.startsWith("/sites/default/files/")) {
-    throw new Error("图像 URL 必须落在官方文件路径 /sites/default/files/");
-  }
+export function assertPublicImageUrl(input: string) {
+  parsePublicHttps(input);
+  classifySourceKind(input);
   return input;
 }
 
 export function parseOfficialImageFixture(raw: unknown): OfficialImageFixture {
   if (!raw || typeof raw !== "object") throw new Error("官方图像 fixture 不是对象");
   const body = raw as Partial<OfficialImageFixture>;
-  if (body.policy !== IMAGE_POLICY) throw new Error("官方图像 fixture 的策略不是 C");
+  if (body.policy !== IMAGE_POLICY) throw new Error("官方图像 fixture 的策略不是 B2");
   if (body.liveCrawl !== false || body.stageALiveCrawl !== false) {
     throw new Error("官方图像 fixture 不能标成 live crawl");
   }
@@ -60,7 +55,7 @@ export function parseOfficialImageFixture(raw: unknown): OfficialImageFixture {
     if (!row.sourceUrl?.trim() || !row.pageUrl?.trim() || !row.exportedAt?.trim()) {
       throw new Error(`${row.workId} 缺少来源 URL、页面 URL 或导出时间`);
     }
-    assertOfficialImageUrl(row.sourceUrl);
+    assertPublicImageUrl(row.sourceUrl);
     parsePublicHttps(row.pageUrl);
     return {
       fixtureId: row.workId,

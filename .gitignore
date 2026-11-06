@@ -41,5 +41,5 @@ yarn-error.log*
 *.tsbuildinfo
 next-env.d.ts
 
-# Stage B audited image cache. Regenerated from the official URL fixture.
+# Stage B audited image cache. Regenerated from public URLs; not committed.
 /data/stage-b/
