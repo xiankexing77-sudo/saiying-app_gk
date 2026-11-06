@@ -31,6 +31,15 @@ export default function ReportsPage() {
           </Link>
         ))}
       </div>
+      <Link href="/reports/stage-b" className="glass glass-cobalt mt-4 block p-6">
+        <p className="text-xs text-muted-foreground">Cut 2026-11-05-B · policy C</p>
+        <h2 className="mt-4 text-xl font-medium">
+          <Tr k="reports.stageCard" />
+        </h2>
+        <p className="mt-2 text-sm text-muted-foreground">
+          <Tr k="reports.stageCardBody" />
+        </p>
+      </Link>
       <p className="mt-8 flex items-center gap-2 text-sm">
         <InferenceMark />
         <Tr k="reports.note" />

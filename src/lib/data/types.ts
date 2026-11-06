@@ -399,13 +399,13 @@ export type ResearchScope = {
 
 export type TaskStageLog = {
   stage: string;
-  status: "passed" | "blocked" | "skipped";
+  status: "passed" | "blocked" | "skipped" | "failed";
   summary: string;
 };
 
 export type AgentTask = {
   id: string;
-  type: "crawl" | "research" | "analyze" | "report";
+  type: "crawl" | "research" | "analyze" | "report" | "stage_b";
   title: string;
   status: "queued" | "running" | "succeeded" | "failed" | "blocked";
   stage: string;
@@ -420,6 +420,7 @@ export type AgentTask = {
   years: number[];
   scope: ResearchScope | null;
   stages: TaskStageLog[];
+  stageB?: { injectFailureWorkId: string | null } | null;
 };
 
 export type Database = {
