@@ -1,0 +1,81 @@
+{
+  "policy": "C",
+  "exportedAt": "2026-11-06T12:32:00.000Z",
+  "liveCrawl": false,
+  "stageALiveCrawl": false,
+  "note": "这些 URL 从已经公开的官方获奖页复制。运行时只下载本文件里的地址。没有列入的获奖作品不下载、不入库。这不是 Stage A 采集器的 live crawl，也不表示 Stage A 验收已通过。",
+  "images": [
+    {
+      "fixtureId": "series-2025-wildlife",
+      "workId": "series-2025-wildlife",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/styles/social_card/public/6684457_6124429_1_%20%C2%A9%20Zed%20Nelson%2C%20United%20Kingdom%2C%20Shortlist%2C%20Professional%20competition%2C%20Wildlife%20%26%20Nature%2C%202025%20Sony%20World%20Photography%20Awards.JPG",
+      "pageUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2025/overall-winners-2025",
+      "pageTitle": "Overall Winners 2025",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "URL 复制自 2025 overall winners 页。文件名版权行写 Shortlist。不把文件名里的 Shortlist 改写成另一条获奖事实。"
+    },
+    {
+      "fixtureId": "single-2025-architecture",
+      "workId": "single-2025-architecture",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/%C2%A9%20Xuecheng%20Liu%2C%20China%20Mainland%2C%20Winner%2C%20Open%20Competition%2C%20Architecture%2C%20Sony%20World%20Photography%20Awards%202025.jpg",
+      "pageUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+      "pageTitle": "Open category winners and shortlist: first look",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "URL 复制自 2025 Open 获奖博文中的 Winner / Architecture / Xuecheng Liu 图。"
+    },
+    {
+      "fixtureId": "single-2025-landscape",
+      "workId": "single-2025-landscape",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/%C2%A9%20Ng%20Guang%20Ze%2C%20Singapore%2C%20Winner%2C%20Open%20Competition%2C%20Landscape%2C%20Sony%20World%20Photography%20Awards%202025.jpg",
+      "pageUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+      "pageTitle": "Open category winners and shortlist: first look",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "URL 复制自 2025 Open 获奖博文中的 Winner / Landscape / Ng Guang Ze 图。博文里另有一条把 mockup 文件名粘在前面的坏地址，未收录。"
+    },
+    {
+      "fixtureId": "single-2025-motion",
+      "workId": "single-2025-motion",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/%C2%A9%20Olivier%20Unia%2C%20France%2C%20Winner%2C%20Open%20Competition%2C%20Motion%2C%20Sony%20World%20Photography%20Awards%202025.jpg",
+      "pageUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+      "pageTitle": "Open category winners and shortlist: first look",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "URL 复制自 2025 Open 获奖博文中的 Winner / Motion / Olivier Unia 图。"
+    },
+    {
+      "fixtureId": "single-2025-portraiture",
+      "workId": "single-2025-portraiture",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/%C2%A9%20Yeintze%20Boutamba%2C%20Gabon%2C%20Winner%2C%20Open%20Competition%2C%20Portraiture%2C%20Sony%20World%20Photography%20Awards%202025.jpg",
+      "pageUrl": "https://www.worldphoto.org/blogs/07-03-25/open-category-winners-and-shortlist-first-look",
+      "pageTitle": "Open category winners and shortlist: first look",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "URL 复制自 2025 Open 获奖博文中的 Winner / Portraiture / Yeintze Boutamba 图。"
+    },
+    {
+      "fixtureId": "series-2026-creative",
+      "workId": "series-2026-creative",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/styles/blog_teaser/public/image_media-files-04/edbce6882e82900a976323af99320ac0.2%2520Malena.jpg.webp?h=7c460b71&itok=zO4ntnob",
+      "pageUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/overall-winners-2026",
+      "pageTitle": "Overall Winners 2026",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "2026 overall winners 页上标题为 Malena 的图，是系列 Bilha 中的一幅，不是整组八幅。"
+    },
+    {
+      "fixtureId": "single-2026-portraiture",
+      "workId": "single-2026-portraiture",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/styles/blog_teaser/public/11692f9407fe2e69e0237bbc45d7a.Phillip%2520Tanna%25201%2520Reduced%2520Size.jpg.webp?h=d627821a&itok=HYtwoPis",
+      "pageUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/overall-winners-2026",
+      "pageTitle": "Overall Winners 2026",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "2026 overall winners 页上标题为 The Barefoot Volcanologist 的图。"
+    },
+    {
+      "fixtureId": "single-2026-youth",
+      "workId": "single-2026-youth",
+      "sourceUrl": "https://www.worldphoto.org/sites/default/files/styles/blog_teaser/public/bc6487f26385b082f5e2ed54519b55be.PHILIPKANGASFOTO-222.jpg.webp?h=5229a97b&itok=ZRJO7CGP",
+      "pageUrl": "https://www.worldphoto.org/sony-world-photography-awards/winners-galleries/2026/overall-winners-2026",
+      "pageTitle": "Overall Winners 2026",
+      "exportedAt": "2026-11-06T12:32:00.000Z",
+      "note": "2026 overall winners 页上标题为 Saving History from the flames 的图。"
+    }
+  ]
+}
