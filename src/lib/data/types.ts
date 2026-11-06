@@ -420,7 +420,16 @@ export type AgentTask = {
   years: number[];
   scope: ResearchScope | null;
   stages: TaskStageLog[];
-  stageB?: { injectFailureWorkId: string | null } | null;
+  stageB?: {
+    injectFailureWorkId: string | null;
+    publicSources: {
+      subjectKind: "winner" | "jury";
+      subjectId: string;
+      sourceUrl: string;
+      pageUrl: string;
+      note?: string;
+    }[];
+  } | null;
 };
 
 export type Database = {

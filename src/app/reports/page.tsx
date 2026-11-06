@@ -5,6 +5,7 @@ import { InferenceMark } from "@/components/marks";
 import { LinearIcon } from "@/components/linear-icon";
 import { PageHeader, PageMain } from "@/components/page-header";
 import { Tr } from "@/components/preferences";
+import { IMAGE_POLICY, STAGE_B_CUT } from "@/lib/stage-b/policy";
 
 export const metadata = { title: "报告" };
 
@@ -32,7 +33,7 @@ export default function ReportsPage() {
         ))}
       </div>
       <Link href="/reports/stage-b" className="glass glass-cobalt mt-4 block p-6">
-        <p className="text-xs text-muted-foreground">Cut 2026-11-05-B · policy C</p>
+        <p className="text-xs text-muted-foreground">Cut {STAGE_B_CUT} · policy {IMAGE_POLICY}</p>
         <h2 className="mt-4 text-xl font-medium">
           <Tr k="reports.stageCard" />
         </h2>

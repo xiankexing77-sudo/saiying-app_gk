@@ -2,7 +2,7 @@
 
 摄影赛事评委研究与 AI 视觉分析平台。首期试点只做 **Sony World Photography Awards（SWPA）2025 与 2026**。
 
-这是一个可运行的研究界面和数据模型证明，不是完整的采集集群。页面能按赛事、届次、组别、奖项浏览获奖作品和评委；事实与推断分开；来源、记录时间和解析版本写在事实记录上。种子库里的获奖原图仍是 `rights_blocked`。Cut 2026-11-05-B（图像策略 C）另有一条审计缓存：只下载 fixture 里已经导出的官方图像 URL，记录来源 URL 和下载时间，再做本地视觉测量。假设不写成官方事实。Stage A 的 live crawl 没有完成。
+这是一个可运行的研究界面和数据模型证明，不是完整的采集集群。页面能按赛事、届次、组别、奖项浏览获奖作品和评委；事实与推断分开；来源、记录时间和解析版本写在事实记录上。种子库里的获奖原图仍是 `rights_blocked`。Cut 2026-11-06-B2 可以下载任何公开网页上的获奖图和评委样本像素。每张缓存保留 `sourceUrl`、`downloadedAt` 和 `storagePath`。官方站点为 `sourceKind=official`，其他公开页为 `sourceKind=web_other`。身份不确定标 `unverified_match`，权利不清标 `rights_unverified`，这两类不进事实栏。假设不写成官方事实。Stage A 的 live crawl 没有完成。
 
 ## 怎么运行
 
@@ -46,9 +46,9 @@ curl -s http://127.0.0.1:41731/api/v1/competitions/swpa/validation
 
 可选环境变量见 `.env.example`。`VISION_MODEL` 和 `TEXT_MODEL` 留空。阶段 B 的视觉读取使用进程内的 `pji-vision-cache`，不把缓存图发给外部模型。
 
-## 阶段 B（Cut 2026-11-05-B，策略 C）
+## 阶段 B（Cut 2026-11-06-B2，策略 B2）
 
-获奖汇总、评委公开资料和事实 / 假设草稿在 [阶段 B 报告](http://127.0.0.1:41731/reports/stage-b)。名单来自 Stage A 种子，不是本次 live crawl。图像 URL 写在 `fixtures/stage-b/official-image-urls.json`。没有列入的作品不下载。
+获奖汇总、评委公开资料和事实 / 假设草稿在 [阶段 B 报告](http://127.0.0.1:41731/reports/stage-b)。名单来自 Stage A 种子，不是本次 live crawl。官方图像 URL 写在 `fixtures/stage-b/official-image-urls.json`。另外可以在研究任务里提交 `publicSources`，从任何公开网页下载获奖图或评委样本。缺少审计三字段的像素不进入视觉读取。登录或付费墙的失败会写在任务错误里，重试会再下载。
 
 ```bash
 curl -s http://127.0.0.1:41731/api/v1/stage-b/policy
@@ -97,7 +97,7 @@ curl -s http://127.0.0.1:41731/api/v1/stage-b/report
 | Bilha 的 8 个画幅标题与说明 | 来自该系列官方作品页 |
 | 其他系列的逐帧照片 | 未采集，张数为空 |
 | 种子库里的获奖原图 | 不外链显示。权限状态为 `rights_blocked`，`hostedBinary` 为 false |
-| 阶段 B 审计缓存 | 只下载 fixture 中的官方图像 URL。每张图有来源 URL、下载时间和存储路径。页面不展示像素，只展示审计。不是 Stage A live crawl |
+| 阶段 B 审计缓存 | 官方 fixture 与其他公开网页都可以下载。每张图有 sourceUrl、downloadedAt、storagePath。web_other、unverified_match、rights_unverified 不进事实栏。页面不展示像素，只展示审计。不是 Stage A live crawl |
 | SonyAdapter、去重、域名校验 | 可运行。作品库仍读种子。另有多来源夹具和交叉验证，不发 HTTP |
 | LangGraph、Celery、Redis、PostgreSQL、pgvector | 未部署。`database/schema.sql` 是目标表结构；`agents/graph.ts` 在进程内列出阶段，不调用 LangGraph |
 | 获奖作品视觉分析、跨届审美趋势 | 不读像素。`pji-text-evidence` 只在官方说明原句命中词表时填写维度，并附原句。像素趋势保持未生成 |

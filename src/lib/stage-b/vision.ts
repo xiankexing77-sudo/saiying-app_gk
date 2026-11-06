@@ -1,17 +1,23 @@
 import { createHash } from "node:crypto";
 import { readFileSync, existsSync } from "node:fs";
 import { decode } from "jpeg-js";
-import { auditComplete, detectImageFormat, type ImageAudit } from "./cache";
+import { auditComplete, auditTrioMissing, detectImageFormat, type ImageAudit } from "./cache";
+import type { IdentityMatch, PixelRights, PixelSubject, SourceKind } from "./source";
 
 export const VISION_MODEL_NAME = "pji-vision-cache";
 export const VISION_MODEL_VERSION = "measure-1.0.0";
 
 export type VisionMeasurement = {
   kind: "fact";
+  subjectKind: PixelSubject;
   workId: string;
   fixtureId: string;
+  juryId: string | null;
   sourceUrl: string;
   pageUrl: string;
+  sourceKind: SourceKind;
+  identityMatch: IdentityMatch;
+  rightsStatus: PixelRights;
   downloadedAt: string;
   storagePath: string;
   sha256: string;
@@ -71,13 +77,19 @@ function measurementQuote(input: { width: number; height: number; pixelsRead: bo
 }
 
 export function measureAuditedBytes(audit: ImageAudit | null, bytes: Buffer | null): { ok: true; measurement: VisionMeasurement } | { ok: false; refusal: VisionRefusal } {
-  if (!auditComplete(audit) || !bytes || bytes.length === 0) {
+  const missing = auditTrioMissing(audit);
+  if (missing.length > 0 || !bytes || bytes.length === 0 || !auditComplete(audit)) {
+    const reason = missing.length > 0
+      ? `缺少审计字段 ${missing.join("、")}，不进入视觉读取。`
+      : !auditComplete(audit)
+        ? "审计不完整或未标明来源种类，不进入视觉读取。"
+        : "没有来源 URL、下载时间或像素，不进入视觉读取。";
     return {
       ok: false,
       refusal: {
         workId: audit?.workId ?? null,
         sourceUrl: audit?.sourceUrl ?? null,
-        reason: "没有来源 URL、下载时间或像素，不进入视觉读取。",
+        reason,
       },
     };
   }
@@ -136,10 +148,15 @@ function measureFormat(audit: ImageAudit, bytes: Buffer): VisionMeasurement {
   if (width < 1 || height < 1) throw new Error("图像尺寸无效");
   return {
     kind: "fact",
+    subjectKind: audit.subjectKind,
     workId: audit.workId,
     fixtureId: audit.fixtureId,
+    juryId: audit.juryId,
     sourceUrl: audit.sourceUrl,
     pageUrl: audit.pageUrl,
+    sourceKind: audit.sourceKind,
+    identityMatch: audit.identityMatch,
+    rightsStatus: audit.rightsStatus,
     downloadedAt: audit.downloadedAt,
     storagePath: audit.storagePath,
     sha256: audit.sha256,
@@ -193,11 +210,16 @@ export function measureAuditedFiles(audits: ImageAudit[], files = new Map<string
     }
   }
   for (const audit of audits) {
-    if (!auditComplete(audit) || !existsSync(/*turbopackIgnore: true*/ audit.storagePath)) {
+    const missing = auditTrioMissing(audit);
+    if (missing.length > 0 || !auditComplete(audit) || !existsSync(/*turbopackIgnore: true*/ audit.storagePath)) {
       refusals.push({
         workId: audit?.workId ?? null,
         sourceUrl: audit?.sourceUrl ?? null,
-        reason: "审计记录不完整或文件不存在，不进入视觉读取。",
+        reason: missing.length > 0
+          ? `缺少审计字段 ${missing.join("、")}，不进入视觉读取。`
+          : !auditComplete(audit)
+            ? "审计不完整或未标明来源种类，不进入视觉读取。"
+            : "审计记录不完整或文件不存在，不进入视觉读取。",
       });
       continue;
     }
